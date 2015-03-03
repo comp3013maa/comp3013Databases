@@ -7,7 +7,7 @@
   
 <body>
 <?php
-
+require "header.php";
 /*
 function isDataValid() {
 	$errorMessage = null;
