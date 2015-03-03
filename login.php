@@ -33,7 +33,7 @@ function checkDatabase($user) {
 	 or die('Error' . mysql_error());
 	 
 	 $query = 
-	 "SELECT * 
+	 "SELECT userID, userName 
 	  FROM users  
 	  WHERE userName = '${user['userName']}' 
 	  AND password = '{$user['password']}' ";
@@ -41,15 +41,21 @@ function checkDatabase($user) {
 	 $result = mysqli_query($connection,$query) or die('Error' . mysql_error());
 	 // var_dump($result); // check what's in result e.g. echo for arrays
 	 
-	 if (mysqli_num_rows($result) == 1) { // check how many rows return 
+	 if (mysqli_num_rows($result) == 1) { // check if succesfully logged in how many rows return 
+		$row = mysqli_fetch_assoc($result); // places the results of the sql query into a row array 
+		$_SESSION['userID'] = $row['userID']; 
+		$_SESSION['username'] = $row['username'];
+		// setcookie("username", $_SESSION['username'], time() +3600); 
+		// header('location: index.php');	//redirect 
+		
 		echo 'It worked you cunt'; 
+
 	 }
 	 	 
 	 mysqli_close($connection);
 	 
 	 
 }
-
 
 checkDatabase(getUser()); 
 
