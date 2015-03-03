@@ -7,7 +7,7 @@
   
 <body>
 <?php
-
+require "header.php";
 
 
 function getUser() {
