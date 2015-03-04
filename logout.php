@@ -6,6 +6,7 @@
 
 <body>
 <?php
+require "header.php";
   if(isset($_POST['logoutForm'])){ 
     session_destroy(); 
     echo 'logged out';  
