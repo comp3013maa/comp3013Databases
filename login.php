@@ -48,8 +48,8 @@ function checkDatabase($user) {
 		// setcookie("userName", $_SESSION['userName'], time() +3600); 
 		// header('location: index.php');	//redirect 
 		
-		echo 'It worked you cunt'; 
-		echo $_SESSION['userName'];
+		echo 'It worked you cunt <br />'; 
+		echo 'Username is: ' . $_SESSION['userName'];
 	 }
 	 	 
 	 mysqli_close($connection);
