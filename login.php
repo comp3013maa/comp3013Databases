@@ -50,7 +50,7 @@ function checkDatabase($user) {
 		
 		echo 'It worked you cunt'; 
 		echo $_SESSION['username'];
-		echo $_row['username'];
+		var_dump ($_row['username']);
 		var_dump($row);
 		var_dump($_SESSION['username']);
 	 }
