@@ -60,8 +60,9 @@ function checkDatabase($user) {
 checkDatabase(getUser()); 
 
 
-?>
 
+if(!isset($_SESSION['userID'])){
+?>
 <h2> Login </h2>
 
 <form method='post' action='login.php' name='loginForm'> 
@@ -73,8 +74,10 @@ checkDatabase(getUser());
 	
 	
 	<p><input type='submit' value='Login'></p>
-	
 </form>
+
+<?php } 
+?>
 
 </body>
 </html>
