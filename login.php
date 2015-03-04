@@ -29,7 +29,7 @@ function getUser() {
 
 
 function checkDatabase($user) {
-	$connection = mysqli_connect('localhost','root','','comp3013')
+	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error' . mysql_error());
 	 
 	 $query = 
