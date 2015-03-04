@@ -62,7 +62,19 @@ checkDatabase(getUser());
 
 ?>
 
+<h2> Login </h2>
 
+<form method='post' action='login.php' name='loginForm'> 
+
+	<label>Username:</label>
+	<input type='text' name='userName' size='30'> <br />
+	<label>Password:</label>
+	<input type='password' name='password' size='30'> <br />
+	
+	
+	<p><input type='submit' value='Login'></p>
+	
+</form>
 
 </body>
 </html>
