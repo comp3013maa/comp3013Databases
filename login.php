@@ -49,7 +49,7 @@ function checkDatabase($user) {
 		// header('location: index.php');	//redirect 
 		
 		echo 'It worked you cunt'; 
-
+		echo $_SESSION['username'];
 	 }
 	 	 
 	 mysqli_close($connection);
