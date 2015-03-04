@@ -50,9 +50,6 @@ function checkDatabase($user) {
 		
 		echo 'It worked you cunt'; 
 		echo $_SESSION['userName'];
-		var_dump ($row['userName']);
-		var_dump($row);
-		var_dump($_SESSION['userName']);
 	 }
 	 	 
 	 mysqli_close($connection);
