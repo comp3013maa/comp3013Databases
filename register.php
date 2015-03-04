@@ -47,7 +47,7 @@ function printUser($user) {
 }
 
 function saveToDatabase($user) {
-	$connection = mysqli_connect('localhost','root','','comp3013')
+	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error connecting to MySQL server.' . mysql_error());
 	$query = "INSERT INTO users (firstName, lastName, userName, password, email, groupID, joinedOn)".
 	"VALUES ('${user['firstName']}','${user['lastName']}','${user['userName']}','${user['password']}',
