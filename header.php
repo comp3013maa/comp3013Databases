@@ -15,4 +15,11 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 /*  if session still active - update last activity to current time  */ 
 $_SESSION['LAST_ACTIVITY'] = time(); 
 
+if( isset ($_SESSION['username']) ) {
+	echo ' 
+	<form method="POST" action = "logout.php" name="logoutForm">
+		<p>	<input type="submit" value = "logout"> </p> 
+	</form> ';
+} 
+
 ?>
