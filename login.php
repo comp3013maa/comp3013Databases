@@ -57,7 +57,6 @@ function checkDatabase($user) {
 	 
 }
 
-session_destroy();
 checkDatabase(getUser()); 
 
 
