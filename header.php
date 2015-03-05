@@ -19,6 +19,11 @@ $_SESSION['LAST_ACTIVITY'] = time();
 <link href="include/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="include/style.css" rel="stylesheet" type="text/css">
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) - maybe not actually be used - ignore largely -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="include/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
