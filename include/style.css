@@ -1,4 +1,9 @@
 .logoutDesign{
-  color: blue; /* #00FFFF*/
+  color: #00FFFF;
+  float: right;
+}
+
+.lol{
+  color: red;
   float: right;
 }
