@@ -70,6 +70,5 @@ $_SESSION['LAST_ACTIVITY'] = time();
 <?php 
 if( isset ($_SESSION['userID']) ) {
 	echo '<p class="lol"> Hi user: ' . $_SESSION['userName'] . ' with userID: ' . $_SESSION['userID'] . '</p>';
-	echo ' 
 } 
 ?>
