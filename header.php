@@ -51,8 +51,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
                             <li class="divider"></li>
                             <li><!-- <a href="logout.php"><i class="icon-off"></i> Logout</a> -->
                             	<form method="POST" action = "logout.php">
-                            	  <button type="button" class="btn btn-default">Middle</button>
-
 					<p>	<input type="submit" value = "logout" name="logoutForm" class="logoutDesign"> </p> 
 				</form> 
                             </li>
