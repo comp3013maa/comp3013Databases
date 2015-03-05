@@ -65,6 +65,21 @@ $_SESSION['LAST_ACTIVITY'] = time();
         </div><!--/.nav-collapse -->
       </div>
     </div>
+    
+    
+    <!-- SIDEBAR --> 
+  <div class="col-md-3">
+    <ul class="nav nav-pills nav-stacked admin-menu">
+        <li class=""><a href="index.php">Home</a></li>
+        <li class=""><a href="api.php?menu">APIs</a></li>
+        <li><a href="users.php?menu">User Management</a></li>
+        <li><a href="analytics.php">Analytics</a></li>
+        <li><a href="design.php?menu">Design</a></li>
+        <li><a href="alerts.php?menu" data-target-id="forms">Alerts</a></li>
+        <li><a href="support.php" data-target-id="calender">Support</a></li>
+
+    </ul>
+</div>
 
 
 <?php 
