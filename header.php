@@ -16,6 +16,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 $_SESSION['LAST_ACTIVITY'] = time(); 
 
 if( isset ($_SESSION['userID']) ) {
+	echo 'Hi user: ' . $_SESSION['userName'] . 'with userID: ' . $_SESSION['userID'] . '<br />';
 	echo ' 
 	<form method="POST" action = "logout.php">
 		<p>	<input type="submit" value = "logout" name="logoutForm" class="logoutDesign"> </p> 
