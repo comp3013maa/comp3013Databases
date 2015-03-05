@@ -17,11 +17,10 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
 if( isset ($_SESSION['userID']) ) {
 	echo ' 
-	<form method="POST" action = "logout.php">
-		<p>	<input type="submit" value = "logout" name="logoutForm"> </p> 
+	<form method="POST" action = "logout.php" class="logoutDesign">
+		<p>	<input type="submit" value = "logout" name="logoutForm" > </p> 
 	</form> ';
 } 
-
 ?>
 
 <link href="include/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
