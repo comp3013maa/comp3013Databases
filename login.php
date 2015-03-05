@@ -46,10 +46,7 @@ function checkDatabase($user) {
 		$_SESSION['userID'] = $row['userID']; 
 		$_SESSION['userName'] = $row['userName'];
 		// setcookie("userName", $_SESSION['userName'], time() +3600); 
-		// header('location: index.php');	//redirect 
-		
-		echo 'It worked you cunt <br />'; 
-		echo 'Username is: ' . $_SESSION['userName'];
+		 header('location: index.php');	//redirect 
 	 }
 	 	 
 	 mysqli_close($connection);
