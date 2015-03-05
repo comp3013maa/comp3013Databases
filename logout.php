@@ -10,7 +10,7 @@ require "header.php";
   if(isset($_POST['logoutForm'])){ 
     session_destroy(); 
     echo 'logged out';  
-    echo 'http://comp3013maa.azurewebsites.net/index.php'; 
+    echo '<a href="index.php"> Go back to index </a> '; 
   }
 ?>
 
