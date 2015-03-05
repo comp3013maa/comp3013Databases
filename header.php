@@ -33,7 +33,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="headerLinks" href="index.php">UCL Go Admin</a>
+          <a class="navbar-brand" id="headerLinks" href="index.php">Proper Abbuz m8</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
