@@ -4,4 +4,5 @@ require "header.php"; //include file - require means must be there or give error
 echo '<a href="register.html">Add New User Form</a> <br />' ;
 echo '<a href="login.php">Login</a> <br />' ;
 
+require "footer.php";
 ?>
