@@ -24,7 +24,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="include/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 
- <div class="navbar navbar-default " role="navigation">
+ <div class="navbar navbar-default navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
