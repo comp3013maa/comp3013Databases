@@ -17,8 +17,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
 if( isset ($_SESSION['userID']) ) {
 	echo ' 
-	<form method="POST" action = "logout.php" class="logoutDesign">
-		<p>	<input type="submit" value = "logout" name="logoutForm" > </p> 
+	<form method="POST" action = "logout.php">
+		<p>	<input type="submit" value = "logout" name="logoutForm" class="logoutDesign"> </p> 
 	</form> ';
 } 
 ?>
