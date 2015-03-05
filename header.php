@@ -23,3 +23,8 @@ if( isset ($_SESSION['userID']) ) {
 } 
 
 ?>
+
+<link href="include/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="include/style.css" rel="stylesheet" type="text/css">
+
+
