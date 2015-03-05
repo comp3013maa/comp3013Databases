@@ -82,8 +82,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 </div>
 
 <!-- CONTENT - the end </divs> we've placed into our footer -->
-<div class = "container">
- <div class="row">	
+<div class="col-md-9 well admin-content" >
 
 <?php 
 if( isset ($_SESSION['userID']) ) {
