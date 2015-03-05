@@ -81,9 +81,9 @@ $_SESSION['LAST_ACTIVITY'] = time();
     </ul>
 </div>
 
-
-	<div class = "container">
-	  <div class="row">	
+<!-- CONTENT - the end </divs> we've placed into our footer -->
+<div class = "container">
+ <div class="row">	
 
 <?php 
 if( isset ($_SESSION['userID']) ) {
