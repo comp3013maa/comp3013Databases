@@ -51,6 +51,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
                             <li class="divider"></li>
                             <li><!-- <a href="logout.php"><i class="icon-off"></i> Logout</a> -->
                             	<form method="POST" action = "logout.php">
+                            	  <button type="button" class="btn btn-default">Middle</button>
+
 					<p>	<input type="submit" value = "logout" name="logoutForm" class="logoutDesign"> </p> 
 				</form> 
                             </li>
@@ -71,8 +73,5 @@ $_SESSION['LAST_ACTIVITY'] = time();
 if( isset ($_SESSION['userID']) ) {
 	echo '<p class="lol"> Hi user: ' . $_SESSION['userName'] . ' with userID: ' . $_SESSION['userID'] . '</p>';
 	echo ' 
-	<form method="POST" action = "logout.php">
-		<p>	<input type="submit" value = "logout" name="logoutForm" class="logoutDesign"> </p> 
-	</form> ';
 } 
 ?>
