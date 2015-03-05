@@ -24,6 +24,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="include/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 
+<!-- NAVBAR -->
  <div class="navbar navbar-default navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -82,7 +83,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 </div>
 
 <!-- CONTENT - the end </divs> we've placed into our footer -->
-<div class="container"> <!-- Container for everything under navbar -->
+<div class="container-fluid"> <!-- Container for everything under navbar -->
  <div class="row">
    <div class="col-md-9 well admin-content" > <!-- grey main body box --> 
 
