@@ -83,7 +83,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
 <!-- CONTENT - the end </divs> we've placed into our footer -->
 <div class="container"> <!-- Container for everything under navbar -->
- <div class="row"> 
    <div class="col-md-9 well admin-content" > <!-- grey main body box --> 
 
 <?php 
