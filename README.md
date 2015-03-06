@@ -2,9 +2,6 @@
 Building a database system 
 As part of 3rd year UCL
 
-<b> NOTE: </b>
-- 
-
 <h3> To do for fri 13th: </h3>
 
 Anuz
@@ -28,6 +25,7 @@ Mahi
 - 11. the administrator-user interface will allow particular groups to be allocated to the peer assessment of particular other groups
 - 12. the administrator-users will be able to see a list of the groups ranked according with the aggregation of peer assessments on their submissions 
 - 13. Validatin checks on the login/registration forms 
-
 - Done login/design/global structure / includes/security 
 
+<b> Notes: </b>
+- For forms where users enter data to be stored in the database, use mysqli_real_escape_string() to escape the data (make it store in a safe way). E.g. in a registration form, for the username (you'd do this for name, email etc too) you do: $username = mysqli_real_escape_string($connection, username);
