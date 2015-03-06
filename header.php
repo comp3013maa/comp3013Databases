@@ -39,8 +39,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.php">Home</a></li>
-            <li><a href="support.php">Documentation</a></li>
-            <li><a href="support.php">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -72,12 +71,10 @@ $_SESSION['LAST_ACTIVITY'] = time();
   <div class="col-md-3">
     <ul class="nav nav-pills nav-stacked admin-menu">
         <li class=""><a href="index.php">Home</a></li>
-        <li class=""><a href="api.php?menu">APIs</a></li>
-        <li><a href="users.php?menu">User Management</a></li>
-        <li><a href="analytics.php">Analytics</a></li>
-        <li><a href="design.php?menu">Design</a></li>
-        <li><a href="alerts.php?menu" data-target-id="forms">Alerts</a></li>
-        <li><a href="support.php" data-target-id="calender">Support</a></li>
+        <li><a href="#">Upload Reports </a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">User Management</a></li>
+        <li><a href="#" data-target-id="forms">Forums </a></li>
 
     </ul>
 </div>
