@@ -28,4 +28,4 @@ Mahi
 - Done login/design/global structure / includes/security 
 
 <b> Notes: </b>
-- For forms where users enter data to be stored in the database, use mysqli_real_escape_string() to escape the data (make it store in a safe way). E.g. in a registration form, for the username (you'd do this for name, email etc too) you do: $username = mysqli_real_escape_string($connection, username);
+- For forms where users enter data to be stored in the database, use mysqli_real_escape_string() to escape the data (make it store in a safe way). E.g. in a registration form, for the username (you'd do this for name, email etc too) you do: $username = mysqli_real_escape_string($connection, $username);
