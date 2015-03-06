@@ -74,8 +74,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
         <li><a href="#">Upload Reports </a></li>
         <li><a href="#">Reports</a></li>
         <li><a href="#">User Management</a></li>
-        <li><a href="#" data-target-id="forms">Forums </a></li>
-
+        <li><a href="forum.php" data-target-id="forms">Forums </a></li>
+        <li><a href="#">Others if needed</a></li>
     </ul>
 </div>
 
