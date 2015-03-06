@@ -8,7 +8,10 @@
 <body>
 <?php
 require "header.php";
-
+// redirect if already logged in 
+if (isset($_SESSION['userID'])) {
+	header('location: unauthorised.php');	 
+}
 
 function getUser() {
 	$user = array();
