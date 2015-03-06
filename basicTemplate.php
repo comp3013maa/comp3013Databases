@@ -1,5 +1,5 @@
 <?php
-require "header.php"; //include file - require means must be there or give error, include() is can have it 
+require "header.php"; 
 
 echo 'put code here to appear in main body of page';
 
