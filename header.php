@@ -14,7 +14,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 
 /*  if session still active - update last activity to current time  */ 
 $_SESSION['LAST_ACTIVITY'] = time(); 
-?>
+?> 
 
 <link href="include/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="include/style.css" rel="stylesheet" type="text/css">
@@ -73,7 +73,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
         <li class=""><a href="index.php">Home</a></li>
         <li><a href="#">Upload Reports </a></li>
         <li><a href="#">Reports</a></li>
-        <li><a href="#">Admin </a></li>
+        <li><a href="admin.php">Admin </a></li>
         <li><a href="forum.php" data-target-id="forms">Forums </a></li>
         <li><a href="#">Others if needed</a></li>
     </ul>
