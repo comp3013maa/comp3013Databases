@@ -12,8 +12,7 @@ Anuz
 
 Abbas 
 - 7. student-users in a group will be able to discuss submissions with other members of their group via a forum which is threaded, browseable and searchable
-(these ones join in with 1/2/3) 
-- 4. student-users will be able to view assessments on their own reports made by other groups
+- (these ones join in with 1/2/3)  4. student-users will be able to view assessments on their own reports made by other groups
 - 5. Student-users will be able to know the ranking of their own aggregated mark within the aggregated marks for all groups.
 - 6. student-users will upload their reports as XML files. The system will extract the data elements from the file and insert them into the database
 - 8 student-users will be able to see the aggregate assessment grades received by each group that provides a grade on their own submissions
