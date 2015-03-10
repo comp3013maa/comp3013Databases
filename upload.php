@@ -5,8 +5,13 @@ if (!isset($_SESSION['userID'])) {
 	header('location: login.php?');	 
 	
 }
-
 echo $name = $_FILES['file']['name'];
+
+if (isset($name)){
+	if(!empty($name)){
+		move_uploaded_file($name, 'uploads/');
+	}
+}
 
 ?>
 
