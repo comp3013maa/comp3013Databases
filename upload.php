@@ -5,15 +5,20 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
-//echo $name = $_FILES['file']['name'];
-//echo $tmp_name = $_FILES['file']['tmp_name'];
-if (isset($name)){
-	if(!empty($name)){
-	 $location = 'uploads/';
-	 if(move_uploaded_file($tmp_name, $location.$name)){
-	 	echo "lol";
-	 }
-	}
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
 }
 
 ?>
