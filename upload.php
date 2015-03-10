@@ -9,7 +9,10 @@ if (!isset($_SESSION['userID'])) {
 //echo $tmp_name = $_FILES['file']['tmp_name'];
 if (isset($name)){
 	if(!empty($name)){
-		
+	 $location = 'uploads/';
+	 if(move_uploaded_file($tmp_name, $location.$name)){
+	 	echo "lol";
+	 }
 	}
 }
 
