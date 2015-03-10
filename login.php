@@ -49,7 +49,7 @@ function checkDatabase($user) {
 		$_SESSION['userID'] = $row['userID']; 
 		$_SESSION['userName'] = $row['userName'];
 		// setcookie("userName", $_SESSION['userName'], time() +3600); 
-		 if($_GET['source']== 'submit'){
+		 if($_GET['source'] == 'submit'){
 		 	header('location: sumbit.php');
 		 }
 		 header('location: index.php');	//redirect 
