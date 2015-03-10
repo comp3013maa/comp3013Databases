@@ -6,10 +6,10 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 echo $name = $_FILES['file']['name'];
-
+echo $tmp_name = $_FILES['file']['tmp_name'];
 if (isset($name)){
 	if(!empty($name)){
-		move_uploaded_file($name, 'uploads/');
+		
 	}
 }
 
