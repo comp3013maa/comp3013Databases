@@ -10,7 +10,7 @@ echo $name = $_FILES['file']['name'];
 
 ?>
 
-<form action = "submit.php" method = "POST" enctype"multiplart/form-data">
+<form action = "upload.php" method = "POST" enctype"multiplart/form-data">
       <input type="file" name="file"> <br><br>
       <input type="submit" value"Submit">
 </form>
