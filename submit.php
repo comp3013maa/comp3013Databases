@@ -2,7 +2,8 @@
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
 
 if (!isset($_SESSION['userID'])) {
-	header('location: unauthorised.php');	 
+	header('location: unauthorised.php?source=upload');	 
+	// if ($_GET['source'] == 'upload')
 }
 
 echo $name = $_FILES['file']['name'];
