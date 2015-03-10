@@ -50,6 +50,10 @@ function checkDatabase($user) {
 		$_SESSION['userName'] = $row['userName'];
 		// setcookie("userName", $_SESSION['userName'], time() +3600); 
 		 header('location: index.php');	//redirect 
+		 
+		 if($_GET['source']==['submit']){
+		 	header('location: sumbit.php');
+		 }
 	 }
 	 	 
 	 mysqli_close($connection);
