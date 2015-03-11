@@ -1,10 +1,11 @@
 <?php
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
-/*
+
 if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
+/*
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
