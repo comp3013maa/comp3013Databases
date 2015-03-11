@@ -5,9 +5,7 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
-if( $_FILES['file']['name'] != "" ){
-echo $_FILES['file']['type'];
-}
+
 ?>
 
 
@@ -18,6 +16,9 @@ echo $_FILES['file']['type'];
 </form>
 
 <?php
+if( $_FILES['file']['name'] != "" ){
+echo $_FILES['file']['type'];
+}
 require "footer.php";
 ?>
 
