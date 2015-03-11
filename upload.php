@@ -5,6 +5,7 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
+echo $_FILES['file']['type'];
 ?>
 
 
