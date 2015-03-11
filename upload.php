@@ -19,6 +19,7 @@ if (!isset($_SESSION['userID'])) {
 if( $_FILES['file']['name'] != "" ){
 echo $_FILES['file']['type'];
 }
+echo  $_FILES['file']['type'];
 require "footer.php";
 ?>
 
