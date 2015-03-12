@@ -19,10 +19,10 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	while($row = mysqli_fetch_assoc($result)){ 
 	echo $row['firstName'];
 	echo $row['lastName'];	
-	}
+	
 	 mysqli_close($connection);
 
-?>
+
 
 
 <div class="dropdown">
@@ -34,8 +34,8 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><?php echo $row['firstName'] . $row['lastName'] ?></a></li>
   </ul>
 </div>
-
-
+}
+?>
 <?php
 require "footer.php";
 ?>
