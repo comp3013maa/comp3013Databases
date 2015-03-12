@@ -11,17 +11,17 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 or die('Error' . mysql_error());
 	 
 	 $query = 
-	 "SELECT userID, userName 
+	 "SELECT userName 
 	  FROM users";  
 	 
 	  $result = mysqli_query($connection,$query) or die('Error' . mysql_error());
 	 
 
 		$row = mysqli_fetch_assoc($result); 
-		 
+		echo $row['userName'];
 		
 	 
-	 echo $row;	 
+	  
 	 mysqli_close($connection);
 
 ?>
@@ -37,7 +37,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$row</a></li>
+       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$row['userName']</a></li>
   </ul>
 </div>
 
