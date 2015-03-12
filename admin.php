@@ -11,7 +11,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 or die('Error' . mysql_error());
 	 
 	$query = 
-	 "SELECT firstName, lastName 
+	 "SELECT * 
 	  FROM users";  
 	 
 	$result = mysqli_query($connection,$query) or die('Error' . mysql_error());
