@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<body>
+
 
 <?php
 require "header.php"; 
@@ -52,6 +50,4 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 <?php
 require "footer.php";
 ?>
-</body>
-</html>
 
