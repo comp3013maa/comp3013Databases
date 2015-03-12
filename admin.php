@@ -16,10 +16,10 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 
 	$result = mysqli_query($connection,$query) or die('Error' . mysql_error());
 	  
-	$row = mysqli_fetch_assoc($result); 
+	while($row = mysqli_fetch_assoc($result)){ 
 	echo $row['firstName'];
 	echo $row['lastName'];	
-	  
+	}
 	 mysqli_close($connection);
 
 ?>
