@@ -2,7 +2,7 @@
 require "header.php"; 
 
 echo '<a href="register.html">Add New User Form</a> <br />' ;
-
+?>
 
 
 <div class="dropdown">
@@ -19,7 +19,6 @@ echo '<a href="register.html">Add New User Form</a> <br />' ;
 </div>
 
 
-
-
+<?php
 require "footer.php";
 ?>
