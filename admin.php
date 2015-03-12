@@ -21,7 +21,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 		 
 		
 	 
-	 	 
+	 echo $row;	 
 	 mysqli_close($connection);
 
 ?>
