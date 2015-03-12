@@ -10,17 +10,15 @@ echo '<a href="register.html">Add New User Form</a> <br />' ;
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error' . mysql_error());
 	 
-	 $query = 
+	$query = 
 	 "SELECT firstName, lastName 
 	  FROM users";  
 	 
-	  $result = mysqli_query($connection,$query) or die('Error' . mysql_error());
-	 
-
-		$row = mysqli_fetch_assoc($result); 
-		echo $row['firstName'];
-		
-	 
+	$result = mysqli_query($connection,$query) or die('Error' . mysql_error());
+	  
+	$row = mysqli_fetch_assoc($result); 
+	echo $row['firstName'];
+	echo $row['lastName'];	
 	  
 	 mysqli_close($connection);
 
@@ -34,10 +32,6 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
   </button>
   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$row['userName']</a></li>
   </ul>
 </div>
 
