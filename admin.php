@@ -11,14 +11,14 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 or die('Error' . mysql_error());
 	 
 	 $query = 
-	 "SELECT userName 
+	 "SELECT firstName, lastName 
 	  FROM users";  
 	 
 	  $result = mysqli_query($connection,$query) or die('Error' . mysql_error());
 	 
 
 		$row = mysqli_fetch_assoc($result); 
-		echo $row['userName'];
+		echo $row['firstName'];
 		
 	 
 	  
