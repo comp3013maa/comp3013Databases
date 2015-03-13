@@ -45,11 +45,11 @@ echo '<div class="dropdown">
   while($row = mysqli_fetch_assoc($result)){ 
    echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">'; echo $row['firstName'];
 	
-echo '	  </a></li>
-  </ul>
+echo	'  </a></li>';}
+ echo ' </ul>
 </div>';
 
-}
+
 mysqli_close($connection);
 ?>
 
