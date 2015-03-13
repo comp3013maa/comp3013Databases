@@ -13,7 +13,7 @@ echo '
       <input type="submit" value"Submit">
 </form>';
 
-while (!isset($_FILES['file'])){
+if(!isset($_FILES['file'])){
 	echo 'not uploaded';
 }
 echo 'lol';
