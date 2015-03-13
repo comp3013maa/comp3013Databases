@@ -40,14 +40,14 @@ echo '<div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
     Dropdown
     <span class="caret"></span>
-  </button>'; while($row = mysqli_fetch_assoc($result)){ 
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
- 
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">';
+ while($row = mysqli_fetch_assoc($result)){
    echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">'; echo $row['firstName']
-	.'</a></li></ul>';
+	.'</a></li>';
   	
   }
- echo ' 
+ echo ' </ul>
 </div>';
 
 
