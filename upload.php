@@ -18,6 +18,10 @@ $directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot
 if(move_uploaded_file($_FILES['file']['tmp_name'], $directory)) {
 	echo 'looool';
 }
+else{
+	echo 'failed';
+	
+}
 }
 echo '
 <form action = "upload.php" method = "POST" enctype"multiplart/form-data">
