@@ -6,7 +6,7 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 
-if (isset $_POST['uploaded']{
+if (isset ($_POST['uploaded'])){
 	
 
 
