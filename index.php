@@ -5,72 +5,61 @@ echo '<a href="register.html">Add New User Form</a> <br />' ;
 echo '<a href="login.php">Login</a> <br />' ;
 ?> 
     <div class="col-sm-6">
-     
         <div class="panel panel-primary"> <!-- Change to panel-default to get grey colour-->
             <div class="panel-heading">
-              <h3 class="panel-title">APIS</h3>
+              <h3 class="panel-title">Upload Reports</h3>
             </div>
             <div class="panel-body">
               	<ul> 
-	                <li id = "indexList"> <a href = "api.php?add" class="listLinks"> Add New </a> </li>                  		
-	                <li id = "indexList"> <a href = "api.php?id=1" class="listLinks">Timetable</a> </li>
-	                <li id = "indexList"> <a href = "api.php?id=2" class="listLinks">Moodle </a></li>
-	                <li id = "indexList"> <a href = "api.php?view" class="listLinks">View All </a></li>
-
+	                <li id = "indexList"> <a href = "" class="listLinks"> Upload Free Text Report</a> </li>                  		
+	                <li id = "indexList"> <a href = "" class="listLinks">Upload XML</a> </li>
                	</ul>
               </div>  
         </div>
         
         <div class="panel panel-primary"> 
             <div class="panel-heading">
-             	 <h3 class="panel-title">ANALYTICS</h3>
+             	 <h3 class="panel-title">Group Reports</h3>
             </div>
             <div class="panel-body">
                	<ul> 
-					<li id = "indexList"> <a href = "analytics.php" class="listLinks"> Google Analytics </a></li>
+		<li id = "indexList"> <a href = "" class="listLinks"> Submit Gradings </a></li>
+		<li id = "indexList"> <a href = "" class="listLinks"> View Assessements </a></li>
+		<li id = "indexList"> <a href = "" class="listLinks"> View Rankings </a></li>
                </ul>
             </div>  
         </div>
-
+        
         <div class="panel panel-primary"> 
             <div class="panel-heading">
-             	 <h3 class="panel-title">DESIGN</h3>
+             	 <h3 class="panel-title">FORUM</h3>
             </div>
             <div class="panel-body">
                	<ul> 
-					<li id = "indexList"> <a href="design.php?icons"> Menu Icons </a></li>
-					<li id = "indexList"> Style </li>  
+		<li id = "indexList"> <a href = "forum.php" class="listLinks"> Forum Index </a></li>
+		<li id = "indexList"> <a href = "forum.php?newThread" class="listLinks"> New Thread </a></li>
+		<li id = "indexList"> <a href = "forum.php?search" class="listLinks"> Search Forum </a></li>
                </ul>
             </div>  
         </div>
-
     </div>  
 
     <div class="col-sm-6">
        
         <div class="panel panel-primary">
             <div class="panel-heading">
-              	<h3 class="panel-title">USER MANAGEMENT</h3>
+              	<h3 class="panel-title">ADMIN</h3>
             </div>
             <div class="panel-body">
                     <ul> 
-                    <li id = "indexList"> <a href="users.php?add">Add <a/></li>
-                    <li id = "indexList"> <a href="users.php?edit">View/Modify Users </a></li>
+	                <li id = "indexList"> <a href = "admin.php?add" class="listLinks"> Add New User</a> </li>                  		
+	                <li id = "indexList"> <a href = "admin.php?browse" class="listLinks">Browse & Search Users</a> </li>
+	                <li id = "indexList"> <a href = "admin.php?allocateGroups" class="listLinks">Allocate Groups </a></li>
+	                <li id = "indexList"> <a href = "admin.php?rankings" class="listLinks">Group Rankings </a></li>
                 </ul>   
             </div>
         </div>
 
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-              	<h3 class="panel-title">ALERTS</h3>
-            </div>
-            <div class="panel-body">
-                <ul> 
-						<li id = "indexList"> <a href="alerts.php?add"> Add </a></li>
-						<li id = "indexList"> <a href="alerts.php?edit"> Modify </a> </li>
-                </ul>   
-            </div>
-        </div>
 
        	<div class="panel panel-primary">
             <div class="panel-heading">
