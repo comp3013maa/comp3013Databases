@@ -6,18 +6,23 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 
+if (isset $_POST['uploaded']{
+	
+
+
+echo $_FILES['file'];
+	echo 'uploaded';
+}
+
+$directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
 
 echo '
 <form action = "upload.php" method = "POST" enctype"multiplart/form-data">
       <input type="file" name="file"> <br><br>
-      <input type="submit" value"Submit">
+      <input type="submit" value"Submit" name = "uploaded">
 </form>';
 
-echo $_FILES['file'];
-	echo 'uploaded';
 
-
-$directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
 
 require "footer.php";
 ?>
