@@ -23,7 +23,7 @@ Mahi
 - 10. the administrator-user interface will support searching for details of a particular student and browsing of student details
 - 11. the administrator-user interface will allow particular groups to be allocated to the peer assessment of particular other groups
 - 12. the administrator-users will be able to see a list of the groups ranked according with the aggregation of peer assessments on their submissions 
-- 13. Validatin checks on the login/registration forms 
+- 13. Validatin checks on the login/registration forms - create a validator class? Then register/login can inherit from it 
 - Done login/design/global structure / includes/security 
 
 General 
