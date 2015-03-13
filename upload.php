@@ -15,7 +15,7 @@ echo $_FILES['file'];
 
 
 $directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
-if(move_uploaded_file($_FILES['tmp_name'], $directory)) {
+if(move_uploaded_file($_FILES['file']['tmp_name'], $directory)) {
 	echo 'looool';
 }
 }
