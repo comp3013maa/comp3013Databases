@@ -14,7 +14,7 @@ echo '
 </form>';
 
 while (!isset($_FILES['file'])){
-	
+	echo 'not uploaded';
 }
 echo 'lol';
 
