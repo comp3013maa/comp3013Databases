@@ -13,10 +13,9 @@ echo '
       <input type="submit" value"Submit">
 </form>';
 
-if(isset($_FILES['file'])){
+echo $_FILES['file'];
 	echo 'uploaded';
-}
-echo 'lol';
+
 
 $directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
 
