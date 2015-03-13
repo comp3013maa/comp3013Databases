@@ -13,9 +13,10 @@ echo '
       <input type="submit" value"Submit">
 </form>';
 
-while (isset($_FILES['file'])){
-	echo 'lol';
+while (!isset($_FILES['file'])){
+	
 }
+echo 'lol';
 
 $directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
 
