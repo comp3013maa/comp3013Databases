@@ -13,7 +13,7 @@ echo '
       <input type="submit" value"Submit">
 </form>';
 
-if (isset($_FILES['file'])){
+while (isset($_FILES['file'])){
 	echo 'lol';
 }
 
