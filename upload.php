@@ -6,20 +6,15 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 
-?>
 
-
-
+echo '
 <form action = "upload.php" method = "POST" enctype"multiplart/form-data">
       <input type="file" name="file"> <br><br>
       <input type="submit" value"Submit">
-</form>
+</form>';
 
-<?php
-if( $_FILES['file']['name'] != "" ){
-echo $_FILES['file']['type'];
-}
-echo  $_FILES['file']['type'];
+$directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
+$target_file = $directory . basename($_FILES["fileToUpload"]["name"]);
 require "footer.php";
 ?>
 
