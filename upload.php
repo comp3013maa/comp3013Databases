@@ -15,9 +15,9 @@ $conn_id = ftp_connect('waws-prod-am2-025.ftp.azurewebsites.windows.net')or die(
 
 ftp_login($conn_id, 'comp3013maa\abbuz','FuckingCunt') or die('could not log in');
 
-var_dump(ftp_chdir($conn_id, '/site/wwwroot/uploads/'));
+ftp_chdir($conn_id, '/site/wwwroot/uploads/');
 
-if (ftp_put($conn_id, $temp_name, $filename, FTP_BINARY))
+if (ftp_put($conn_id, $filename, $temp_name, FTP_ASCII))
 {
  echo 'successfully uploaded';
 }else{echo 'not uploaded';}
