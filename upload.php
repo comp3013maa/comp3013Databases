@@ -13,7 +13,7 @@ if (isset ($_POST['uploaded'])){
 	
 $directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
 $target = $directory . ($_FILES['file']['name']);
-if(move_uploaded_file($_FILES['file']['tmp_name'], $target)) {
+if(move_uploaded_file($_FILES['file']['tmp_name'], $directory)) {
 	echo 'looool';
 }
 else{
