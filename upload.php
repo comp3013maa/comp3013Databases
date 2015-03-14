@@ -9,7 +9,7 @@ if (!isset($_SESSION['userID'])) {
 if (isset ($_POST['uploaded'])){
 	var_dump($_FILES['file']);
 	
-	
+	echo 'this is files file name: '. $_FILES['file']['name'];
 	
 $directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
 $target = $directory . ($_FILES['file']['name']);
