@@ -21,14 +21,14 @@ else{
 	echo 'failed';
 	
 }
+
+}
+
 echo '
 <form action = "upload.php" method = "POST" enctype"multiplart/form-data">
       <input type="file" name="file" id="file"> <br><br>
       <input type="submit" value"Submit" name = "uploaded">
 </form>';
-}
-
-
 
 
 require "footer.php";
