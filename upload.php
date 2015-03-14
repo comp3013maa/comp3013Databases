@@ -27,7 +27,7 @@ else{
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
       <input type="file" name="file" id="file"> <br><br>
-      <input type="submit" value"Submit" name = "uploaded">
+      <input type="submit" value="Submit" name = "uploaded">
 </form>';
 
 
