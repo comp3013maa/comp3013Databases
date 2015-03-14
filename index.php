@@ -32,7 +32,7 @@ echo '<a href="login.php">Login</a> <br />' ;
         
         <div class="panel panel-primary"> 
             <div class="panel-heading">
-             	 <h3 class="panel-title">FORUM</h3>
+             	 <h3 class="panel-title">Forum</h3>
             </div>
             <div class="panel-body">
                	<ul> 
@@ -48,7 +48,7 @@ echo '<a href="login.php">Login</a> <br />' ;
        
         <div class="panel panel-primary">
             <div class="panel-heading">
-              	<h3 class="panel-title">ADMIN</h3>
+              	<h3 class="panel-title">Admin</h3>
             </div>
             <div class="panel-body">
                     <ul> 
@@ -63,7 +63,7 @@ echo '<a href="login.php">Login</a> <br />' ;
 
        	<div class="panel panel-primary">
             <div class="panel-heading">
-              	<h3 class="panel-title">SUPPORT</h3>
+              	<h3 class="panel-title">Support</h3>
             </div>
             <div class="panel-body">
                 <ul> 
