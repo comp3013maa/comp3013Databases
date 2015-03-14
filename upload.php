@@ -14,7 +14,7 @@ $temp_name = $_FILES['file']['tmp_name'];
 $conn_id = ftp_connect('waws-prod-am2-025.ftp.azurewebsites.windows.net')or die('could not connect');
 
 ftp_login($conn_id, 'comp3013maa\abbuz','FuckingCunt') or die('could not log in');
-ftp_chdir($conn_id, 'ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/'); //not working
+ftp_chdir($conn_id, 'waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/'); //not working
 echo ftp_pwd($conn_id);
 var_dump();	
 if (ftp_put($conn_id, $filename, $temp_name, FTP_BINARY))
