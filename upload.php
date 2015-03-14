@@ -9,7 +9,7 @@ if (!isset($_SESSION['userID'])) {
 if (isset ($_POST['uploaded'])){
 	var_dump($_FILES['file']);
 
-$conn_id = ftp_connect('waws-prod-am2-025.ftp.azurewebsites.windows.netll')or die('couldnt connect');
+$conn_id = ftp_connect('waws-prod-am2-025.ftp.azurewebsites.windows.net')or die('couldn't connect');
 
 $login_result = ftp_login($conn_id, 'comp3013maa\abbuz',' FuckingCunt');
 	
