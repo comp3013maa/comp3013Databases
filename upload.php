@@ -8,7 +8,15 @@ if (!isset($_SESSION['userID'])) {
 
 if (isset ($_POST['uploaded'])){
 	var_dump($_FILES['file']);
+
+$conn_id = ftp_connect('ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net');
+
+$login_result = ftp_login($conn_id, 'comp3013maa\abbuz',' FuckingCunt');
 	
+if (ftp_put($conn_id, '/site/wwwroot/uploads/' , $_FILES['file']['tmp_name'], FTP_ASCII)) {
+ echo "successfully uploaded";
+}
+/*	
 $directory = "ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/";
 $target = $directory . basename($_FILES['file']['name']);
 if(move_uploaded_file($_FILES['file']['tmp_name'], $target)) {
@@ -18,7 +26,7 @@ else{
 	echo 'failed';
 	
 }
-
+*/
 }
 
 echo '
