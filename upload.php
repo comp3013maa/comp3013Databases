@@ -8,7 +8,7 @@ if (!isset($_SESSION['userID'])) {
 
 if (isset ($_POST['uploaded'])){
 	var_dump($_FILES['file']);
-	
+	echo $_FILES['file']['tmp_name'];
 	if (isset ($_FILES['file']));{
 		echo 'leeel';
 	}
