@@ -11,8 +11,8 @@ echo '<a href="login.php">Login</a> <br />' ;
             </div>
             <div class="panel-body">
               	<ul> 
-	                <li id = "indexList"> <a href = "" class="listLinks"> Upload Free Text Report</a> </li>                  		
-	                <li id = "indexList"> <a href = "" class="listLinks">Upload XML</a> </li>
+	                <li id = "indexList"> <a href = "upload.php" class="listLinks"> Upload Free Text Report</a> </li>                  		
+	                <li id = "indexList"> <a href = "upload.php" class="listLinks">Upload XML</a> </li>
                	</ul>
               </div>  
         </div>
