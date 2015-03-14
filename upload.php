@@ -11,7 +11,7 @@ if (isset ($_POST['uploaded'])){
 
 $conn_id = ftp_connect('waws-prod-am2-025.ftp.azurewebsites.windows.net')or die('could not connect');
 
-$login_result = ftp_login($conn_id, 'comp3013maa\abbuz',' FuckingCunt') or die('could not log in');
+$login_result = ftp_login($conn_id, 'comp3013maa\abbuz','FuckingCunt') or die('could not log in');
 	
 if (ftp_put($conn_id, 'ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/' , $_FILES['file']['tmp_name'], FTP_ASCII)) {
  echo "successfully uploaded";
