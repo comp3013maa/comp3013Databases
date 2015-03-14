@@ -13,10 +13,10 @@ $conn_id = ftp_connect('waws-prod-am2-025.ftp.azurewebsites.windows.net')or die(
 
 $login_result = ftp_login($conn_id, 'comp3013maa\abbuz','FuckingCunt') or die('could not log in');
 	
-if (ftp_put($conn_id, 'site/wwwroot/uploads/'.$_FILES['file']['name'], $_FILES['file']['tmp_name'], FTP_BINARY))
+if (ftp_put($conn_id, 'site/wwwroot/uploads/'.$_FILES['file']['name'], $_FILES['file']['tmp_name'], FTP_ASCII))
 {
  echo "successfully uploaded";
-}
+}else{echo 'not uploaded';}
 ftp_close($conn_id);
 }
 
