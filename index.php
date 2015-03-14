@@ -67,7 +67,7 @@ echo '<a href="login.php">Login</a> <br />' ;
             </div>
             <div class="panel-body">
                 <ul> 
-					<li id = "indexList"> <a href="support.php">  Message </a></li>
+			<li id = "indexList"> <a href="contact.php">  Message </a></li>
                 </ul>   
             </div>
         </div>
