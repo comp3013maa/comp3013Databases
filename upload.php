@@ -13,7 +13,7 @@ $conn_id = ftp_connect('ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net');
 
 $login_result = ftp_login($conn_id, 'comp3013maa\abbuz',' FuckingCunt');
 	
-if (ftp_put($conn_id, '/site/wwwroot/uploads/' , $_FILES['file']['tmp_name'], FTP_ASCII)) {
+if (ftp_put($conn_id, 'ftp://waws-prod-am2-025.ftp.azurewebsites.windows.net/site/wwwroot/uploads/' , $_FILES['file']['tmp_name'], FTP_ASCII)) {
  echo "successfully uploaded";
 }
 /*	
