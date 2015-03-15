@@ -60,6 +60,7 @@ if ($validUpload == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+}
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
       <input type="file" name="file" id="file"> <br><br>
