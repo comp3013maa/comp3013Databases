@@ -24,7 +24,7 @@ if (ftp_put($conn_id, $filename, $temp_name, FTP_ASCII))
 ftp_close($conn_id);
 }
 */
-if(isset($_POST["submit"])) {
+if(isset($_POST["uploaded"])) {
 $directory = "uploads/". basename($_FILES["file"]["name"]);
 
 $uploadOk = 1;
