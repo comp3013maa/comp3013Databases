@@ -24,7 +24,7 @@ if (ftp_put($conn_id, $filename, $temp_name, FTP_ASCII))
 ftp_close($conn_id);
 }
 */
-/*
+
 if(isset($_POST['uploaded'])) {
 $directory = 'uploads/'. basename($_FILES['file']['name']);
 
@@ -32,7 +32,7 @@ $validUpload = 1;
 
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 
-*/
+
 // Check if file already exists
 /*if (file_exists($directory)) {
     
@@ -40,8 +40,8 @@ $extension = pathinfo($directory,PATHINFO_EXTENSION);
 }
 */
 // Check file size
-/*
-if ($_FILES["file"]["size"] > 2000000) {
+
+if ($_FILES['file']['size'] > 2000000) {
     echo 'Cannot exceed 2MB';
     $validUpload = 0;
 }
@@ -61,7 +61,7 @@ if ($validUpload == 1) {
     }
 }
 	
-}*/
+}
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
       <input type="file" name="file" id="file"> <br><br>
