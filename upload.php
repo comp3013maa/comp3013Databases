@@ -43,7 +43,7 @@ $imageFileType = pathinfo($directory,PATHINFO_EXTENSION);
 // Check if file already exists
 if (file_exists($directory)) {
     echo "Sorry, file already exists.";
-    $uploadOk = 0;
+    
 }
 // Check file size
 if ($_FILES["file"]["size"] > 2000000) {
