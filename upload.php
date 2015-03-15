@@ -27,7 +27,7 @@ ftp_close($conn_id);
 if(isset($_POST['uploaded'])) {
 $directory = 'uploads/'. basename($_FILES['file']['name']);
 
-$validUpload = true;
+$validUpload = 1;
 
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 
@@ -40,12 +40,12 @@ if (file_exists($directory)) {
 // Check file size
 if ($_FILES["file"]["size"] > 2000000) {
     echo 'Cannot exceed 2MB';
-    $validUpload = false;
+    $validUpload = 0;
 }
 // Allow certain file formats
 if($extension != "txt" && $extension != "doc" && $extension != "pdf") {
     echo 'Please ensure file is .txt, .doc, or .pdf';
-    $validUpload = false;
+    $validUpload = 0;
 }
 if ($validUpload) {
 	if (move_uploaded_file($_FILES["file"]["tmp_name"], $directory)) {
