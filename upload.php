@@ -40,11 +40,11 @@ $extension = pathinfo($directory,PATHINFO_EXTENSION);
 }
 */
 // Check file size
-/*
+
 if ($_FILES['file']['size'] > 2000000) {
     echo 'Cannot exceed 2MB';
     $validUpload = 0;
-}
+}/*
 // Allow certain file formats
 if($extension != "txt" && $extension != "doc" && $extension != "pdf") {
     echo 'Please ensure file is .txt, .doc, or .pdf';
