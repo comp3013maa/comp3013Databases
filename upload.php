@@ -53,7 +53,7 @@ if($extension != "txt" && $extension != "doc" && $extension != "pdf") {
 if ($validUpload) {
     
  if (move_uploaded_file($_FILES["file"]["tmp_name"], $directory)) {
-        echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
+        echo $_FILES["file"]["name"]. " has been uploaded.";
     }else {
         echo "Sorry, there was an error uploading your file.";
     }
