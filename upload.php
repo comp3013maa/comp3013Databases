@@ -50,17 +50,15 @@ if($extension != "txt" && $extension != "doc" && $extension != "pdf") {
     echo 'Please ensure file is .txt, .doc, or .pdf';
     $validUpload = 0;
 }
-if ($validUpload == 1) {
-	if (move_uploaded_file($_FILES["file"]["tmp_name"], $directory)) {
-		   echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
-	} else {
-    		echo 'Upload error';
-      
+if ($validUpload == 0) {
+    echo "Sorry, your file was not uploaded.";
+
+} else {
+    if (move_uploaded_file($_FILES["file"]["tmp_name"], $directory)) {
+        echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
     } else {
-        echo 'File not uploaded';
+        echo "Sorry, there was an error uploading your file.";
     }
-}/*
-*/	
 }
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
