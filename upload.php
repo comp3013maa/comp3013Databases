@@ -23,12 +23,12 @@ while (file_exists($directory)) {
 }//adds a number marker if file exists
 
 if ($_FILES['file']['size'] > 2000000) {
-    echo 'Cannot exceed 2MB ';
+    echo 'Cannot exceed 2MB. ';
     $validUpload = false;
 }
 
-if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf') {
-    echo 'Please ensure file is .txt, .doc, or .pdf ';
+if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extension != 'docx') {
+    echo 'Please ensure file is .txt, .docx, or .pdf. ';
     $validUpload = false;
 }
 if ($validUpload) {
