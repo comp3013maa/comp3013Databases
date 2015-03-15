@@ -8,8 +8,9 @@ if (!isset($_SESSION['userID'])) {
 
 
 if(isset($_POST['uploaded'])) {
-$directory = 'uploads/'. basename($_FILES['file']['name']);
-echo basename($_FILES['file']['name'],'.'.pathinfo($_FILES['file']['name'])['extension']);
+$file = $_FILES['file']['name'];	
+$directory = 'uploads/'. basename($file);
+echo basename($file,'.'.pathinfo($file)['extension']);
 $validUpload = true;
 
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
@@ -17,7 +18,7 @@ $extension = pathinfo($directory,PATHINFO_EXTENSION);
 $marker = 0;
 while (file_exists($directory)) {
     $marker = $marker + 1;
-    $directory = 'uploads/'.basename($_FILES['file']['name'],'.'.$info['extension']) . $marker . $extension;
+    $directory = 'uploads/'.basename($_FILES['file']['name'],'.'.pathinfo($_FILES['file']['name'])['extension']) . $marker . $extension;
     $directory = 'uploads/'. basename($_FILES['file']['name'])
     if(file_exists($directory))
 }
@@ -33,7 +34,7 @@ if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf') {
 }
 if ($validUpload) {
  if (move_uploaded_file($_FILES['file']['tmp_name'], $directory)) {
-        echo $_FILES['file']['name'] . ' successfully uploaded.';
+        echo basename($file) . ' successfully uploaded.';
     }else{
         echo 'Upload error';
     }
