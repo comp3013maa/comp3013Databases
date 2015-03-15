@@ -49,7 +49,7 @@ if ($_FILES['file']['size'] > 2000000) {
 if($extension != "txt" && $extension != "doc" && $extension != "pdf") {
     echo 'Please ensure file is .txt, .doc, or .pdf';
     $validUpload = 0;
-}/*
+}
 if ($validUpload == 1) {
 	if (move_uploaded_file($_FILES["file"]["tmp_name"], $directory)) {
 		   echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
@@ -59,7 +59,7 @@ if ($validUpload == 1) {
     } else {
         echo 'File not uploaded';
     }
-}
+}/*
 */	
 }
 echo '
