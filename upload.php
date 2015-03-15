@@ -14,15 +14,14 @@ $directory = 'uploads/'. basename($file);
 $validUpload = true;
 
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
-echo $directory = 'uploads/'.basename($file,'.'.pathinfo($file)['extension']) . '1.' . $extension;
-/*
+//echo $directory = 'uploads/'.basename($file,'.'.pathinfo($file)['extension']) . '1.' . $extension;
+
 $marker = 0;
 while (file_exists($directory)) {
     $marker = $marker + 1;
     $directory = 'uploads/'.basename($file,'.'.pathinfo($file)['extension']) . $marker . '.' . $extension;
-    if(file_exists($directory))
-}
-*/
+}//adds a number marker if file exists
+
 if ($_FILES['file']['size'] > 2000000) {
     echo 'Cannot exceed 2MB';
     $validUpload = false;
