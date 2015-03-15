@@ -10,10 +10,11 @@ if (!isset($_SESSION['userID'])) {
 if(isset($_POST['uploaded'])) {
 $file = $_FILES['file']['name'];	
 $directory = 'uploads/'. basename($file);
-echo    $directory = 'uploads/'.basename($file,'.'.pathinfo($file)['extension']) . '1' . $extension;
+
 $validUpload = true;
 
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
+echo $directory = 'uploads/'.basename($file,'.'.pathinfo($file)['extension']) . '1' . $extension;
 /*
 $marker = 0;
 while (file_exists($directory)) {
