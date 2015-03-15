@@ -40,7 +40,7 @@ $extension = pathinfo($directory,PATHINFO_EXTENSION);
 }
 */
 // Check file size
-
+/*
 if ($_FILES['file']['size'] > 2000000) {
     echo 'Cannot exceed 2MB';
     $validUpload = 0;
@@ -60,7 +60,7 @@ if ($validUpload == 1) {
         echo 'File not uploaded';
     }
 }
-	
+*/	
 }
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
