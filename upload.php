@@ -9,7 +9,7 @@ if (!isset($_SESSION['userID'])) {
 
 if(isset($_POST['uploaded'])) {
 $directory = 'uploads/'. basename($_FILES['file']['name']);
-echo basename($_FILES['file']['name'],'.'.$info['extension']);
+echo basename($_FILES['file']['name'],'.'.pathinfo($_FILES['file']['name'])['extension']);
 $validUpload = true;
 
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
