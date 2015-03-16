@@ -49,6 +49,14 @@ if (isset($_GET['browse'])) {
 
 if (isset($_GET['allocateGroups'])) {
 	// list of each group, and the ones they're assigned too 
+	
+	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
+	$sql = "SELECT id 
+		FROM users
+		WHERE username = '$username' AND password='$password' "; 
+	$result = mysqli_query($conx, $sql) or die( mysqli_error($result) );
+	$row = mysqli_fetch_assoc($result); 
+	echo 'GroupID: ' . $row['groupID'] . 'AND AssignedTo:' . $row['assignedTo'];	
 ?> 	
 
 <h3> Group Allocations </h3> <br /> 
@@ -66,22 +74,6 @@ if (isset($_GET['allocateGroups'])) {
       </thead>
       <tbody>
 	<?php
-	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
-	$sql = "INSERT INTO groupassignments 
-	(groupID, assignedTo)
-		VALUES
-	(5, 3)	
-	"; 
-	mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	
-	$sql = "SELECT id 
-		FROM users
-		WHERE username = '$username' AND password='$password' "; 
-	$result = mysqli_query($conx, $sql) or die( mysqli_error($result) );
-	$row = mysqli_fetch_assoc($result); 
-	echo 'GroupID: ' . $row['groupID'] . 'AND AssignedTo:' . $row['assignedTo'];
-
-
 	/*
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
 	$sql = "SELECT groupID
