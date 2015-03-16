@@ -12,7 +12,7 @@ function displayAssignedTo($groupID) {
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	$output = "";
 	while ($row = mysqli_fetch_assoc($result) ) {
-	 	output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
+	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
 	}
 	mysqli_close($connection);
 	return $output;
