@@ -9,7 +9,7 @@ function displayAssignedTo($groupID) {
 		FROM groupassignments
 		WHERE groupID = $groupID
 		"; 
-	$result = mysqli_query($connection, $sql) or die( mysqli_error($conx) );
+	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	
 	while ($row = mysqli_fetch_assoc($result) ) {
 	 	echo '<td>' . htmlentities($row['assignedTo']) . '</td>';
@@ -78,7 +78,7 @@ if (isset($_GET['allocateGroups'])) {
 	$sql = "SELECT groupID
 		FROM groupassignments
 		ORDER BY groupID ASC";
-	$result = mysqli_query($connection, $sql) or die( mysqli_error($conx) );
+	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	while ($row = mysqli_fetch_assoc($result) ) {
 		echo '<tr> <td>' . htmlentities($row['groupID']) . '</td>' . displayAssignedTo(($row['groupID']) . '</tr>';
 	}
