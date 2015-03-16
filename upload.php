@@ -58,10 +58,11 @@ else {
 	$query2 = 
 	 "INSERT INTO submissions(submissionName, groupID)
 	 VALUES ('$filename', $groupID)";  
-	 echo 'lol';
 	 
 	 
-	$result = mysqli_query($connection,$query2) or die('Error' . mysql_error());
+	 
+	$result = mysqli_query($connection,$query2) or die('Error' . mysql_error("$result"));
+	echo 'lol';
 
 }
 echo '
