@@ -62,6 +62,7 @@ if (isset($_GET['allocateGroups'])) {
       </thead>
       <tbody>
 	<?php
+	/* 
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
 	$sql = "SELECT groupID
 		FROM groupassignments
@@ -69,7 +70,7 @@ if (isset($_GET['allocateGroups'])) {
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($conx) );
 	while ($row = mysqli_fetch_assoc($result) ) {
 		echo '<tr> <td>' . htmlentities($row['groupid']) . '</td>' . displayAssignedTo(($row['groupid']) . '</tr>';
-	}
+	} */ 
 	?>	
       </tbody>
     </table>
