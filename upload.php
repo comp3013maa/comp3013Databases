@@ -5,7 +5,7 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
-unlink('uploads/'.up1);
+unlink('uploads/'.'up1');
 unlink('uploads/'.up2);
 unlink('uploads/'.up3);
 unlink('uploads/'.up);
