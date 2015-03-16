@@ -39,3 +39,4 @@ Stuff to include in video/report
 - Normilisation
 - Foreign key definitions in Grade Table
 - Boostrap / header design/ responsive
+- group by query in admin allocate 
