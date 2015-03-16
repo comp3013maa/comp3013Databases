@@ -54,14 +54,14 @@ else {
 	 	$row = mysqli_fetch_assoc($result1);
 	 echo	$groupID = $row['groupID'];
 	 echo	$filename =  basename($file);
-/*
+
 	$query2 = 
 	 "INSERT INTO submissions 
-	 (submissionName)
-	 VALUES ('ghgigigigigigi')";  
+	 (submissionID, submissionName, groupID)
+	 VALUES (null, 'ghgigigigigigi', 5)";  
 	 
 	$result = mysqli_query($connection,$query2) or die('Error8478957857w33899' . mysql_error($connection));
-	*/
+	
 	mysqli_close($connection);
 
 }
