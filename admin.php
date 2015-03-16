@@ -3,7 +3,22 @@
 <?php
 require "header.php"; 
 
+function displayAssignedTo($groupID) {
+	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
+	$sql = "SELECT assignedTo
+		FROM groupassignments
+		WHERE groupID = $groupID
+		"; 
+	$result = mysqli_query($connection, $sql) or die( mysqli_error($conx) );
+	
+	while ($row = mysqli_fetch_assoc($result) ) {
+	 	echo '<td>' . htmlentities($row['assignedTo']) . '</td>';
+	}	
+}
+
+
 if (empty($_GET)) {
+	// Overall structure found in the list below 
 	echo '
 	<ul> 
 		<li id = "indexList"> <a href = "admin.php?add" class="listLinks"> Add New User</a> </li>                  		
@@ -24,15 +39,54 @@ if (isset($_GET['browse'])) {
 	/* DISPLAY USERS & Search bar - from other stuff  */
 	
 	/* Edit group allocation - List of users, list of groups dropdown - update sql query*/
+	/* Have an option to create a new group as well */
 	
-	/* EDIT PERSONAL INFO*/
+	/* EDIT PERSONAL INFO - admin panel code */
 	
 	echo 'ruff';
 }
 
 if (isset($_GET['allocateGroups'])) {
-	echo 'Hey there';
-}
+	// list of each group, and the ones they're assigned too 
+?> 	
+<div class="well">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>GroupID</th>
+          <th>Assigned 1</th>
+          <th>Assigned 2</th>
+          <th>Assigned 3</th>
+          <th style="width: 36px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+	<?php
+	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
+	$sql = "SELECT groupID
+		FROM groupassignments
+		GROUP BY (groupID)
+		ORDER BY groupID ASC";
+		"; 
+	$result = mysqli_query($connection, $sql) or die( mysqli_error($conx) );
+	
+	while ($row = mysqli_fetch_assoc($result) ) {
+		echo '
+		 <tr>
+	          <td>' . htmlentities($row['groupid']) . '</td>' . 
+	     	  displayAssignedTo($groupID) . 			
+        	'</tr>';
+	}
+	?>	
+      </tbody>
+    </table>
+</div>	
+
+<?php 	
+
+	// two dropdowns - groupid, assign to - submit button assigns as long as not already exisiting 
+	// max 3 assigned 
+} // end isset allocateGrpuos 
 
 if (isset($_GET['rankings'])) {
 
