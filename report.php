@@ -19,10 +19,21 @@ echo '<div class="detailBox">
         </ul>
         <form class="form-inline" role="form">
             <div class="form-group">
-                <textarea rows="7" cols="80">
-Your review
-                </textarea>
+                <textarea rows="7" cols="80"> Your review </textarea>
             </div>
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            Please select grade
+            <span class="caret"></span>
+        </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">
+	</a></li>
+  	
+  
+ </ul>
+</div>
             <div class="form-group">
                 <button class="btn btn-default">Add</button>
             </div>
