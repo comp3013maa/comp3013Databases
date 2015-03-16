@@ -50,7 +50,8 @@ else {
 	WHERE userID = $userID
 	";
 	 
-	 echo	$groupID = mysqli_query($connection,$query1) or die('Error' . mysql_error());
+	 	$groupID = mysqli_query($connection,$query1) or die('Error' . mysql_error());
+	 echo	$row = mysqli_fetch_assoc($groupID);
 /*	 
 	$query2 = 
 	 "INSERT INTO submissions(submissionName, groupID)
