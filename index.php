@@ -1,7 +1,12 @@
 <?php
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
 
-echo '<a href="register.html">Add New User Form</a> <br />' ;
+if (!isset($_SESSION['userID'])) {
+	echo 'You are not currently logged in - please sign in to access authenticated-only areas of the system';
+	//login form 
+	
+}
+
 echo '<a href="login.php">Login</a> <br />' ;
 ?> 
     <div class="col-sm-6">
