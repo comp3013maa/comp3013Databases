@@ -63,17 +63,50 @@ checkDatabase(getUser());
 
 if(!isset($_SESSION['userID'])){
 
-echo '<h2> Login </h2>
+echo '
+<div class="well well-sm">
+  <form class="form-horizontal" action="login.php" method="post">
+  <fieldset>
+    <legend class="text-center">Login</legend>
+
+    <!-- Name input-->
+    <div class="form-group">
+      <label class="col-md-3 control-label" for="name">Username</label>
+      <div class="col-md-9">
+        <input id="username" name="userName" type="text" placeholder="Your User Name" class="form-control">
+      </div>
+    </div>
+
+    <!-- Password input-->
+    <div class="form-group">
+      <label class="col-md-3 control-label" for="password">Password</label>
+      <div class="col-md-9">
+      <input type="password" name="password" id="password"  placeholder="Your Password" class="form-control">
+      </div>
+    </div>
+
+    <!-- Form actions -->
+    <div class="form-group">
+      <div class="col-md- text-center">
+        <button type="submit" name="loginForm" class="btn btn-primary btn-lg">Sign In</button>
+      </div> 
+    </div>
+  </fieldset>
+  </form>
+</div>'
+} 
+?> 
+
+<!--
 <form method= "post" action="login.php" name="loginForm"> 
 
 	<label>Username:</label>
 	<input type="text" name="userName" size="30"> <br />
 	<label>Password:</label>
 	<input type="password" name="password" size="30"> <br />
-	<p><input type="submit" value="Login"></p>
+	<p><input type="submit" value="Login" name="login></p>
 </form>';
-} 
-?> 
+-->
 
 </body>
 </html>
