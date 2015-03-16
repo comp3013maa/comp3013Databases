@@ -14,7 +14,6 @@ function displayAssignedTo($groupID) {
 	while ($row = mysqli_fetch_assoc($result) ) {
 	 	echo '<td>' . htmlentities($row['assignedTo']) . '</td>';
 	}
-	mysqli_close($connection);
 }
 
 
