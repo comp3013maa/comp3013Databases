@@ -87,5 +87,13 @@ $_SESSION['LAST_ACTIVITY'] = time();
 <?php 
 if( isset ($_SESSION['userID']) ) {
 	echo '<p class="lol"> Hi user: ' . $_SESSION['userName'] . ' <br /> with userID: ' . $_SESSION['userID'] . '</p>';
+	
+	define("DEBUG", true);
+	if (DEBUG) {
+	    	ini_set("display_errors",1);
+	    	ini_set("display_startup_errors",1);
+		 error_reporting(E_ALL & ~E_NOTICE);
+	}
+
 } 
 ?>
