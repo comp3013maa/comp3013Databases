@@ -60,7 +60,7 @@ else {
 	 (submissionID, submissionName, groupID)
 	 VALUES (null, 'ghgigigigigigi', 5)";  
 	 
-	$result = mysqli_query($connection,$query2) or die('Error8478957857w33899' . mysql_error($connection));
+	$result = mysqli_query($connection,$query2) or die('Error8478957857w33899' . mysqli_error($connection));
 	
 	mysqli_close($connection);
 
