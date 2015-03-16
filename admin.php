@@ -13,7 +13,8 @@ function displayAssignedTo($groupID) {
 	
 	while ($row = mysqli_fetch_assoc($result) ) {
 	 	echo '<td>' . htmlentities($row['assignedTo']) . '</td>';
-	}	
+	}
+	mysqli_close($connection);
 }
 
 
@@ -73,7 +74,9 @@ if (isset($_GET['allocateGroups'])) {
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($conx) );
 	while ($row = mysqli_fetch_assoc($result) ) {
 		echo '<tr> <td>' . htmlentities($row['groupid']) . '</td>' . displayAssignedTo(($row['groupid']) . '</tr>';
-	} */ 
+	}
+	mysqli_close($connection);
+	*/ 
 	?>	
       </tbody>
     </table>
