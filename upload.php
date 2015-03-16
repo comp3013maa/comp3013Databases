@@ -53,13 +53,13 @@ else {
 	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysql_error("$result1"));
 	 	$row = mysqli_fetch_assoc($result1);
 	 echo	$groupID = $row['groupID'];
-	 echo	$filename =  basename($file);
+	 echo	$filename =  basename($directory);
 	 
 	$query2 = 
 	 "INSERT INTO submissions(submissionName, groupID)
 	 VALUES ('$filename',$groupID)";  
 	 
-	$result = mysqli_query($connection,$query2) or die('Errorrrrrrrr' . mysql_error("$result"));
+	$result = mysqli_query($connection,$query2) or die('Error' . mysql_error("$result"));
 	
 	mysqli_close($connection);
 
