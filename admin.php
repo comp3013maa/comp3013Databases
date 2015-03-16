@@ -19,7 +19,7 @@ if (isset($_GET['browse'])) {
 	echo 'ruff';
 }
 
-if (isset($_GET['allocate'])) {
+if (isset($_GET['allocateGroups'])) {
 	echo 'Hey there';
 }
 
