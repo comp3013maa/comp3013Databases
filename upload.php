@@ -43,7 +43,7 @@ else {
 
  $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error' . mysql_error());
-	 $userID = $_SESSION['userID'];
+/*	 $userID = $_SESSION['userID'];
 	$query1 = 
 	"SELECT groupID 
 	FROM users
@@ -54,7 +54,7 @@ else {
 	 	$row = mysqli_fetch_assoc($result1);
 	 echo	$groupID = $row['groupID'];
 	 echo	$filename =  basename($file);
-	 
+*/
 	$query2 = 
 	 "INSERT INTO submissions(submissionName, groupID)
 	 VALUES ('ghgigigigigigi',2)";  
