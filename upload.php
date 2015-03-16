@@ -57,8 +57,8 @@ else {
 
 	$query2 = 
 	 "INSERT INTO submissions 
-	 (submissionID, submissionName, groupID)
-	 VALUES (null, 'ghgigigigigigi', 5)";  
+	 (submissionName, groupID)
+	 VALUES ('ghgigigigigigi', 5)";  
 	 
 	$result = mysqli_query($connection,$query2) or die('Error8478957857w33899' . mysqli_error($connection));
 	
