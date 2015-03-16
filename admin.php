@@ -49,13 +49,14 @@ if (isset($_GET['browse'])) {
 
 if (isset($_GET['allocateGroups'])) {
 	// list of each group, and the ones they're assigned too 
+	/*
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
 	$sql = "SELECT groupID, assignedTo 
 		FROM groupassignments"; 
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	$row = mysqli_fetch_assoc($result); 
 	echo 'GroupID: ' . $row['groupID'] . 'AND AssignedTo:' . $row['assignedTo'];	
-	mysqli_close($connection);
+	mysqli_close($connection); */ 
 	
 ?> 	
 
@@ -74,7 +75,7 @@ if (isset($_GET['allocateGroups'])) {
       </thead>
       <tbody>
 	<?php
-	/*
+	
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
 	$sql = "SELECT groupID
 		FROM groupassignments
@@ -84,7 +85,7 @@ if (isset($_GET['allocateGroups'])) {
 		echo '<tr> <td>' . htmlentities($row['groupID']) . '</td>' . displayAssignedTo(($row['groupID']) . '</tr>';
 	}
 	mysqli_close($connection);
-	*/
+	
 	?>	
       </tbody>
     </table>
