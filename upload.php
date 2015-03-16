@@ -5,7 +5,16 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
-
+unlink('uploads/'.up1);
+unlink('uploads/'.up2);
+unlink('uploads/'.up3);
+unlink('uploads/'.up);
+unlink('uploads/'.up4);
+unlink('uploads/'.up5);
+unlink('uploads/'.up6.txt.txt);
+unlink('uploads/'.'up6.txt');
+unlink('uploads/'.up6.txt);
+unlink('uploads/'.'up6');
 
 if(isset($_POST['uploaded'])) {
 	
@@ -39,15 +48,7 @@ if ($validUpload) {
 } 
 else {
 	echo 'File not uploaded. Try again.';
-}unlink('uploads/'.up1);
-unlink('uploads/'.up2);
-unlink('uploads/'.up3);
-unlink('uploads/'.up);
-unlink('uploads/'.up4);
-unlink('uploads/'.up5);
-unlink('uploads/'.up6.txt.txt);
-unlink('uploads/'.'up6.txt');
-unlink('uploads/'.up6.txt);
+}
 }
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
