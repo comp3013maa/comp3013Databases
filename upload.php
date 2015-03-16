@@ -60,7 +60,8 @@ else {
 	 VALUES ('$filename', $groupID)";  
 	 
 	$result = mysqli_query($connection,$query2) or die(mysql_error("$result"));
-
+	
+	mysqli_close($connection);
 
 }
 echo '
