@@ -6,7 +6,7 @@ echo file_get_contents('uploads/up.txt');
 echo '<div class="detailBox">
     <div class="titleBox">
       <label>Comment Box</label>
-        <button type="button" class="close" aria-hidden="true">&times;</button>
+        <button type="button" class="close" aria-hidden="false">&times;</button>
     </div>
     <div class="commentBox">
         
