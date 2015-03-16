@@ -81,7 +81,7 @@ if (isset($_GET['allocateGroups'])) {
 		ORDER BY groupID ASC";
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	while ($row = mysqli_fetch_assoc($result) ) {
-		echo '<tr> <td>' . htmlentities($row['groupID']) . '</td>' . displayAssignedTo(($row['groupID']) . '</tr>';
+		echo '<tr> <td>' . htmlentities($row['groupID']) . '</td></tr>';
 	}
 	mysqli_close($connection);
 	
