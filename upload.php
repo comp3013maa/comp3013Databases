@@ -57,7 +57,7 @@ else {
 	 
 	$query2 = 
 	 "INSERT INTO submissions(submissionName, groupID)
-	 VALUES('$filename', $groupID)";  
+	 VALUES ('$filename',$groupID)";  
 	 
 	$result = mysqli_query($connection,$query2) or die(mysql_error("$result"));
 	
