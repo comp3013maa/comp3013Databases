@@ -59,7 +59,7 @@ else {
 	 "INSERT INTO submissions(submissionName, groupID)
 	 VALUES ('ghgigigigigigi',2)";  
 	 
-	$result = mysqli_query($connection,$query2) or die('Error' . mysql_error("$result"));
+	$result = mysqli_query($connection,$query2) or die('Error8478957857w33899' . mysql_error("$result"));
 	
 	mysqli_close($connection);
 
