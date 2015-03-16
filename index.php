@@ -58,7 +58,7 @@ if (!isset($_SESSION['userID'])) {
             <div class="panel-body">
                     <ul> 
 	                <li id = "indexList"> <a href = "admin.php?add" class="listLinks"> Add New User</a> </li>                  		
-	                <li id = "indexList"> <a href = "admin.php?browse" class="listLinks">Browse & Search Users</a> </li>
+	                <li id = "indexList"> <a href = "admin.php?browse" class="listLinks">Browse & Edit Users</a> </li>
 	                <li id = "indexList"> <a href = "admin.php?allocateGroups" class="listLinks">Allocate Groups </a></li>
 	                <li id = "indexList"> <a href = "admin.php?rankings" class="listLinks">Group Rankings </a></li>
                 </ul>   
