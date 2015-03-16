@@ -47,7 +47,7 @@ else {
 	$query1 = 
 	"SELECT groupID 
 	FROM users
-	WHERE userID = $userID
+	WHERE userID = '$userID'
 	";
 	 
 	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysql_error("$result1"));
