@@ -5,13 +5,8 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
-//unlink('uploads/'.'up.txt');
-unlink('uploads/'.'up2.txt');
-unlink('uploads/'.'up7.txt');
-unlink('uploads/'.'up.txt');
-unlink('uploads/'.'up1.txt');
-unlink('uploads/'.'up4.txt');
-unlink('uploads/'.'up5.txt');
+//unlink('uploads/'.'up.txt'); //to delete file
+
 if(isset($_POST['uploaded'])) {
 	
 $file = $_FILES['file']['name'];	
