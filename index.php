@@ -2,12 +2,12 @@
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
 
 if (!isset($_SESSION['userID'])) {
-	echo 'You are not currently logged in - please sign in to access authenticated-only areas of the system';
+	echo 'You are not currently logged in - please sign in to access authenticated-only areas of the system <br />';
 	//login form 
+	echo '<a href="login.php">Login</a> <br />' ;
 	
 }
 
-echo '<a href="login.php">Login</a> <br />' ;
 ?> 
     <div class="col-sm-6">
         <div class="panel panel-primary"> <!-- Change to panel-default to get grey colour-->
