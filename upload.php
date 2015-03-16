@@ -50,14 +50,14 @@ else {
 	WHERE userID = $userID
 	";
 	 
-	 	$groupID = mysqli_query($connection,$query1) or die('Error' . mysql_error());
+	 	$groupID = mysqli_query($connection,$query1) or die('Error1' . mysql_error());
 	 
 	$query2 = 
 	 "INSERT INTO submissions(submissionName, groupID)
 	 VALUES ('" . basename ($file) . "', " . "'" . $groupID . "');";  
 	 
 	 
-	$result = mysqli_query($connection,$query2) or die('Error' . mysql_error());
+	$result = mysqli_query($connection,$query2) or die('Error2' . mysql_error());
 
 }
 echo '
