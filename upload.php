@@ -43,7 +43,7 @@ else {
 
  $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error89899889989898989898' . mysql_error());
-/*	 $userID = $_SESSION['userID'];
+	 $userID = $_SESSION['userID'];
 	$query1 = 
 	"SELECT groupID 
 	FROM users
@@ -54,14 +54,14 @@ else {
 	 	$row = mysqli_fetch_assoc($result1);
 	 echo	$groupID = $row['groupID'];
 	 echo	$filename =  basename($file);
-*/
+/*
 	$query2 = 
 	 "INSERT INTO submissions 
 	 (submissionName)
 	 VALUES ('ghgigigigigigi')";  
 	 
 	$result = mysqli_query($connection,$query2) or die('Error8478957857w33899' . mysql_error($connection));
-	
+	*/
 	mysqli_close($connection);
 
 }
