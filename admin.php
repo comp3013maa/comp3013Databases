@@ -10,9 +10,9 @@ function displayAssignedTo($groupID) {
 		WHERE groupID = $groupID
 		"; 
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	
+	$output = "";
 	while ($row = mysqli_fetch_assoc($result) ) {
-	 	echo '<td>' . htmlentities($row['assignedTo']) . '</td>';
+	 	output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
 	}
 	mysqli_close($connection);
 }
