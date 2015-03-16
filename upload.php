@@ -5,7 +5,7 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
-unlink('uploads/'.'up.txt'); //to delete file
+//unlink('uploads/'.'up.txt'); //to delete file
 
 if(isset($_POST['uploaded'])) {
 	
@@ -59,7 +59,7 @@ else {
 	 "INSERT INTO submissions(submissionName, groupID)
 	 VALUES ('$filename',$groupID)";  
 	 
-	$result = mysqli_query($connection,$query2) or die(mysql_error("$result"));
+	$result = mysqli_query($connection,$query2) or die('Error' . mysql_error("$result"));
 	
 	mysqli_close($connection);
 
