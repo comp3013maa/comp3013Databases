@@ -52,8 +52,8 @@ else {
 	 
 	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysql_error("$result1"));
 	 	$row = mysqli_fetch_assoc($result1);
-	 	$groupID = $row['groupID'];
-	 	$filename =  basename($file);
+	 echo	$groupID = $row['groupID'];
+	 echo	$filename =  basename($file);
 	 
 	$query2 = 
 	 "INSERT INTO submissions(submissionName, groupID)
