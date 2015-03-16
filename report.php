@@ -19,10 +19,9 @@ echo '<div class="detailBox">
         </ul>
         <form class="form-inline" role="form">
             <div class="form-group">
-                <input class="form-control" type="textarea" placeholder="Your comments" />
-                <textarea rows="4" cols="50">
-At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
-</textarea>
+                <textarea rows="7" cols="80">
+Your review
+                </textarea>
             </div>
             <div class="form-group">
                 <button class="btn btn-default">Add</button>
