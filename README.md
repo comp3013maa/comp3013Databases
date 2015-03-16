@@ -35,4 +35,6 @@ General
 
 Stuff to include in video/report
 - Everything validated - forms validated, mysql injection avoided (mysqli_real_escape_string()
-- Uploads - don't insert all the fields into the database - save space by uploading file and storing name of file 
+- Uploads - don't insert all the fields into the database - save space by uploading file and storing name of file
+- Normilisation
+- Foreign key definitions in Grade Table
