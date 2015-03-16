@@ -38,3 +38,4 @@ Stuff to include in video/report
 - Uploads - don't insert all the fields into the database - save space by uploading file and storing name of file
 - Normilisation
 - Foreign key definitions in Grade Table
+- Boostrap / header design/ responsive
