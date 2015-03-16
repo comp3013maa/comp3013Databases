@@ -53,7 +53,7 @@ if (isset($_GET['allocateGroups'])) {
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
 	$sql = "SELECT groupID, assignedTo 
 		FROM groupassignments
-	$result = mysqli_query($conx, $sql) or die( mysqli_error($result) );
+	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	$row = mysqli_fetch_assoc($result); 
 	echo 'GroupID: ' . $row['groupID'] . 'AND AssignedTo:' . $row['assignedTo'];	
 ?> 	
