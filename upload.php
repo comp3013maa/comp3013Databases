@@ -42,7 +42,7 @@ else {
 }
 
  $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error89899889989898989898' . mysql_error());
+	 or die('Error89899889989898989898' . mysqli_error());
 	 $userID = $_SESSION['userID'];
 	$query1 = 
 	"SELECT groupID 
@@ -50,7 +50,7 @@ else {
 	WHERE userID = '$userID'
 	";
 	 
-	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysql_error("$result1"));
+	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysqli_error("$result1"));
 	 	$row = mysqli_fetch_assoc($result1);
 	 echo	$groupID = $row['groupID'];
 	 echo	$filename =  basename($file);
