@@ -4,7 +4,7 @@
 require "header.php"; 
 
 function displayAssignedTo($groupID) {
-	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
+	// $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
 	$sql = "SELECT assignedTo
 		FROM groupassignments
 		WHERE groupID = $groupID
@@ -91,7 +91,6 @@ if (isset($_GET['allocateGroups'])) {
 </div>	
 
 <?php 	
-
 	// two dropdowns - groupid, assign to - submit button assigns as long as not already exisiting 
 	// max 3 assigned 
 } // end isset allocateGrpuos 
