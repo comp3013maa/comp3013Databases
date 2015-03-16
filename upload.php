@@ -12,7 +12,7 @@ unlink('uploads/'.up3);
 unlink('uploads/'.up);
 unlink('uploads/'.up4);
 unlink('uploads/'.up5);
-unlink('uploads/'.up6);
+unlink('uploads/'.up5txt);
 if(isset($_POST['uploaded'])) {
 	
 $file = $_FILES['file']['name'];	
