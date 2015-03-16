@@ -51,9 +51,8 @@ if (isset($_GET['allocateGroups'])) {
 	// list of each group, and the ones they're assigned too 
 	
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
-	$sql = "SELECT id 
-		FROM users
-		WHERE username = '$username' AND password='$password' "; 
+	$sql = "SELECT groupID, assignedTo 
+		FROM groupassignments
 	$result = mysqli_query($conx, $sql) or die( mysqli_error($result) );
 	$row = mysqli_fetch_assoc($result); 
 	echo 'GroupID: ' . $row['groupID'] . 'AND AssignedTo:' . $row['assignedTo'];	
