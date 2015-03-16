@@ -19,7 +19,7 @@ echo '<div class="detailBox">
         </ul>
         <form class="form-inline" role="form">
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Your comments" />
+                <input class="form-control" type="textarea" placeholder="Your comments" />
             </div>
             <div class="form-group">
                 <button class="btn btn-default">Add</button>
