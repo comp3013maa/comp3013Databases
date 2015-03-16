@@ -49,6 +49,9 @@ if (isset($_GET['browse'])) {
 if (isset($_GET['allocateGroups'])) {
 	// list of each group, and the ones they're assigned too 
 ?> 	
+
+<h3> Group Allocations </h3> <br /> 
+<p> List of current allocations: </p>	
 <div class="well">
     <table class="table">
       <thead>
