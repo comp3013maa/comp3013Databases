@@ -6,15 +6,19 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 
-
+unlink('uploads/'.up1.txt);
+unlink('uploads/'.up2.txt);
+unlink('uploads/'.up3.txt);
+unlink('uploads/'.up.txt);
+unlink('uploads/'.up1txt);
 if(isset($_POST['uploaded'])) {
 $file = $_FILES['file']['name'];	
 $directory = 'uploads/'. basename($file);
-unlink(up1.txt);
-unlink(up2.txt);
-unlink(up3.txt);
-unlink(up.txt);
-unlink(up1txt);
+unlink('uploads/'.up1.txt);
+unlink('uploads/'.up2.txt);
+unlink('uploads/'.up3.txt);
+unlink('uploads/'.up.txt);
+unlink('uploads/'.up1txt);
 $validUpload = true;
 
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
