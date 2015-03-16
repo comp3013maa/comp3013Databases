@@ -93,7 +93,7 @@ echo '
     </div>
   </fieldset>
   </form>
-</div>'
+</div>';
 } 
 ?> 
 
