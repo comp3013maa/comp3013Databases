@@ -40,6 +40,25 @@ if ($validUpload) {
 else {
 	echo 'File not uploaded. Try again.';
 }
+
+ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
+	 or die('Error' . mysql_error());
+	 
+	$query1 = 
+	"SELECT groupID 
+	FROM users
+	WHERE userID = '{$_SESSION['userID']}'
+	";
+	 
+	 	$groupID = mysqli_query($connection,$query1) or die('Error' . mysql_error());
+	 
+	$query2 = 
+	 "INSERT INTO submissions(submissionName, groupID)
+	 VALUES ('" . basename ($file) . "', " . $groupID . ")"   ;  
+	 
+	 
+	$result = mysqli_query($connection,$query2) or die('Error' . mysql_error());
+
 }
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
@@ -47,25 +66,7 @@ echo '
       <input type="submit" value="Submit" name = "uploaded">
 </form>';
 
-/*
-if (isset ($_POST['uploaded'])){
-var_dump($_FILES['file']);
-$filename = $_FILES['file']['name'];
-$temp_name = $_FILES['file']['tmp_name'];
 
-$conn_id = ftp_connect('waws-prod-am2-025.ftp.azurewebsites.windows.net')or die('could not connect');
-
-ftp_login($conn_id, 'comp3013maa\abbuz','FuckingCunt') or die('could not log in');
-
-ftp_chdir($conn_id, '/site/wwwroot/uploads/');
-
-if (ftp_put($conn_id, $filename, $temp_name, FTP_ASCII))
-{
- echo 'successfully uploaded';
-}else{echo 'not uploaded';}
-ftp_close($conn_id);
-}
-*/
 require "footer.php";
 ?>
 
