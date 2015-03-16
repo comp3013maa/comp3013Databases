@@ -33,7 +33,7 @@ function getUser() {
 
 function checkDatabase($user) {
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error' . mysql_error());
+	 or die('Error' . mysqli_error());
 	 
 	 $query = 
 	 "SELECT userID, userName 
@@ -41,7 +41,7 @@ function checkDatabase($user) {
 	  WHERE userName = '${user['userName']}' 
 	  AND password = '{$user['password']}' ";
 	 
-	 $result = mysqli_query($connection,$query) or die('Error' . mysql_error());
+	 $result = mysqli_query($connection,$query) or die('Error' . mysqli_error());
 	 // var_dump($result); // check what's in result e.g. echo for arrays
 	 
 	 if (mysqli_num_rows($result) == 1) { // check if succesfully logged in how many rows return 
