@@ -26,9 +26,8 @@ echo '
         </ul>
        
         <form action="report.php" class="form-inline" method="post" role="form">
-        <input type="text" name="comment" size="300">
             <div class="form-group">
-                <textarea rows="7" cols="80"> Your review </textarea>
+                <textarea rows="7" cols="80" name="comment" > Your review </textarea>
             </div>
             <p></p>
             Select Grade
