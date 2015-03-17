@@ -4,10 +4,11 @@ require "header.php"; //include file - require means must be there or give error
 echo file_get_contents('uploads/up.txt');
 
 $review = array();
-echo	$review['comment'] = $_POST['comment'];
+echo $review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
+
 date_default_timezone_set("Europe/London");
-echo date("d/m/y h:ia");
+$time = date("d/m/y h:ia");
 echo '
 <div class="detailBox">
     <div class="titleBox">
@@ -19,7 +20,7 @@ echo '
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">Good work!</p> <span class="date sub-text">  </span>
+                    <p class="">Good work!</p> <span class="date sub-text"> 'echo $time;' </span>
                 </div>
             </li>
         </ul>
