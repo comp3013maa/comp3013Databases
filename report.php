@@ -3,6 +3,9 @@ require "header.php"; //include file - require means must be there or give error
 
 echo file_get_contents('uploads/up.txt');
 
+$review = array();
+echo	$review['comment'] = $_POST['comment'];
+
 echo '
 
 
@@ -25,6 +28,7 @@ echo '
         <form action="report.php" class="form-inline" method="post" role="form">
             <div class="form-group">
                 <textarea rows="7" cols="80"> Your review </textarea>
+                <input type="text" name="comment" size="300">
             </div>
             <p></p>
             Select Grade
