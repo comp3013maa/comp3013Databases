@@ -47,6 +47,23 @@ public function getGroupAllocations() {
 	}
 }
 
+/*
+* Get assigned groups for a group ID
+* @params: int - $groupID
+* @return: string - $output
+*/
+
+public function getAssignedTo($groupID) {
+	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
+	$stmt->bind_param("i", $groupID );	
+ 	$stmt->execute(); $result = $stmt->get_result();
+	$row = array(); $output = "";
+	while ($row = $result->fetch_assoc()) {
+	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
+	}
+	return $output;
+}
+
 
 
 
