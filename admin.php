@@ -1,6 +1,7 @@
 <?php require "header.php"; 
 
 function displayAssignedTo($groupID) {
+	/*
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
 	$sql = "SELECT assignedTo
 		FROM groupassignments
@@ -12,6 +13,8 @@ function displayAssignedTo($groupID) {
 	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
 	}
 	mysqli_close($connection);
+	*/
+	$output = 'moo';
 	return $output;
 }
 
