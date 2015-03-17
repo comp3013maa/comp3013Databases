@@ -28,7 +28,7 @@ public function close() {
 
 public function getAssignedTo($groupID) {
 	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=? GROUP BY ?");
-	$stmt->bind_param("i", $groupID );	
+	$stmt->bind_param("ii", $groupID, $groupID );	
  	$stmt->execute(); $result = $stmt->get_result();
 	$row = array(); $output = "";
 	while ($row = $result->fetch_assoc()) {
