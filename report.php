@@ -42,7 +42,7 @@ echo '
         </select>
     </div>
             <div class="form-group">
-                <p><input type="submit" value="Submit Review"></p>
+                <p><input type="submit" value="Submit review"></p>
             </div>
         </form>
     </div>
