@@ -7,12 +7,7 @@ $review = array();
 echo	$review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
 
-$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error' . mysqli_error());
- $query = "SELECT NOW()";
- $time = mysqli_query($connection,$query) or die('Error' . mysqli_error("$time"));
-echo $row = mysqli_fetch_assoc($time);
-echo $row[0];
+echo date("d/m/y");
 echo '
 <div class="detailBox">
     <div class="titleBox">
