@@ -1,9 +1,9 @@
 <?php
 function DbConnect () {
-	$host = 'localhost'; 
-	$user = 'root'; 
-	$pass = ''; 
-	$db = 'mahikhan_mentorr'; 
+	$host = 'eu-cdbr-azure-west-b.cloudapp.net'; 
+	$user = 'b6526a64c19791'; 
+	$pass = '5d020f59'; 
+	$db = 'comp3013'; 
 	// to change password, go into phpymyadmin, security and set one (look at lesson 5 php2 word ntoes)
 	
 	$connection = mysqli_connect($host, $user, $pass, $db);
@@ -19,7 +19,7 @@ function DbConnect () {
 }
 
 function closeDB($conn) {
-    $conn->close();
+    $connection->close();
 }
 
 ?>
