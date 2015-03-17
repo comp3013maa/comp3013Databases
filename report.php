@@ -7,7 +7,7 @@ $review = array();
 echo	$review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
 
-echo date("d/m/y", "h, i");
+echo date("d/m/y", "h:i");
 echo '
 <div class="detailBox">
     <div class="titleBox">
