@@ -3,7 +3,15 @@ require "header.php"; //include file - require means must be there or give error
 
 echo file_get_contents('uploads/up.txt');
 
-echo '<div class="detailBox">
+echo '
+
+<select>
+  <option>Milk</option>
+  <option>Coffee</option>
+  <option>Tea</option>
+</select>
+
+<div class="detailBox">
     <div class="titleBox">
       <label>Grading Assessments</label>
         <button type="button" class="close" aria-hidden="true">&times;</button>
@@ -28,18 +36,18 @@ echo '<div class="detailBox">
         </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">5</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">6</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">7</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">8</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">9</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10</a></li>
- </ul>
-</div>
+   <li role="presentation"><a role="menuitem" href="#">1</a></li>
+   <li role="presentation"><a role="menuitem" href="#">2</a></li>
+   <li role="presentation"><a role="menuitem" href="#">3</a></li>
+   <li role="presentation"><a role="menuitem" href="#">4</a></li>
+   <li role="presentation"><a role="menuitem" href="#">5</a></li>
+   <li role="presentation"><a role="menuitem" href="#">6</a></li>
+   <li role="presentation"><a role="menuitem" href="#">7</a></li>
+   <li role="presentation"><a role="menuitem" href="#">8</a></li>
+   <li role="presentation"><a role="menuitem" href="#">9</a></li>
+   <li role="presentation"><a role="menuitem" href="#">10</a></li>
+    </ul>
+    </div>
             <div class="form-group">
                 <button class="btn btn-default">Add</button>
             </div>
