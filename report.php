@@ -20,7 +20,7 @@ echo '
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">Good work!</p> <span class="date sub-text">'; echo ''$time'</span>
+                    <p class="">Good work!</p> <span class="date sub-text">'.$time.'</span>
                 </div>
             </li>
         </ul>
