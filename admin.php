@@ -31,7 +31,7 @@ if (isset($_GET['browse'])) {
 	echo 'ruff';
 }
 
-
+/* DISPLAY GROUP ALLOCATIONS AND ALLOW NEW ONES TO CREATED */
 if (isset($_GET['allocateGroups'])) {
 	// list of each group, and the ones they're assigned too 
 ?> 	
@@ -59,9 +59,54 @@ if (isset($_GET['allocateGroups'])) {
     </table>
 </div>	
 
+<!-- CREATE A NEW GROUP ALLOCATION-->
 <hr /> 
-<h5> Allocate a New Group: </h5>	
-<p> A maximum of 3 groups can be allocated for review to one group</p>
+<h3> Allocate a New Group: </h3>	
+<p> Note: A maximum of 3 groups can be allocated for review to one group</p>
+
+<?php
+
+$sql_model = new SQL_Model();
+$groupList[] = $sql_model->getGroups(); 
+$sql_model->close();
+
+while ($groupList['groupID']) {
+	echo $groupList['groupID'];
+}
+
+
+/*
+
+
+$sql = "SELECT id, interest, key_interest 
+		FROM interests"; 
+$result = mysqli_query($conx, $sql) or die( mysqli_error($conx) );
+
+// Similar code to select interest, uses select menu instead of checkboxes however
+echo '<form method="POST" action ="settings.php?id=searchmentorsresults">';
+echo '<select name = "interest">';
+while ($row = mysqli_fetch_assoc($result) ) {						
+	if ($row['key_interest'] == 1) {
+		echo "<option value =" . $row['id'] . ">" . $row['interest'] . "</option>"; 						
+	} 
+	else {
+		$otherInterests[] = $row; 
+	}
+}
+for ($i = 0; $i <= count($otherInterests)-1; $i++) {
+		echo '<option value="' .  $otherInterests[$i]['id'] . '">' .  $otherInterests[$i]['interest'] . '</option>'; 
+}
+echo'</select>'; 
+echo '<br /><button class="btn btn-small" type="submit" value = "Post" name="submitMentorsSearch"> Search for mentors</button>
+</form>';
+*/
+
+if(isset($_POST['newGroupAllocation']) {
+	
+}
+
+?>
+
 
 <?php 	
 	// two dropdowns - groupid, assign to - submit button assigns as long as not already exisiting 
