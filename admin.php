@@ -1,16 +1,18 @@
 <?php require "header.php"; 
 function displayAssignedTo($groupID) {
-/*	
+	
+// possibly move to its own class, move sql query to one file,  tuan's structure
+// then just have the gets (the view with functions in them - mvc) - DO EEET
+if ($connection==NULL) {
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysqli_error());
-	$sql = "SELECT assignedTo FROM groupassignments WHERE groupID=$groupID"; 
+}
+	$sql = "SELECT assignedTo FROM groupassignments WHERE groupID=5"; 
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	$output = $groupid;
+	$output = "";
 	while ($row = mysqli_fetch_assoc($result) ) {
 	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
 	}
 	mysqli_close($connection);
-	*/
-	$output = '<td>' . $groupID . '</td>';
 	return $output;
 }
 
@@ -29,7 +31,8 @@ if (empty($_GET)) {
 
 if (isset($_GET['add'])) {
 	echo '<a href="register.html">Add New User Form</a> <br />' ;
-
+	
+	// use helper classes like tuan? For validation like graham's slides? 
 	
 }
 
