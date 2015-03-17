@@ -5,6 +5,7 @@ echo file_get_contents('uploads/up.txt');
 
 $review = array();
 echo	$review['comment'] = $_POST['comment'];
+echo $review['grade']= $_POST['grade'];
 
 echo '
 
@@ -32,6 +33,7 @@ echo '
             <p></p>
             Select Grade
         <select>
+        <input name="grade">
             <option>1</option>
             <option>2</option>
             <option>3</option>
