@@ -53,7 +53,7 @@ if (isset($_GET['allocateGroups'])) {
 	<?php
 	$sql_model = new SQL_Model();
 	echo $sql_model->getGroupAllocations(); 
-	$sql_model->close();
+ // not closed as using again below	$sql_model->close();
 	?>	
       </tbody>
     </table>
@@ -66,7 +66,6 @@ if (isset($_GET['allocateGroups'])) {
 
 <?php
 
-$sql_model = new SQL_Model();
 $groupList[] = $sql_model->getGroups(); 
 $sql_model->close();
 
@@ -76,8 +75,6 @@ while ($groupList['groupID']) {
 
 
 /*
-
-
 $sql = "SELECT id, interest, key_interest 
 		FROM interests"; 
 $result = mysqli_query($conx, $sql) or die( mysqli_error($conx) );
