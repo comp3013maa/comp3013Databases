@@ -27,7 +27,7 @@ public function close() {
 */
 
 public function getAssignedTo($groupID) {
-	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
+	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=? GROUP BY ?");
 	$stmt->bind_param("i", $groupID );	
  	$stmt->execute(); $result = $stmt->get_result();
 	$row = array(); $output = "";
@@ -55,7 +55,9 @@ public function getGroupAllocations() {
 		$result = $stmt->get_result();
 		$row = array(); $output = "";
 		while ($row = $result->fetch_assoc()) {
-		$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . $this->getAssignedTo($row['groupID']) . '</td></tr>';
+			
+// $output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td>/tr>';
+$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . $this->getAssignedTo($row['groupID']) . '</td></tr>';
 		}
 		
 		$stmt->free_result();
