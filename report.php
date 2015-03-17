@@ -36,11 +36,11 @@ echo '
         </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 
-<select>
+
   <option>Milk</option>
   <option>Coffee</option>
   <option>Tea</option>
-</select>
+
 
    <li role="presentation"><a role="menuitem" href="#">1</a></li>
    <li role="presentation"><a role="menuitem" href="#">2</a></li>
