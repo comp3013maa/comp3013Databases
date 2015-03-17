@@ -47,7 +47,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
             <?php  if( isset ($_SESSION['userID']) ) {?> 
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, <?php echo $_SESSION['userName']; ?><b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="support.php"><i class="icon-envelope"></i> Contact Support</a></li>
+                            <li><a href="contact.php"><i class="icon-envelope"></i> Contact Support</a></li>
                             <li class="divider"></li>
                             <li><!-- <a href="logout.php"><i class="icon-off"></i> Logout</a> -->
                             	<form method="POST" action = "logout.php">
