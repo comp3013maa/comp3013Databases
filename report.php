@@ -28,16 +28,16 @@ echo '<div class="detailBox">
         </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">1</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">2</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">3</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">4</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">5</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">6</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">7</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">8</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">9</a></li>
-   <li role="presentation"><a role="menuitem" tabindex="-1" href="1">10</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">5</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">6</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">7</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">8</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">9</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10</a></li>
  </ul>
 </div>
             <div class="form-group">
