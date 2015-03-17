@@ -6,7 +6,7 @@ echo file_get_contents('uploads/up.txt');
 $review = array();
 echo	$review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
-echo NOW();
+date("Y-m-d H:i:s");
 
 echo '
 <div class="detailBox">
