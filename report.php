@@ -25,18 +25,18 @@ echo '
             <div class="form-group">
                 <textarea rows="7" cols="80"> Your review </textarea>
             </div>
-    <div class="dropdown"> <select>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-            Please select grade
-            <span class="caret"></span>
-        </button>
-    
-   
-  <option>Milk</option>
-  <option>Coffee</option>
-  <option>Tea</option>
-</select>
-    
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
     </div>
             <div class="form-group">
                 <button class="btn btn-default">Add</button>
