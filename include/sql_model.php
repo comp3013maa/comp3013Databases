@@ -20,6 +20,26 @@ public function close() {
 	closeDB($this->conn);
 }
 
+/*
+* Get assigned groups for a group ID - used in getGroupAllocations()
+* @params: int - $groupID
+* @return: string - $output
+*/
+
+public function getAssignedTo($groupID) {
+	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
+	$stmt->bind_param("i", $groupID );	
+ 	$stmt->execute(); $result = $stmt->get_result();
+	$row = array(); $output = "";
+	while ($row = $result->fetch_assoc()) {
+	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
+	}
+	
+	$stmt->free_result();
+        $stmt->close();	
+	return $output;
+}
+
     /*
     *   Get group allocations list 
     *   @params: none 
@@ -35,7 +55,7 @@ public function getGroupAllocations() {
 		$result = $stmt->get_result();
 		$row = array(); $output = "";
 		while ($row = $result->fetch_assoc()) {
-			$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></tr>';     // . displayAssignedTo($groupID, $connection). '</tr>';
+		$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . getAssignedTo($row['groupID') . '</td></tr>';
 		}
 		
 		$stmt->free_result();
@@ -45,23 +65,6 @@ public function getGroupAllocations() {
         else {
 		die("An error occurred performing the request");
 	}
-}
-
-/*
-* Get assigned groups for a group ID
-* @params: int - $groupID
-* @return: string - $output
-*/
-
-public function getAssignedTo($groupID) {
-	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
-	$stmt->bind_param("i", $groupID );	
- 	$stmt->execute(); $result = $stmt->get_result();
-	$row = array(); $output = "";
-	while ($row = $result->fetch_assoc()) {
-	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
-	}
-	return $output;
 }
 
 
