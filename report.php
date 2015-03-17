@@ -8,9 +8,6 @@ echo	$review['comment'] = $_POST['comment'];
 echo $review['grade']= $_POST['grade'];
 
 echo '
-
-
-
 <div class="detailBox">
     <div class="titleBox">
       <label>Grading Assessments</label>
@@ -21,7 +18,7 @@ echo '
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">Good work! '$review["grade"]= $_POST["grade"]'</p> <span class="date sub-text">on March 5th, 2014</span>
+                    <p class="">Good work!</p> <span class="date sub-text">' echo 'now()';echo'</span>
                 </div>
             </li>
         </ul>
