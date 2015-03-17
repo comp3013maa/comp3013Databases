@@ -25,7 +25,8 @@ echo '
             <div class="form-group">
                 <textarea rows="7" cols="80"> Your review </textarea>
             </div>
-        <select> Grade
+            Grade
+        <select>
             <option>1</option>
             <option>2</option>
             <option>3</option>
