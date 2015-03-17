@@ -1,6 +1,7 @@
 <?php
 //create_cat.php
 require 'header.php';
+include 'connect.php';
          
 echo '<tr>';
     echo '<td class="leftpart">';
