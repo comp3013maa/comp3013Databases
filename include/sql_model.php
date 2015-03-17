@@ -55,7 +55,7 @@ public function getGroupAllocations() {
 		$result = $stmt->get_result();
 		$row = array(); $output = "";
 		while ($row = $result->fetch_assoc()) {
-		$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . getAssignedTo($row['groupID']) . '</td></tr>';
+		$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . $this->getAssignedTo($row['groupID']) . '</td></tr>';
 		}
 		
 		$stmt->free_result();
