@@ -1,7 +1,7 @@
 <?php
 //create_cat.php
 include 'connect.php';
-include 'header.php';
+require 'header.php';
          
 echo '<tr>';
     echo '<td class="leftpart">';
@@ -11,5 +11,5 @@ echo '<tr>';
             echo '<a href="topic.php?id=">Topic subject</a> at 10-10';
     echo '</td>';
 echo '</tr>';
-include 'footer.php';
+require 'footer.php';
 ?>
