@@ -6,6 +6,19 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 //unlink('uploads/'.'up.txt'); //to delete file
+unlink('uploads/'.'up14.txt');
+unlink('uploads/'.'up13.txt');
+unlink('uploads/'.'up12.txt');
+unlink('uploads/'.'up11.txt');
+unlink('uploads/'.'up10.txt');
+unlink('uploads/'.'up9.txt');
+unlink('uploads/'.'up8.txt');
+unlink('uploads/'.'up7.txt');
+unlink('uploads/'.'up6.txt');
+unlink('uploads/'.'up5.txt');
+unlink('uploads/'.'up4.txt');
+unlink('uploads/'.'up3.txt');
+unlink('uploads/'.'up2.txt');
 
 if(isset($_POST['uploaded'])) {
 	
