@@ -1,4 +1,5 @@
 <?php require "header.php"; 
+require_once "include/sql_model.php";
 function displayAssignedTo($groupID, $connection) {
 	
 // possibly move to its own class, move sql query to one file,  tuan's structure
