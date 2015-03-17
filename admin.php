@@ -2,6 +2,7 @@
 require_once "include/sql_model.php";
 $sql_model = new SQL_Model();
 
+/*
 function displayAssignedTo($groupID, $connection) {
 	
 // possibly move to its own class, move sql query to one file,  tuan's structure
@@ -15,6 +16,7 @@ function displayAssignedTo($groupID, $connection) {
 	}
 	return $output;
 }
+*/ 
 
 
 if (empty($_GET)) {
