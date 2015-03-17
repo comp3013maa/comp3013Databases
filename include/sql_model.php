@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
 
-class sql_model {
+class SQL_Model {
 
 /*
 * Using prepared statements 
