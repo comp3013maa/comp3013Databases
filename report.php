@@ -21,7 +21,7 @@ echo '
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">Good work!</p> <span class="date sub-text">on March 5th, 2014</span>
+                    <p class="">Good work! '$review['grade']= $_POST['grade']'</p> <span class="date sub-text">on March 5th, 2014</span>
                 </div>
             </li>
         </ul>
