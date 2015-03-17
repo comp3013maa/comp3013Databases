@@ -10,8 +10,8 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	}
 	mysqli_close($connection);
 	*/
-	
-	return $groupID;
+	$output = '<td>' . $groupID . '</td>';
+	return $output;
 }
 
 
