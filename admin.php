@@ -1,6 +1,6 @@
 <?php require "header.php"; 
 require_once "include/sql_model.php";
-$this->sql_model = new SQL_Model();
+$sql_model = new SQL_Model();
 
 function displayAssignedTo($groupID, $connection) {
 	
@@ -75,7 +75,7 @@ if (isset($_GET['allocateGroups'])) {
       </thead>
       <tbody>
 	<?php
-	echo $this->sql_model->getGroupAllocations(); 
+	echo $sql_model->getGroupAllocations(); 
 	/* 
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
 	$sql = "SELECT groupID
