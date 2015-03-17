@@ -12,7 +12,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
  $query = "SELECT NOW()";
  $time = mysqli_query($connection,$query) or die('Error' . mysqli_error("$time"));
 echo $row = mysqli_fetch_assoc($time);
-echo $row['now()'];
+echo $row[0];
 echo '
 <div class="detailBox">
     <div class="titleBox">
