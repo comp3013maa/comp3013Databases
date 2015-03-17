@@ -37,7 +37,7 @@ if (isset($_GET['allocateGroups'])) {
 ?> 	
 
 <h3> Group Allocations </h3> <br /> 
-<h4> List of current allocations: <h4>	
+<h5> List of current allocations: </h5>	
 <div class="well">
     <table class="table">
       <thead>
@@ -60,7 +60,7 @@ if (isset($_GET['allocateGroups'])) {
 </div>	
 
 <hr /> 
-<h4> Allocate a New Group: <h4>	
+<h5> Allocate a New Group: </h5>	
 <p> A maximum of 3 groups can be allocated for review to one group</p>
 
 <?php 	
