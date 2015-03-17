@@ -1,6 +1,5 @@
 <?php
 //create_cat.php
-include 'connect.php';
 require 'header.php';
          
 echo '<tr>';
