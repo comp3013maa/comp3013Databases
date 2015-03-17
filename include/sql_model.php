@@ -5,7 +5,7 @@ class SQL_Model {
 
 /*
 * Using prepared statements 
-    $stmt = $dbConnection->prepare('SELECT * FROM employees WHERE name = ?');
+$stmt = $dbConnection->prepare('SELECT * FROM employees WHERE name = ?');
 $stmt->bind_param('s', $name);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -20,11 +20,36 @@ public function close() {
 	closeDB($this->conn);
 }
 
-/*
-* Get assigned groups for a group ID - used in getGroupAllocations()
-* @params: int - $groupID
-* @return: string - $output
+/* Gets the users groupID
+* @param: int userid @return int groupID
 */
+public function getUsersGroupID($userid) {
+	$stmt = $this->conn->prepare("SELECT groupID FROM users WHERE userID=?");
+	$stmt->bind_param("i", $userid);
+	$stmt->execute(); 
+	$result = $stmt->get_result();
+	$row = $result->fetch_assoc(); 
+	
+	$stmt->free_result();
+        $stmt->close();
+	return $row['groupID'];
+} 
+
+/* Return list of all groups */ 
+public function getGroups() {
+	$stmt = $this->conn->prepare("SELECT groupID FROM groups ORDER BY groupID ASC ");
+	$stmt->execute(); 
+	$result = $stmt->get_result();
+	$row = $result->fetch_assoc(); 
+	$groupList[] = $row;
+		
+	$stmt->free_result();
+        $stmt->close();
+	return $groupList;
+}
+
+/* Get assigned groups for a group ID - used in getGroupAllocations()
+* @params: int - $groupID, @return: string - $output */
 
 public function getAssignedTo($groupID) {
 	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
@@ -40,11 +65,9 @@ public function getAssignedTo($groupID) {
 	return $output;
 }
 
-    /*
-    *   Get group allocations list 
-    *   @params: none 
-    *   @return: string - ouptput
-    */
+/*  Get group allocations list 
+*   @params: none @return: string - ouptput
+*/
 public function getGroupAllocations() {
 	$stmt = $this->conn->prepare("SELECT groupID
 	FROM groupassignments
@@ -57,8 +80,8 @@ public function getGroupAllocations() {
 		$row = array(); $output = "";
 		while ($row = $result->fetch_assoc()) {
 			
-// $output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td>/tr>';
-$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . $this->getAssignedTo($row['groupID']) . '</td></tr>';
+		// $output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td>/tr>';
+		$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . $this->getAssignedTo($row['groupID']) . '</td></tr>';
 		}
 		
 		$stmt->free_result();
@@ -69,28 +92,5 @@ $output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . $this->g
 		die("An error occurred performing the request");
 	}
 }
-
-public function getGroups() {
-	$stmt = $this->conn->prepare("SELECT groupID
-	FROM groups
-	ORDER BY groupID ASC ");
-	
-	
-}
-
-/*
-* Gets the users groupID
-* @param: int userid @return int groupID
-*/
-public function getUsersGroupID($userid) {
-	$stmt = $this->conn->prepare("SELECT groupID FROM users WHERE userID=?");
-	$stmt->bind_param("i", $userid);
-	$stmt->execute(); 
-	$result = $stmt->get_result();
-	$row = $result->fetch_assoc(); 
-	return $row['groupID'];
-} 
-
-
 
 } // end class	
