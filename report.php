@@ -5,7 +5,8 @@ echo file_get_contents('uploads/up.txt');
 
 $review = array();
 echo	$review['comment'] = $_POST['comment'];
-echo $review['grade']= $_POST['grade'];
+echo $review['grade'] = $_POST['grade'];
+echo NOW();
 
 echo '
 <div class="detailBox">
@@ -18,7 +19,7 @@ echo '
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">Good work!</p> <span class="date sub-text"> NOW() </span>
+                    <p class="">Good work!</p> <span class="date sub-text">  </span>
                 </div>
             </li>
         </ul>
