@@ -11,5 +11,5 @@ echo '<tr>';
             echo '<a href="topic.php?id=">Topic subject</a> at 10-10';
     echo '</td>';
 echo '</tr>';
-<?php require "footer.php";
+require "footer.php";
 ?>
