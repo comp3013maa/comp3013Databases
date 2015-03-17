@@ -1,25 +1,9 @@
 <?php require "header.php"; 
 require_once "include/sql_model.php";
-
-/*
-function displayAssignedTo($groupID, $connection) {
-	
-// possibly move to its own class, move sql query to one file,  tuan's structure
-// then just have the gets (the view with functions in them - mvc) - DO EEET
-	$groupID= mysqli_real_escape_string($connection, $groupID);
-	$sql = "SELECT assignedTo FROM groupassignments WHERE groupID=$groupID"; 
-	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	$output = "";
-	while ($row = mysqli_fetch_assoc($result) ) {
-	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
-	}
-	return $output;
-}
-*/ 
-
+/* This file follows mvc - only deals with the view. sql_model is the model in our mvc and deals with our data */
 
 if (empty($_GET)) {
-	// Overall structure found in the list below 
+	// Overall structure  
 	echo '
 	<ul> 
 		<li id = "indexList"> <a href = "admin.php?add" class="listLinks"> Add New User</a> </li>                  		
@@ -32,7 +16,6 @@ if (empty($_GET)) {
 
 if (isset($_GET['add'])) {
 	echo '<a href="register.html">Add New User Form</a> <br />' ;
-	
 	// use helper classes like tuan? For validation like graham's slides? 
 	
 }
@@ -48,21 +31,13 @@ if (isset($_GET['browse'])) {
 	echo 'ruff';
 }
 
+
 if (isset($_GET['allocateGroups'])) {
 	// list of each group, and the ones they're assigned too 
-	/*
-	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
-	$sql = "SELECT groupID, assignedTo 
-		FROM groupassignments"; 
-	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	$row = mysqli_fetch_assoc($result); 
-	echo 'GroupID: ' . $row['groupID'] . 'AND AssignedTo:' . $row['assignedTo'];	
-	mysqli_close($connection); */ 
-	
 ?> 	
 
 <h3> Group Allocations </h3> <br /> 
-<p> List of current allocations: </p>	
+<h4> List of current allocations: <h4>	
 <div class="well">
     <table class="table">
       <thead>
@@ -79,28 +54,21 @@ if (isset($_GET['allocateGroups'])) {
 	$sql_model = new SQL_Model();
 	echo $sql_model->getGroupAllocations(); 
 	$sql_model->close();
-	/* 
-	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
-	$sql = "SELECT groupID
-		FROM groupassignments
-		ORDER BY groupID ASC";
-	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	$groupID = $row['groupID'];
-	while ($row = mysqli_fetch_assoc($result) ) {
-		echo '<tr> <td>' . htmlentities($groupID) . '</td>' . displayAssignedTo($groupID, $connection). '</tr>';
-	} 
-	mysqli_close($connection);
-	*/ 
-	
 	?>	
       </tbody>
     </table>
 </div>	
 
+<hr /> 
+<h4> Allocate a New Group: <h4>	
+<p> A maximum of 3 groups can be allocated for review to one group</p>
+
 <?php 	
 	// two dropdowns - groupid, assign to - submit button assigns as long as not already exisiting 
 	// max 3 assigned 
-} // end isset allocateGrpuos 
+
+
+} 
 
 if (isset($_GET['rankings'])) {
 
