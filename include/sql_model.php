@@ -43,7 +43,7 @@ public function getAssignedTo($groupID) {
     /*
     *   Get group allocations list 
     *   @params: none 
-    *   @return: 
+    *   @return: string - ouptput
     */
 public function getGroupAllocations() {
 	$stmt = $this->conn->prepare("SELECT groupID
@@ -78,13 +78,17 @@ public function getGroups() {
 	
 }
 
+/*
+* Gets the users groupID
+* @param: int userid @return int groupID
+*/
 public function getUsersGroupID($userid) {
 	$stmt = $this->conn->prepare("SELECT groupID FROM users WHERE userID=?");
 	$stmt->bind_param("i", $userid);
 	$stmt->execute(); 
 	$result = $stmt->get_result();
 	$row = $result->fetch_assoc(); 
-	return $row['userID'];
+	return $row['groupID'];
 } 
 
 
