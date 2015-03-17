@@ -1,16 +1,14 @@
 <?php require "header.php"; 
-function displayAssignedTo($groupID) {
+function displayAssignedTo($groupID, $connection) {
 	
 // possibly move to its own class, move sql query to one file,  tuan's structure
 // then just have the gets (the view with functions in them - mvc) - DO EEET
-$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysqli_error());
 	$sql = "SELECT assignedTo FROM groupassignments WHERE groupID=$groupID"; 
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	$output = "";
 	while ($row = mysqli_fetch_assoc($result) ) {
 	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
 	}
-	mysqli_close($connection);
 	return $output;
 }
 
@@ -80,7 +78,7 @@ if (isset($_GET['allocateGroups'])) {
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	$groupID = $row['groupID'];
 	while ($row = mysqli_fetch_assoc($result) ) {
-		echo '<tr> <td>' . htmlentities($groupID) . '</td>' . displayAssignedTo($groupID). '</tr>';
+		echo '<tr> <td>' . htmlentities($groupID) . '</td>' . displayAssignedTo($groupID, $connection). '</tr>';
 	}
 	mysqli_close($connection);
 	
