@@ -22,7 +22,7 @@ echo '
             </li>
         </ul>
        
-        <form action='report.php' class="form-inline" method='post' role="form">
+        <form action="report.php" class="form-inline" method="post" role="form">
             <div class="form-group">
                 <textarea rows="7" cols="80"> Your review </textarea>
             </div>
@@ -42,7 +42,7 @@ echo '
         </select>
     </div>
             <div class="form-group">
-                <p><input type='submit' value='Submit Review'></p>
+                <p><input type="submit" value="Submit Review"></p>
             </div>
         </form>
     </div>
