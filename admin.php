@@ -3,6 +3,7 @@ function displayAssignedTo($groupID, $connection) {
 	
 // possibly move to its own class, move sql query to one file,  tuan's structure
 // then just have the gets (the view with functions in them - mvc) - DO EEET
+	$groupID= mysqli_real_escape_string($connection, $groupID);
 	$sql = "SELECT assignedTo FROM groupassignments WHERE groupID=$groupID"; 
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
 	$output = "";
