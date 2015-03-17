@@ -34,25 +34,13 @@ echo '
             Please select grade
             <span class="caret"></span>
         </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-
-
+    
+    <select>
   <option>Milk</option>
   <option>Coffee</option>
   <option>Tea</option>
-
-
-   <li role="presentation"><a role="menuitem" href="#">1</a></li>
-   <li role="presentation"><a role="menuitem" href="#">2</a></li>
-   <li role="presentation"><a role="menuitem" href="#">3</a></li>
-   <li role="presentation"><a role="menuitem" href="#">4</a></li>
-   <li role="presentation"><a role="menuitem" href="#">5</a></li>
-   <li role="presentation"><a role="menuitem" href="#">6</a></li>
-   <li role="presentation"><a role="menuitem" href="#">7</a></li>
-   <li role="presentation"><a role="menuitem" href="#">8</a></li>
-   <li role="presentation"><a role="menuitem" href="#">9</a></li>
-   <li role="presentation"><a role="menuitem" href="#">10</a></li>
-    </ul>
+</select>
+    
     </div>
             <div class="form-group">
                 <button class="btn btn-default">Add</button>
