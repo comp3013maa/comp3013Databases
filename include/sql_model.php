@@ -70,6 +70,22 @@ $output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . $this->g
 	}
 }
 
+public function getGroups() {
+	$stmt = $this->conn->prepare("SELECT groupID
+	FROM groups
+	ORDER BY groupID ASC ");
+	
+	
+}
+
+public function getUsersGroupID($userid) {
+	$stmt = $this->conn->prepare("SELECT groupID FROM users WHERE userID=?");
+	$stmt->bind_param("i", $userid);
+	$stmt->execute(); 
+	$result = $stmt->get_result();
+	$row = $result->fetch_assoc(); 
+	return $row['userID'];
+} 
 
 
 
