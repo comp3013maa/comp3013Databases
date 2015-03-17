@@ -48,8 +48,8 @@ public function getAssignedTo($groupID) {
 public function getGroupAllocations() {
 	$stmt = $this->conn->prepare("SELECT groupID
 	FROM groupassignments
-	ORDER BY groupID ASC 
-	GROUP BY groupID");
+	GROUP BY groupID	
+	ORDER BY groupID ASC ");
 	// $stmt->bind_param('s', $name);
 
         if ($stmt->execute()) {
