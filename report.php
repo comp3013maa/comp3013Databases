@@ -21,7 +21,8 @@ echo '
                 </div>
             </li>
         </ul>
-        <form class="form-inline" role="form">
+       
+        <form action='report.php' class="form-inline" method='post' role="form">
             <div class="form-group">
                 <textarea rows="7" cols="80"> Your review </textarea>
             </div>
@@ -41,7 +42,7 @@ echo '
         </select>
     </div>
             <div class="form-group">
-                <button class="btn btn-default">Add</button>
+                <p><input type='submit' value='Submit Review'></p>
             </div>
         </form>
     </div>
