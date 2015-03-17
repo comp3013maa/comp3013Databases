@@ -1,9 +1,10 @@
 <?php require "header.php"; 
 function displayAssignedTo($groupID) {
+	
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysqli_error());
-	$sql = "SELECT assignedTo FROM groupassignments WHERE groupID='$groupID' "; 
+	$sql = "SELECT assignedTo FROM groupassignments WHERE groupID=$groupID "; 
 	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	$output = "";
+	$output = $groupid;
 	while ($row = mysqli_fetch_assoc($result) ) {
 	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
 	}
