@@ -6,19 +6,21 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 //unlink('uploads/'.'up.txt'); //to delete file
-unlink('uploads/'.'up14.txt');
-unlink('uploads/'.'up13.txt');
-unlink('uploads/'.'up12.txt');
-unlink('uploads/'.'up11.txt');
-unlink('uploads/'.'up10.txt');
-unlink('uploads/'.'up9.txt');
-unlink('uploads/'.'up8.txt');
-unlink('uploads/'.'up7.txt');
-unlink('uploads/'.'up6.txt');
-unlink('uploads/'.'up5.txt');
-unlink('uploads/'.'up4.txt');
-unlink('uploads/'.'up3.txt');
-unlink('uploads/'.'up2.txt');
+unlink('uploads/'.'up15.txt');
+unlink('uploads/'.'up16.txt');
+unlink('uploads/'.'up17.txt');
+unlink('uploads/'.'up18.txt');
+unlink('uploads/'.'up19.txt');
+unlink('uploads/'.'up20.txt');
+unlink('uploads/'.'up21.txt');
+unlink('uploads/'.'up22.txt');
+unlink('uploads/'.'up23.txt');
+unlink('uploads/'.'up24.txt');
+unlink('uploads/'.'up25.txt');
+unlink('uploads/'.'up26.txt');
+unlink('uploads/'.'up27.txt');
+unlink('uploads/'.'up28.txt');
+unlink('uploads/'.'up29.txt');
 
 if(isset($_POST['uploaded'])) {
 	
