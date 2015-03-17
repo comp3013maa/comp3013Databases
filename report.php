@@ -7,7 +7,7 @@ $review = array();
 echo	$review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
 date_default_timezone_set("Europe/London");
-echo date("d/m/y h:i");
+echo date("d/m/y h:ia");
 echo '
 <div class="detailBox">
     <div class="titleBox">
