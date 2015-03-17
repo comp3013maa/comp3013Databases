@@ -80,7 +80,7 @@ if (isset($_GET['allocateGroups'])) {
 	$groupID = $row['groupID'];
 	while ($row = mysqli_fetch_assoc($result) ) {
 		echo '<tr> <td>' . htmlentities($groupID) . '</td>' . displayAssignedTo($groupID, $connection). '</tr>';
-	}
+	} 
 	mysqli_close($connection);
 	
 	?>	
