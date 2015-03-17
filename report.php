@@ -18,7 +18,7 @@ echo '
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">Good work!</p> <span class="date sub-text">'; NOW(); echo'</span>
+                    <p class="">Good work!</p> <span class="date sub-text"> NOW() </span>
                 </div>
             </li>
         </ul>
