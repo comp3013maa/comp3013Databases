@@ -27,7 +27,7 @@ public function close() {
 */
 
 public function getAssignedTo($groupID) {
-	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=? GROUP BY groupID");
+	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
 	$stmt->bind_param("i", $groupID);	
  	$stmt->execute(); $result = $stmt->get_result();
 	$row = array(); $output = "";
@@ -48,7 +48,8 @@ public function getAssignedTo($groupID) {
 public function getGroupAllocations() {
 	$stmt = $this->conn->prepare("SELECT groupID
 	FROM groupassignments
-	ORDER BY groupID ASC");
+	ORDER BY groupID ASC 
+	GROUP BY groupID");
 	// $stmt->bind_param('s', $name);
 
         if ($stmt->execute()) {
