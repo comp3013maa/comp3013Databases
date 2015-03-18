@@ -25,7 +25,7 @@ $i = 0;
 	$sql_model->close();
 	 
 	 $query = "
-	 SELECT submissionName
+	 SELECT submissionName, groupID
 	 FROM submissions INNER JOIN groupassignments
 	 ON submissions.groupID = groupassignments.assignedTo
 	 WHERE groupassignments.groupID = $groupID
@@ -35,7 +35,7 @@ $i = 0;
 mysqli_close($connection);
 
 	while ($row = mysqli_fetch_assoc($result)){
-		echo $groupID;
+		echo $row['groupID'];
 		
 	echo $report[$i] = $row['submissionName'];
 	echo file_get_contents($report[$i]);
