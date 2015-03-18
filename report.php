@@ -3,7 +3,7 @@ require "header.php"; //include file - require means must be there or give error
 require_once "include/sql_model.php";
 
 if(!isset($_SESSION['userID'])){
-	header(''location: unauthorised.php?');
+	header('location: unauthorised.php?');
 }
 
 $review = array();
