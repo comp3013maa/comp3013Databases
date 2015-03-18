@@ -114,6 +114,8 @@ public function newGroupAllocation($groupID, $allocateTo) {
 	} 
 	else {
 		$check1 = TRUE; 
+		$message .= 'First numrows (exists already = ' . $stmt->num_rows . '<br />';		
+		$message .= 'Check 1:' . $check1 . '<br />';
 	}
 
 	$stmt->free_result(); $stmt->close();
@@ -127,6 +129,7 @@ public function newGroupAllocation($groupID, $allocateTo) {
 	}
 	else {
 		$check2 = TRUE; 
+		$message .= 'Check 2:' . $check2 . '<br />';
 	}	
 
 	$stmt->free_result(); $stmt->close();
@@ -140,6 +143,7 @@ public function newGroupAllocation($groupID, $allocateTo) {
 	}
 	else {
 		$check3 = TRUE; 
+		$message .= 'Check 3:' . $check3 . '<br />';	
 	}	
 	$stmt->free_result(); $stmt->close();
 
