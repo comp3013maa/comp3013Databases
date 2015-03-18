@@ -14,24 +14,7 @@ else comment box and dropdown and submit button.
 */
 $report = array();
 $i = 0;
-
-
-
-
 	
-	while ($row = mysqli_fetch_assoc( getReports())){
-	//	echo $groupID;	
-		displayReport();
-
-	}
-
-function displayReport(){
-	$report[$i] = $row['submissionName'];
-	echo file_get_contents($reports[$i]);
-	$i++;
-}
-	 	
-function getReports(){
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error());
 	 
@@ -48,9 +31,23 @@ function getReports(){
 	 WHERE groupassignments.groupID = $groupID
 	 ";
 	 
-return $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
+ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
 mysqli_close($connection);
+
+	while ($row = mysqli_fetch_assoc($result){
+	//	echo $groupID;	
+		displayReport();
+
+	}
+
+function displayReport(){
+	$report[$i] = $row['submissionName'];
+	echo file_get_contents($reports[$i]);
+	$i++;
 }
+	 	
+
+
 /*
 $review = array();
 echo $review['comment'] = $_POST['comment'];
