@@ -41,7 +41,7 @@ public function getGroups() {
 	$result = $stmt->get_result();
 	$groupList = array(); $n = 0;
 	while ($row = $result->fetch_assoc()) {
-		$groupList[$n] = $row[''];
+		$groupList[$n] = $row['groupID'];
 		$n++;
 	}	
 	$stmt->free_result();
