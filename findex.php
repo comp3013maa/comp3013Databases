@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "SELECT * from categories";
+$sql = "SELECT * from catefgories";
 
 $result = $conn->query($sql);
 
