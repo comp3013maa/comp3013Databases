@@ -73,44 +73,11 @@ while ($groupList['groupID']) {
 	echo $groupList['groupID'];
 }
 
-
-/*
-$sql = "SELECT id, interest, key_interest 
-		FROM interests"; 
-$result = mysqli_query($conx, $sql) or die( mysqli_error($conx) );
-
-// Similar code to select interest, uses select menu instead of checkboxes however
-echo '<form method="POST" action ="settings.php?id=searchmentorsresults">';
-echo '<select name = "interest">';
-while ($row = mysqli_fetch_assoc($result) ) {						
-	if ($row['key_interest'] == 1) {
-		echo "<option value =" . $row['id'] . ">" . $row['interest'] . "</option>"; 						
-	} 
-	else {
-		$otherInterests[] = $row; 
-	}
-}
-for ($i = 0; $i <= count($otherInterests)-1; $i++) {
-		echo '<option value="' .  $otherInterests[$i]['id'] . '">' .  $otherInterests[$i]['interest'] . '</option>'; 
-}
-echo'</select>'; 
-echo '<br /><button class="btn btn-small" type="submit" value = "Post" name="submitMentorsSearch"> Search for mentors</button>
-</form>';
-*/
-
 if(isset($_POST['newGroupAllocation']) {
 	
 }
 
-?>
-
-
-<?php 	
-	// two dropdowns - groupid, assign to - submit button assigns as long as not already exisiting 
-	// max 3 assigned 
-
-
-} 
+}  // end allocateGroups if 
 
 if (isset($_GET['rankings'])) {
 
