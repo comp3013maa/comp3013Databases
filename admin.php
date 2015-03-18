@@ -70,7 +70,7 @@ $groupList = $sql_model->getGroups();
 $sql_model->close();
 
 echo '<select name = "newAllocation">';
-	for ($i=0; $i < count($groupList), $i++ )  {						
+	for ($i=0; $i < count($groupList); $i++ )  {						
 		echo 'Grouplist is: ' . $groupList[$i];
 		/* 
 		if ($row['key_interest'] == 1) {
