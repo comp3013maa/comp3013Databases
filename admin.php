@@ -69,6 +69,7 @@ $groupList = array();
 $groupList = $sql_model->getGroups();  
 $sql_model->close();
 
+var_dump($groupList);
 echo '<select name = "newAllocation">';
 	for ($i=0; $i < count($groupList); $i++ )  {						
 		echo 'Grouplist is: ' . $groupList[$i];
