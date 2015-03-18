@@ -64,6 +64,45 @@ if (isset($_GET['allocateGroups'])) {
 <h3> Allocate a New Group: </h3>	
 <p> Note: A maximum of 3 groups can be allocated for review to one group</p>
 
+
+<form class="form-horizontal" method="POST" action="users.php?add">
+<fieldset>	
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textinput">Username: </label>  
+	  <div class="col-md-4">
+	  	<input id="textinput" name="username" type="text" class="form-control input-md">
+	  </div>
+	</div>
+
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textinput">Email: </label>
+	  <div class="col-md-4">
+	  	<input id="textinput" name="email" type="text" class="form-control input-md">
+	  </div>
+	</div>
+
+	<div class="form-group">
+			<label class="col-md-4 control-label" for="passwordinput">Password: </label>
+			<div class="col-md-4">
+	  			<input id="passwordinput" name="password1" type="password" class="form-control input-md">
+  	</div>
+	</div>
+
+	<div class="form-group">
+			<label class="col-md-4 control-label" for="passwordinput">Confirm Password: </label>
+			<div class="col-md-4">
+	  			<input id="passwordinput" name="password2" type="password" class="form-control input-md">
+  	</div>
+	</div>
+
+	<!-- Button -->
+	<div class="form-group">
+			<label class="col-md-4 control-label" for="singlebutton"></label>
+			<div class="col-md-4">
+				<button type ="submit "id="singlebutton" name="register" class="btn btn-success"> Register </button>
+			</div>
+	</div>
+</form>
 <?php
 $groupList = array(); 
 $groupList = $sql_model->getGroups();  
@@ -77,11 +116,13 @@ echo '<select name = "groupId">';
 
 		echo "<option value =" . $groupList[$i] . ">" . $groupList[$i]. "</option>"; 						
 echo '</select>'; 		
+	}
 
 echo '<select name = "AllocateTo">';
 	for ($i=0; $i < count($groupList); $i++ )  {						
 
-		echo "<option value =" . $groupList[$i] . ">" . $groupList[$i]. "</option>"; 						
+		echo "<option value =" . $groupList[$i] . ">" . $groupList[$i]. "</option>"; 	
+		}					
 echo '</select>'; 	
 ?> 
 
