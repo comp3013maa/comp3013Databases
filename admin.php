@@ -71,6 +71,8 @@ $groupList = array();
 $groupList = $sql_model->getGroups(); 
 $sql_model->close();
 
+var_dump($groupList);
+
 while ($groupList['groupID']) {
 	echo $groupList['groupID'];
 }
