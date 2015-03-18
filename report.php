@@ -97,8 +97,8 @@ echo '
         </select>
     </div>
             <div class="form-group">
-            
+            		<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . ' "/>
             	<p><input type="submit" value="Submit review"></p>
-             </div>
+             </div>';
 require "footer.php";
 ?>
