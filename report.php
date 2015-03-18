@@ -30,7 +30,7 @@ function displayReport(){
 	 	
 function getReports(){
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error1' . mysqli_error());
+	 or die('Error1' . mysqli_error("$connection"));
 	 
 	$userID = $_SESSION['userID'];
 	 
