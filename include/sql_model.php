@@ -29,7 +29,6 @@ public function getUsersGroupID($userid) {
 	$stmt->execute(); 
 	$result = $stmt->get_result();
 	$row = $result->fetch_assoc(); 
-	
 	$stmt->free_result();
         $stmt->close();
 	return $row['groupID'];
@@ -40,12 +39,13 @@ public function getGroups() {
 	$stmt = $this->conn->prepare("SELECT groupID FROM groups ORDER BY groupID ASC ");
 	$stmt->execute(); 
 	$result = $stmt->get_result();
-	$row = $result->fetch_assoc(); 
-
+	$groupList = array();
+	while ($row = $result->fetch_assoc()) {
+		$groupList['groupID'] = $row['groupID'];		
+	}	
 	$stmt->free_result();
         $stmt->close();
-        var_dump($row);
-	return $row;
+	return $groupList;
 }
 
 /* Get assigned groups for a group ID - used in getGroupAllocations()
