@@ -12,13 +12,25 @@ displayReport() //the groupID and free text
 if (graded) print the review and grade
 else comment box and dropdown and submit button. 
 */
-
 $report = array();
 $i = 0;
-	 	while ($row = mysqli_fetch_assoc($result)){
-	 		$report[$i] = $row['submissionName'];
-	 		$i++;
-	 	}
+
+	getReports();
+	
+	while ($row = mysqli_fetch_assoc($result)){
+		displayReport();
+	}
+
+function displayReport(){
+	$report[$i] = $row['submissionName'];
+	ehco file_get_contents($reports[$i]);
+	$i++;
+}
+
+	 
+	 		
+	 		
+	 	
 	 	
 //echo $report = $row['submissionName'];
 //echo $row
