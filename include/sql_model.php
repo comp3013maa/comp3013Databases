@@ -118,9 +118,8 @@ public function newGroupAllocation($groupID, $allocateTo) {
 	$stmt->free_result(); $stmt->close();
 
 	// 2. check each groupID isn't assigned to more than 3 groups
-	$currentUSersGroup = getUsersGroupID(); 
 	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
-	$stmt->bind_param("i", $currentUSersGroup);	
+	$stmt->bind_param("i", $groupID);	
 	$stmt->execute();
 	if ($stmt->num_rows >= 3) {
 		$message .= "A group cannot be assigned to more than three groups <br />";		
