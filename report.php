@@ -5,13 +5,7 @@ require_once "include/sql_model.php";
 if(!isset($_SESSION['userID'])){
 	header('location: unauthorised.php?');
 }
-/*
-getReports()
-while row=fetch assoc
-displayReport() //the groupID and free text 
-if (graded) print the review and grade
-else comment box and dropdown and submit button. 
-*/
+
 $report = array();
 $i = 0;
 	
@@ -46,8 +40,16 @@ mysqli_close($connection);
 		echo file_get_contents($report[$i]) . '<p></p>';
 		$i++;
 		
+		// either comment box or the review 
+		$submissionID = $row['submissionID'];
+		$query = "SELECT grade, comment
+			FROM grade
+			WHERE submissionID = $submissionID AND byGroup = $groupID
+			";
 		
+		// either it gives back a row - if so echo it
 		
+		// or nothing, if so show comment box
 	}
 	
 
@@ -95,12 +97,6 @@ echo '
         </select>
     </div>
             <div class="form-group">
-            	<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . ' "/>
-                <p><input type="submit" value="Submit review"></p>
-            </div>
-        </form>
-    </div>
-</div>';
-
+            	<input type = "hidden" name = "submissionID" value = '.  $row['submissionID'] .wer vtA
 require "footer.php";
 ?>
