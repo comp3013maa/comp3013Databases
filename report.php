@@ -2,7 +2,9 @@
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
 require_once "include/sql_model.php";
 
-
+if(!isset($_SESSION['userID'])){
+	header('unauthorised.php');
+}
 
 $review = array();
 echo $review['comment'] = $_POST['comment'];
