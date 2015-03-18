@@ -2,6 +2,12 @@
 //create_cat.php
 require 'header.php';
 include 'connect.php';
+
+<form method="post" action="">
+    Category name: <input type="text" name="cat_name" />
+    Category description: <textarea name="cat_description" /></textarea>
+    <input type="submit" value="Add category" />
+ </form>
          
          $sql = "SELECT
             cat_id,
