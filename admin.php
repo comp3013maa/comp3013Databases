@@ -65,7 +65,6 @@ if (isset($_GET['allocateGroups'])) {
 	<p> Note: A maximum of 3 groups can be allocated for review to one group</p>
 
 	<?php
-	<?php
 	$groupList = array(); 
 	$groupList = $sql_model->getGroups();  
 	$sql_model->close(); ?>
