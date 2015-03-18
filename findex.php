@@ -29,7 +29,7 @@ $sql = "SELECT
 		GROUP BY
 			categories.cat_name, categories.cat_description, categories.cat_id";
 
-$result = mysql_query($sql);
+$result = $conn->query($sql);
 
 if(!$result)
 {
