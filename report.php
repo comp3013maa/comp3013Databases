@@ -22,7 +22,7 @@ $i = 0;
 	 
 	$sql_model = new SQL_Model();
 	$groupID = $sql_model->getUsersGroupID($userID); 
-	$sql_model->close();
+//	$sql_model->close();
 	 
 	 $query = "
 	 SELECT submissionName, submissions.groupID
@@ -37,7 +37,7 @@ mysqli_close($connection);
 	while ($row = mysqli_fetch_assoc($result)){
 		echo "Report from group ". $row['groupID'] . '<p></p>';
 		$report[$i] = $row['submissionName'];
-		echo file_get_contents($report[$i]);
+		echo file_get_contents($report[$i]) . '<p></p>';
 		$i++;	
 	}
 	
