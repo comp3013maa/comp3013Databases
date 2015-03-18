@@ -73,9 +73,11 @@ $sql_model->close();
 
 var_dump($groupList);
 
+/* 
 while ($groupList['groupID']) {
 	echo $groupList['groupID'];
 }
+*/ 
 
 if(isset($_POST['newGroupAllocation'])) {
 	
