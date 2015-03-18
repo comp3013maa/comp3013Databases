@@ -49,7 +49,7 @@ function getReports(){
 	 WHERE groupassignments.groupID = $groupID
 	 ";
 	 
-$result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
+return $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
 
 }
 /*
