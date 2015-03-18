@@ -15,16 +15,16 @@ else comment box and dropdown and submit button.
 $report = array();
 $i = 0;
 
-	getReports(); 
+echo	$result = getReports(); 
 	
 	
-
+/*
 	while ($row = mysqli_fetch_assoc($result)){
 	//	echo $groupID;	
 	//	displayReport();
 	echo $row[$i];
 	$i++;
-	}
+	}*/
 /*
 function displayReport(){
 	$report[$i] = $row['submissionName'];
@@ -34,7 +34,7 @@ function displayReport(){
 */	 	
 function getReports(){
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error1' . mysqli_error($connection));
+	 or die('Error1' . mysqli_error());
 	 
 	$userID = $_SESSION['userID'];
 	 
