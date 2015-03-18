@@ -144,9 +144,8 @@ public function newGroupAllocation($groupID, $allocateTo) {
 	$stmt->free_result(); $stmt->close();
 
 	if (($check1 && $check2 && $check3) == TRUE)  {
-		
 
-		$message .= 'Succesfully allocated group ' . $groupID . ' to mark group ' . $allocateTo '. <br />';
+		$message .= 'Succesfully allocated group ' . $groupID . ' to mark group ' . $allocateTo . '. <br />';
 		return $message;
 	} 
 	else {
