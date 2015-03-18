@@ -15,8 +15,8 @@ else comment box and dropdown and submit button.
 $report = array();
 $i = 0;
 	
-	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error1' . mysqli_error($connection));
+	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013');
+	// or die('Error1' . mysqli_error($connection));
 	 
 	$userID = $_SESSION['userID'];
 	 
