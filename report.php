@@ -35,8 +35,9 @@ $i = 0;
 mysqli_close($connection);
 
 	while ($row = mysqli_fetch_assoc($result)){
-	//	echo $groupID;	
-	$report[$i] = $row['submissionName'];
+		echo $groupID;
+		
+	echo $report[$i] = $row['submissionName'];
 	echo file_get_contents($report[$i]);
 	$i++;	
 
