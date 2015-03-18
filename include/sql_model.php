@@ -44,6 +44,7 @@ public function getGroups() {
 
 	$stmt->free_result();
         $stmt->close();
+        var_dump($row);
 	return $row;
 }
 
