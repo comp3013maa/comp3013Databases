@@ -1,7 +1,7 @@
 <?php
 //create_cat.php
 require 'fheader.php';
-include 'connect.php';
+require 'connect.php';
 
  
 $sql = "SELECT
