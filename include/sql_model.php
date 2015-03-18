@@ -109,6 +109,7 @@ public function newGroupAllocation($groupID, $allocateTo) {
 	$stmt = $this->conn->prepare("SELECT groupID FROM groupassignments WHERE groupID=? AND assignedTo=?");
 	$stmt->bind_param("ii", $groupID, $allocateTo);	
 	$stmt->execute();
+	$stmt->store_result();	
 	if ($stmt->num_rows == 1) {
 		$message .= "This assignment already exists <br />";
 	} 
