@@ -41,12 +41,12 @@ mysqli_close($connection);
 		$i++;
 		
 		// either comment box or the review 
-		$submissionID = $row['submissionID'];
+	/*	$submissionID = $row['submissionID'];
 		$query = "SELECT grade, comment
 			FROM grade
 			WHERE submissionID = $submissionID AND byGroup = $groupID
 			";
-		
+		*/
 		// either it gives back a row - if so echo it
 		
 		// or nothing, if so show comment box
