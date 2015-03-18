@@ -68,9 +68,10 @@ if (isset($_GET['allocateGroups'])) {
 
 
 $groupList = array();
-// $groupList = $sql_model->getGroups(); 
-$sql_model->getGroups(); 
+$groupList = $sql_model->getGroups(); 
 $sql_model->close();
+
+var_dump($groupList);
 
 
 /* 
