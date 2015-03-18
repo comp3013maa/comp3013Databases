@@ -102,7 +102,8 @@ public function getGroupAllocations() {
 public function newGroupAllocation($groupID, $allocateTo) {
 			
 	$errorMessage = ""; 
-	$check1 = $check2 = $check3 = FALSE; 
+	$check1 = FALSE; $check2 = FALSE; $check3 = FALSE; 
+
 
 	// 1. check not existing 
 	$stmt = $this->conn->prepare("SELECT groupID FROM groupassignments WHERE groupID=? AND assignedTo=?");
