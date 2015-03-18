@@ -24,7 +24,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 WHERE groupassignments.groupID = $groupID
 	 ";
 	 
-$result = mysqli_query($connection,$query) or die('Error' . mysqli_error("$result"));
+$result = mysqli_query($connection,$query) or die('Error' . mysqli_error());
 	 	$row = mysqli_fetch_assoc($result);
 echo $row['submissionName'];
 date_default_timezone_set("Europe/London");
