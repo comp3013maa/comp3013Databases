@@ -16,7 +16,8 @@ $report = array();
 $i = 0;
 
 	$sqlreport = getReports(); 
-	
+
+
 	
 	while ($row = mysqli_fetch_assoc($sqlreport)){
 	//	echo $groupID;	
@@ -26,7 +27,7 @@ $i = 0;
 
 function displayReport(){
 	$report[$i] = $row['submissionName'];
-	ehco file_get_contents($reports[$i]);
+	echo file_get_contents($reports[$i]);
 	$i++;
 }
 	 	
