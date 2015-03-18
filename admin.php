@@ -67,7 +67,7 @@ if (isset($_GET['allocateGroups'])) {
 	<?php
 	$groupList = array(); 
 	$groupList = $sql_model->getGroups();  
-	$sql_model->close(); ?>
+	?>
 
 	<form class="form-horizontal" method="POST" action="admin.php?allocateGroups">
 	<fieldset>	
@@ -109,8 +109,8 @@ if (isset($_GET['allocateGroups'])) {
 	<?php
 	if(isset($_POST['newGroupAllocation'])) {
 		echo $sql_model->newGroupAllocation($_POST['groupID'], $_POST['allocateTo']);  
-			$sql_model->close();
 	}
+	$sql_model->close();
 }  
 
 
