@@ -6,7 +6,8 @@ if(!isset($_SESSION['userID'])){
 	header('location: unauthorised.php?');
 }
 /*
-while report exists
+getReports()
+while row=fetch assoc
 displayReport() //the groupID and free text 
 if (graded) print the review and grade
 else comment box and dropdown and submit button. 
