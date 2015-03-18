@@ -6,14 +6,14 @@ $server = 'eu-cdbr-azure-west-b.cloudapp.net';
 $username = 'b6526a64c19791';
 $password = '5d020f59';
 $database = 'comp3013';
-if(!mysql_connect($server, $username, $password))
-{
-exit('Error: could not establish database connection');
-}
-if(!mysql_select_db($database)
-{
-exit('Error: could not select the database');
-}
+
+// Create connection
+$conn = new mysqli($server, $username, $password, $database);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
 
 $sql = "SELECT
 			categories.cat_id,
