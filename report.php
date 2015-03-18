@@ -9,13 +9,13 @@ echo $review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
 
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error' . mysqli_error());
+	 or die('Error1' . mysqli_error());
 	 
-	 $userID = $_SESSION['userID'];
+	$userID = $_SESSION['userID'];
 	 
-	 $sql_model = new SQL_Model();
-     $groupID = $sql_model->getUsersGroupID($userID); 
-     $sql_model->close();
+	$sql_model = new SQL_Model();
+	$groupID = $sql_model->getUsersGroupID($userID); 
+	$sql_model->close();
 	 
 	 $query = "
 	 SELECT submissionName
@@ -24,7 +24,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 WHERE groupassignments.groupID = $groupID
 	 ";
 	 
-$result = mysqli_query($connection,$query) or die('Error' . mysqli_error());
+$result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
 $report = array();
 $i = 0;
 	 	while ($row = mysqli_fetch_assoc($result)){
@@ -34,7 +34,7 @@ $i = 0;
 	 	
 //echo $report = $row['submissionName'];
 //echo $row
-echo file_get_contents($report[$i]);
+echo file_get_contents($report[0]);
 
 date_default_timezone_set("Europe/London");
 $time = date("d/m/y h:ia");
