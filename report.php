@@ -2,7 +2,7 @@
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
 require_once "include/sql_model.php";
 
-echo file_get_contents('uploads/up.txt');
+echo file_get_contents($report);
 
 $review = array();
 echo $review['comment'] = $_POST['comment'];
@@ -26,7 +26,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 
 $result = mysqli_query($connection,$query) or die('Error' . mysqli_error());
 	 	$row = mysqli_fetch_assoc($result);
-echo $row['submissionName'];
+echo $report = $row['submissionName'];
 date_default_timezone_set("Europe/London");
 $time = date("d/m/y h:ia");
 echo '
