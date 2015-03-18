@@ -35,8 +35,8 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 mysqli_close($connection);
 
 	while ($row = mysqli_fetch_assoc($result)){
-		echo "Report from group ". $row['groupID'];
-		<p></p>
+		echo "Report from group ". $row['groupID'] <p></p>;
+		
 	echo file_get_contents($report[$i]);
 	$i++;	
 
