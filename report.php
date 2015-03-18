@@ -41,21 +41,24 @@ mysqli_close($connection);
 		$i++;
 		
 		// either comment box or the review 
-	/*	$submissionID = $row['submissionID'];
-		$query = "SELECT grade, comment
+		$submissionID = $row['submissionID'];
+		$query2 = "SELECT grade, comment
 			FROM grade
 			WHERE submissionID = $submissionID AND byGroup = $groupID
 			";
-		*/
+	
 		// either it gives back a row - if so echo it
 		
 		// or nothing, if so show comment box
 	}
 	
-
-$review = array();
-echo $review['comment'] = $_POST['comment'];
-echo $review['grade'] = $_POST['grade'];
+$query3= "
+INSERT INTO grade(submissionID, grade, comment, byGroup)
+VALUES ($submissionID, $_POST['grade'], '$_POST['comment']', $groupID)
+";
+//$review = array();
+//echo $review['comment'] = $_POST['comment'];
+//echo $review['grade'] = $_POST['grade'];
 
 
 
