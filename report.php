@@ -25,7 +25,7 @@ $i = 0;
 	$sql_model->close();
 	 
 	 $query = "
-	 SELECT submissionName, groupID
+	 SELECT submissionName, submissions.groupID
 	 FROM submissions INNER JOIN groupassignments
 	 ON submissions.groupID = groupassignments.assignedTo
 	 WHERE groupassignments.groupID = $groupID
