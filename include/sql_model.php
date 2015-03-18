@@ -67,7 +67,7 @@ public function getAssignedTo($groupID) {
 }
 
 /*  Get group allocations list 
-*   @params: none @return: string - ouptput
+*   @params: none @return: string - $ouptput
 */
 public function getGroupAllocations() {
 	$stmt = $this->conn->prepare("SELECT groupID
@@ -76,7 +76,7 @@ public function getGroupAllocations() {
 	ORDER BY groupID ASC ");
 	// $stmt->bind_param('s', $name);
 
-        if ($stmt->execute()) {
+    if ($stmt->execute()) {
 		$result = $stmt->get_result();
 		$row = array(); $output = "";
 		while ($row = $result->fetch_assoc()) {
@@ -86,11 +86,71 @@ public function getGroupAllocations() {
 		}
 		
 		$stmt->free_result();
-            	$stmt->close();
+	        	$stmt->close();
 		return $output; 
-        } 
-        else {
+    } 
+    else {
 		die("An error occurred performing the request");
+	}
+}
+
+/*  Assigns the $groupID to make the reports of $allocateTo - 3 validation checks - max assignments per group 
+*   @params: int $groupID, int $allocateTo 
+*   @return: string - $message (success or error)
+*/
+
+public function newGroupAllocation($groupID, $allocateTo) {
+			
+	$errorMessage = ""; 
+	$check1 = $check2 = $check3 = FALSE; 
+
+	// 1. check not existing 
+	$stmt = $this->conn->prepare("SELECT groupID FROM groupassignments WHERE groupID=? AND assignedTo=?");
+	$stmt->bind_param("ii", $groupID, $allocateTo);	
+	$stmt->execute();
+	if ($stmt->num_rows == 1) {
+		$message .= "This assignment already exists <br />";
+	} 
+	else {
+		$check1 = TRUE; 
+	}
+
+	$stmt->free_result(); $stmt->close();
+
+	// 2. check each groupID isn't assigned to more than 3 groups
+	$currentUSersGroup = getUsersGroupID(); 
+	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
+	$stmt->bind_param("i", $currentUSersGroup);	
+	$stmt->execute();
+	if ($stmt->num_rows >= 3) {
+		$message .= "A group cannot be assigned to more than three groups <br />";		
+	}
+	else {
+		$check2 = TRUE; 
+	}	
+
+	$stmt->free_result(); $stmt->close();
+
+	// 3. check each allocateTo hasn't got more than 3 groups managing it 
+	$stmt = $this->conn->prepare("SELECT groupID FROM groupassignments WHERE  assignedTo=?");
+	$stmt->bind_param("i", $allocateTo);	
+	$stmt->execute();
+	if ($stmt->num_rows >= 3) {
+		$message .= "A group cannot be marked by more than three groups <br />";		
+	}
+	else {
+		$check3 = TRUE; 
+	}	
+	$stmt->free_result(); $stmt->close();
+
+	if (($check1 && $check2 && $check3) == TRUE)  {
+		
+
+		$message .= 'Succesfully allocated group ' . $groupID . ' to mark group ' . $allocateTo '. <br />';
+		return $message;
+	} 
+	else {
+		return $message
 	}
 }
 
