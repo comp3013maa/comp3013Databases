@@ -6,21 +6,6 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 //unlink('uploads/'.'up.txt'); //to delete file
-unlink('uploads/'.'up15.txt');
-unlink('uploads/'.'up16.txt');
-unlink('uploads/'.'up17.txt');
-unlink('uploads/'.'up18.txt');
-unlink('uploads/'.'up19.txt');
-unlink('uploads/'.'up20.txt');
-unlink('uploads/'.'up21.txt');
-unlink('uploads/'.'up22.txt');
-unlink('uploads/'.'up23.txt');
-unlink('uploads/'.'up24.txt');
-unlink('uploads/'.'up25.txt');
-unlink('uploads/'.'up26.txt');
-unlink('uploads/'.'up27.txt');
-unlink('uploads/'.'up28.txt');
-unlink('uploads/'.'up29.txt');
 
 if(isset($_POST['uploaded'])) {
 	
@@ -57,8 +42,9 @@ else {
 }
 
  $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error89899889989898989898' . mysqli_error());
+	 or die('Error' . mysqli_error());
 	 $userID = $_SESSION['userID'];
+	 
 	$query1 = 
 	"SELECT groupID 
 	FROM users
@@ -75,7 +61,7 @@ else {
 	 (submissionName, groupID)
 	 VALUES ('$directory', $groupID)";  
 	 
-	$result = mysqli_query($connection,$query2) or die('Error8478957857w33899' . mysqli_error($connection));
+	$result = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 	
 	mysqli_close($connection);
 

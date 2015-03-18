@@ -1,12 +1,46 @@
 <?php
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
+require_once "include/sql_model.php";
 
-echo file_get_contents('uploads/up.txt');
+if(!isset($_SESSION['userID'])){
+	header('location: unauthorised.php?');
+}
 
+$review = array();
+echo $review['comment'] = $_POST['comment'];
+echo $review['grade'] = $_POST['grade'];
+
+$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
+	 or die('Error1' . mysqli_error());
+	 
+	$userID = $_SESSION['userID'];
+	 
+	$sql_model = new SQL_Model();
+	$groupID = $sql_model->getUsersGroupID($userID); 
+	$sql_model->close();
+	 
+	 $query = "
+	 SELECT submissionName
+	 FROM submissions INNER JOIN groupassignments
+	 ON submissions.groupID = groupassignments.assignedTo
+	 WHERE groupassignments.groupID = $groupID
+	 ";
+	 
+$result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
+$report = array();
+$i = 0;
+	 	while ($row = mysqli_fetch_assoc($result)){
+	 		$report[$i] = $row['submissionName'];
+	 		$i++;
+	 	}
+	 	
+//echo $report = $row['submissionName'];
+//echo $row
+echo file_get_contents($report[0]);
+
+date_default_timezone_set("Europe/London");
+$time = date("d/m/y h:ia");
 echo '
-
-
-
 <div class="detailBox">
     <div class="titleBox">
       <label>Grading Assessments</label>
@@ -17,17 +51,18 @@ echo '
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">Good work!</p> <span class="date sub-text">on March 5th, 2014</span>
+                    <p class="">Good work!</p> <span class="date sub-text">'.$time.'</span>
                 </div>
             </li>
         </ul>
-        <form class="form-inline" role="form">
+       
+        <form action="report.php" class="form-inline" method="post" role="form">
             <div class="form-group">
-                <textarea rows="7" cols="80"> Your review </textarea>
+                <textarea rows="7" cols="80" name="comment" > Your review </textarea>
             </div>
             <p></p>
             Select Grade
-        <select>
+        <select name="grade">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -41,7 +76,7 @@ echo '
         </select>
     </div>
             <div class="form-group">
-                <button class="btn btn-default">Add</button>
+                <p><input type="submit" value="Submit review"></p>
             </div>
         </form>
     </div>

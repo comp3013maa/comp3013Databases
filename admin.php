@@ -1,21 +1,9 @@
 <?php require "header.php"; 
-function displayAssignedTo($groupID, $connection) {
-	
-// possibly move to its own class, move sql query to one file,  tuan's structure
-// then just have the gets (the view with functions in them - mvc) - DO EEET
-	$groupID= mysqli_real_escape_string($connection, $groupID);
-	$sql = "SELECT assignedTo FROM groupassignments WHERE groupID=$groupID"; 
-	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	$output = "";
-	while ($row = mysqli_fetch_assoc($result) ) {
-	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
-	}
-	return $output;
-}
-
+require_once "include/sql_model.php";
+/* This file follows mvc - only deals with the view. sql_model is the model in our mvc and deals with our data */
 
 if (empty($_GET)) {
-	// Overall structure found in the list below 
+	// Overall structure  
 	echo '
 	<ul> 
 		<li id = "indexList"> <a href = "admin.php?add" class="listLinks"> Add New User</a> </li>                  		
@@ -28,7 +16,6 @@ if (empty($_GET)) {
 
 if (isset($_GET['add'])) {
 	echo '<a href="register.html">Add New User Form</a> <br />' ;
-	
 	// use helper classes like tuan? For validation like graham's slides? 
 	
 }
@@ -44,21 +31,13 @@ if (isset($_GET['browse'])) {
 	echo 'ruff';
 }
 
+/* DISPLAY GROUP ALLOCATIONS AND ALLOW NEW ONES TO CREATED */
 if (isset($_GET['allocateGroups'])) {
 	// list of each group, and the ones they're assigned too 
-	/*
-	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
-	$sql = "SELECT groupID, assignedTo 
-		FROM groupassignments"; 
-	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	$row = mysqli_fetch_assoc($result); 
-	echo 'GroupID: ' . $row['groupID'] . 'AND AssignedTo:' . $row['assignedTo'];	
-	mysqli_close($connection); */ 
-	
 ?> 	
 
 <h3> Group Allocations </h3> <br /> 
-<p> List of current allocations: </p>	
+<h5> List of current allocations: </h5>	
 <div class="well">
     <table class="table">
       <thead>
@@ -72,26 +51,59 @@ if (isset($_GET['allocateGroups'])) {
       </thead>
       <tbody>
 	<?php
-	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013') or die('Error' . mysql_error());
-	$sql = "SELECT groupID
-		FROM groupassignments
-		ORDER BY groupID ASC";
-	$result = mysqli_query($connection, $sql) or die( mysqli_error($connection) );
-	$groupID = $row['groupID'];
-	while ($row = mysqli_fetch_assoc($result) ) {
-		echo '<tr> <td>' . htmlentities($groupID) . '</td>' . displayAssignedTo($groupID, $connection). '</tr>';
-	} 
-	mysqli_close($connection);
-	
+	$sql_model = new SQL_Model();
+	echo $sql_model->getGroupAllocations(); 
+ // not closed as using again below	$sql_model->close();
 	?>	
       </tbody>
     </table>
 </div>	
 
-<?php 	
-	// two dropdowns - groupid, assign to - submit button assigns as long as not already exisiting 
-	// max 3 assigned 
-} // end isset allocateGrpuos 
+<!-- CREATE A NEW GROUP ALLOCATION-->
+<hr /> 
+<h3> Allocate a New Group: </h3>	
+<p> Note: A maximum of 3 groups can be allocated for review to one group</p>
+
+<?php
+$groupList = array(); 
+$groupList = $sql_model->getGroups();  
+$sql_model->close();
+
+	for ($i=0; $i < count($groupList); $i++ )  {						
+		echo 'Grouplist is: ' . $groupList[$i];
+		/* 
+		if ($row['key_interest'] == 1) {
+			echo "<option value =" . $row['id'] . ">" . $row['interest'] . "</option>"; 						
+		} 
+		else {
+			$otherInterests[] = $row; 
+		} */ 
+	}
+var_dump($groupList);
+echo '<select name = "newAllocation">';
+	for ($i=0; $i < count($groupList); $i++ )  {						
+		echo 'Grouplist is: ' . $groupList[$i];
+		/* 
+		if ($row['key_interest'] == 1) {
+			echo "<option value =" . $row['id'] . ">" . $row['interest'] . "</option>"; 						
+		} 
+		else {
+			$otherInterests[] = $row; 
+		} */ 
+	}
+	/*
+	for ($i = 0; $i <= count($otherInterests)-1; $i++) {
+			echo '<option value="' .  $otherInterests[$i]['id'] . '">' .  $otherInterests[$i]['interest'] . '</option>'; 
+	}*/ 
+echo '</select>'; 		
+?> 
+
+<?php
+if(isset($_POST['newGroupAllocation'])) {
+	
+}
+
+}  // end allocateGroups if 
 
 if (isset($_GET['rankings'])) {
 
