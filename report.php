@@ -33,15 +33,15 @@ $i = 0;
 	 
  $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
 mysqli_close($connection);
-/*
-	while ($row = mysqli_fetch_assoc($result){
+
+	while ($row = mysqli_fetch_assoc($result)){
 	//	echo $groupID;	
 	$report[$i] = $row['submissionName'];
 	echo file_get_contents($reports[$i]);
 	$i++;	
 
 	}
-	*/
+	
 /*
 $review = array();
 echo $review['comment'] = $_POST['comment'];
