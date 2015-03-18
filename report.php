@@ -18,8 +18,8 @@ $i = 0;
 	getReports();
 	
 	while ($row = mysqli_fetch_assoc($result)){
+		echo $groupID;	
 		displayReport();
-		
 	}
 
 function displayReport(){
@@ -46,9 +46,9 @@ function getReports(){
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
-
+mysqli_close($connection);
 }
-
+/*
 $review = array();
 echo $review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
@@ -98,6 +98,6 @@ echo '
         </form>
     </div>
 </div>';
-
+*/
 require "footer.php";
 ?>
