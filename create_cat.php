@@ -3,51 +3,30 @@
 require 'header.php';
 include 'connect.php';
 
-<form method="post" action="">
-    Category name: <input type="text" name="cat_name" />
-    Category description: <textarea name="cat_description" /></textarea>
-    <input type="submit" value="Add category" />
- </form>
-         
-         $sql = "SELECT
-            cat_id,
-            cat_name,
-            cat_description,
-        FROM
-            categories";
- 
-$result = mysql_query($sql);
- 
-if(!$result)
+if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
-    echo 'The categories could not be displayed, please try again later.';
+    //the form hasn't been posted yet, display it
+    echo '<form method='post' action=''>
+        Category name: <input type='text' name='cat_name' />
+        Category description: <textarea name='cat_description' /></textarea>
+        <input type='submit' value='Add category' />
+     </form>';
 }
 else
 {
-    if(mysql_num_rows($result) == 0)
+    //the form has been posted, so save it
+    $sql = ìINSERT INTO categories(cat_name, cat_description)
+       VALUES('' . mysql_real_escape_string($_POST['cat_name']) . ì',
+             '' . mysql_real_escape_string($_POST['cat_description']) . ì')';
+    $result = mysql_query($sql);
+    if(!$result)
     {
-        echo 'No categories defined yet.';
+        //something went wrong, display the error
+        echo 'Error' . mysql_error();
     }
     else
     {
-        //prepare the table
-        echo '<table border="1">
-              <tr>
-                <th>Category</th>
-                <th>Last topic</th>
-              </tr>';
-             
-        while($row = mysql_fetch_assoc($result))
-        {              
-            echo '<tr>';
-                echo '<td class="leftpart">';
-                    echo '<h3><a href="category.php?id">' . $row['cat_name'] . '</a></h3>' . $row['cat_description'];
-                echo '</td>';
-                echo '<td class="rightpart">';
-                            echo '<a href="topic.php?id=">Topic subject</a> at 10-10';
-                echo '</td>';
-            echo '</tr>';
-        }
+        echo 'New category successfully added.';
     }
 }
          
