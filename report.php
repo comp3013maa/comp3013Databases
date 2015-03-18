@@ -32,13 +32,14 @@ $i = 0;
 	 ";
 	 
  $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
-mysqli_close($connection);
+
 
 	while ($row = mysqli_fetch_assoc($result){
 	//	echo $groupID;	
 		displayReport();
 
 	}
+mysqli_close($connection);
 
 function displayReport(){
 	$report[$i] = $row['submissionName'];
