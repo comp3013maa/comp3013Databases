@@ -39,9 +39,10 @@ public function getGroups() {
 	$stmt = $this->conn->prepare("SELECT groupID FROM groups ORDER BY groupID ASC ");
 	$stmt->execute(); 
 	$result = $stmt->get_result();
-	$groupList = array();
+	$groupList = array(); $n = 0;
 	while ($row = $result->fetch_assoc()) {
-		$groupList['groupID'] = $row['groupID'];		
+		$groupList[$n] = $row[''];
+		$n++;
 	}	
 	$stmt->free_result();
         $stmt->close();
