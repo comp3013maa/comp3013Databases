@@ -1,11 +1,30 @@
 <?php
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
+require_once "include/sql_model.php";
 
 echo file_get_contents('uploads/up.txt');
 
 $review = array();
 echo $review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
+
+$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
+	 or die('Error' . mysqli_error());
+	 
+	 $userID = $_SESSION['userID'];
+	 
+	 $sql_model = new SQL_Model();
+     $groupID = $sql_model->getUsersGroupID($userID); 
+     $sql_model->close();
+	 
+	 $query = "
+	 SELECT submissionName
+	 FROM submissions INNER JOIN groupassignments
+	 ON submissions.groupID = groupassignments.assignedTo
+	 WHERE groupassignments.groupID = $groupID
+	 ";
+	 
+
 
 date_default_timezone_set("Europe/London");
 $time = date("d/m/y h:ia");
