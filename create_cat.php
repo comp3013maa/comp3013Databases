@@ -1,8 +1,9 @@
 <?php
 //create_cat.php
 
-include 'connect.php';
+
 include 'fheader.php';
+include 'connect.php';
 
 echo '<h2>Create a category</h2>';
 if($_SESSION['signed_in'] == false | $_SESSION['user_level'] != 1 )
