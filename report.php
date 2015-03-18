@@ -32,8 +32,8 @@ $i = 0;
 	 ";
 	 
  $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
-
-
+mysqli_close($connection);
+/*
 	while ($row = mysqli_fetch_assoc($result){
 	//	echo $groupID;	
 	$report[$i] = $row['submissionName'];
@@ -41,12 +41,7 @@ $i = 0;
 	$i++;	
 
 	}
-mysqli_close($connection);
-
-
-/*	 */	
-
-
+	*/
 /*
 $review = array();
 echo $review['comment'] = $_POST['comment'];
