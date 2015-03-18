@@ -65,21 +65,29 @@ if (isset($_GET['allocateGroups'])) {
 <p> Note: A maximum of 3 groups can be allocated for review to one group</p>
 
 <?php
-
-
-$groupList = array();
-$groupList = $sql_model->getGroups(); 
+$groupList = array(); 
+$groupList = $sql_model->getGroups();  
 $sql_model->close();
 
-var_dump($groupList);
+echo '<select name = "newAllocation">';
+	for ($i=0; $i < count($groupList), $i++ )  {						
+		echo 'Grouplist is: ' . $groupList[$i];
+		/* 
+		if ($row['key_interest'] == 1) {
+			echo "<option value =" . $row['id'] . ">" . $row['interest'] . "</option>"; 						
+		} 
+		else {
+			$otherInterests[] = $row; 
+		} */ 
+	}
+	/*
+	for ($i = 0; $i <= count($otherInterests)-1; $i++) {
+			echo '<option value="' .  $otherInterests[$i]['id'] . '">' .  $otherInterests[$i]['interest'] . '</option>'; 
+	}*/ 
+echo '</select>'; 		
+?> 
 
-
-/* 
-while ($groupList['groupID']) {
-	echo $groupList['groupID'];
-}
-*/ 
-
+<?php
 if(isset($_POST['newGroupAllocation'])) {
 	
 }
