@@ -1,156 +1,128 @@
-<?php
-require_once "config.php";
+<?php require "header.php"; 
+require_once "include/sql_model.php";
+/* This file follows mvc - only deals with the view. sql_model is the model in our mvc and deals with our data */
 
-class SQL_Model {
-
-/*
-* Using prepared statements 
-$stmt = $dbConnection->prepare('SELECT * FROM employees WHERE name = ?');
-$stmt->bind_param('s', $name);
-$stmt->execute();
-$result = $stmt->get_result();
-while ($row = $result->fetch_assoc()) { }
-*/
-  
-public function __construct() {
-   $this->conn = DbConnect();
+if (empty($_GET)) {
+	// Overall structure  
+	echo '
+	<ul> 
+		<li id = "indexList"> <a href = "admin.php?add" class="listLinks"> Add New User</a> </li>                  		
+		<li id = "indexList"> <a href = "admin.php?browse" class="listLinks">Browse & Edit Users</a> </li>
+		<li id = "indexList"> <a href = "admin.php?allocateGroups" class="listLinks">Allocate Groups </a></li>
+		<li id = "indexList"> <a href = "admin.php?rankings" class="listLinks">Group Rankings </a></li>
+	</ul>   
+	';
 }
 
-public function close() {
-	closeDB($this->conn);
-}
-
-/* Gets the users groupID
-* @param: int userid @return int groupID
-*/
-public function getUsersGroupID($userid) {
-	$stmt = $this->conn->prepare("SELECT groupID FROM users WHERE userID=?");
-	$stmt->bind_param("i", $userid);
-	$stmt->execute(); 
-	$result = $stmt->get_result();
-	$row = $result->fetch_assoc(); 
-	$stmt->free_result();
-        $stmt->close();
-	return $row['groupID'];
-} 
-
-/* Return list of all groups */ 
-public function getGroups() {
-	$stmt = $this->conn->prepare("SELECT groupID FROM groups ORDER BY groupID ASC ");
-	$stmt->execute(); 
-	$result = $stmt->get_result();
-	$groupList = array(); $n = 0;
-	while ($row = $result->fetch_assoc()) {
-		$groupList[$n] = $row['groupID'];
-		$n++;
-	}	
-	$stmt->free_result();
-        $stmt->close();
-	return $groupList;
-}
-
-/* Get assigned groups for a group ID - used in getGroupAllocations()
-* @params: int - $groupID, @return: string - $output */
-
-public function getAssignedTo($groupID) {
-	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
-	$stmt->bind_param("i", $groupID);	
- 	$stmt->execute(); $result = $stmt->get_result();
-	$row = array(); $output = "";
-	while ($row = $result->fetch_assoc()) {
-	 	$output .= '<td>' . htmlentities($row['assignedTo']) . '</td>';
-	}
+if (isset($_GET['add'])) {
+	echo '<a href="register.html">Add New User Form</a> <br />' ;
+	// use helper classes like tuan? For validation like graham's slides? 
 	
-	$stmt->free_result();
-        $stmt->close();	
-	return $output;
 }
 
-/*  Get group allocations list 
-*   @params: none @return: string - $ouptput
-*/
-public function getGroupAllocations() {
-	$stmt = $this->conn->prepare("SELECT groupID
-	FROM groupassignments
-	GROUP BY groupID	
-	ORDER BY groupID ASC ");
-	// $stmt->bind_param('s', $name);
-
-    if ($stmt->execute()) {
-		$result = $stmt->get_result();
-		$row = array(); $output = "";
-		while ($row = $result->fetch_assoc()) {
-			
-		// $output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td>/tr>';
-		$output .= '<tr> <td>' . htmlentities($row['groupID']) . '</td></td>' . $this->getAssignedTo($row['groupID']) . '</td></tr>';
-		}
-		
-		$stmt->free_result();
-	        	$stmt->close();
-		return $output; 
-    } 
-    else {
-		die("An error occurred performing the request");
-	}
+if (isset($_GET['browse'])) {
+	/* DISPLAY USERS & Search bar - from other stuff  */
+	
+	/* Edit group allocation - List of users, list of groups dropdown - update sql query*/
+	/* Have an option to create a new group as well */
+	
+	/* EDIT PERSONAL INFO - admin panel code */
+	
+	echo 'ruff';
 }
 
-/*  Assigns the $groupID to make the reports of $allocateTo - 3 validation checks - max assignments per group 
-*   @params: int $groupID, int $allocateTo 
-*   @return: string - $message (success or error)
-*/
+/* DISPLAY GROUP ALLOCATIONS AND ALLOW NEW ONES TO CREATED */
+if (isset($_GET['allocateGroups'])) {
+	// list of each group, and the ones they're assigned too 
+?> 	
 
-public function newGroupAllocation($groupID, $allocateTo) {
-			
-	$errorMessage = ""; 
-	$check1 = $check2 = $check3 = FALSE; 
+	<h3> Group Allocations </h3> <br /> 
+	<h5> List of current allocations: </h5>	
+	<div class="well">
+	    <table class="table">
+	      <thead>
+	        <tr>
+	          <th>GroupID</th>
+	          <th>Assigned 1</th>
+	          <th>Assigned 2</th>
+	          <th>Assigned 3</th>
+	          <th style="width: 36px;"></th>
+	        </tr>
+	      </thead>
+	      <tbody>
+		<?php
+		$sql_model = new SQL_Model();
+		echo $sql_model->getGroupAllocations(); 
+	 // not closed as using again below	$sql_model->close();
+		?>	
+	      </tbody>
+	    </table>
+	</div>	
 
-	// 1. check not existing 
-	$stmt = $this->conn->prepare("SELECT groupID FROM groupassignments WHERE groupID=? AND assignedTo=?");
-	$stmt->bind_param("ii", $groupID, $allocateTo);	
-	$stmt->execute();
-	if ($stmt->num_rows == 1) {
-		$message .= "This assignment already exists <br />";
-	} 
-	else {
-		$check1 = TRUE; 
+	<!-- CREATE A NEW GROUP ALLOCATION-->
+	<hr /> 
+	<h3> Allocate a New Group: </h3>	
+	<p> Note: A maximum of 3 groups can be allocated for review to one group</p>
+
+	<?php
+	$groupList = array(); 
+	$groupList = $sql_model->getGroups();  
+	$sql_model->close(); ?>
+
+	<form class="form-horizontal" method="POST" action="admin.php?allocateGroups">
+	<fieldset>	
+		<div class="form-group">  
+		  <label class="col-md-4 control-label" for="textinput">Chose a group to assign: </label>  
+		  <div class="col-md-4">
+			<select name = "groupID" class="form-control input-md">
+				<?php
+				for ($i=0; $i < count($groupList); $i++ )  {						
+					echo "<option value =" . $groupList[$i] . ">" . $groupList[$i]. "</option>"; 	
+					}		
+				?>
+			</select>		
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput">Allocate To: </label>
+		  <div class="col-md-4">
+			<select name = "allocateTo" class="form-control input-md">
+				<?php
+				for ($i=0; $i < count($groupList); $i++ )  {						
+					echo "<option value =" . $groupList[$i] . ">" . $groupList[$i]. "</option>"; 	
+					}		
+				?>
+			</select>	
+		  </div>
+		</div>
+
+		<!-- Button -->  
+		<div class="form-group">  
+				<label class="col-md-4 control-label" for="singlebutton"></label>
+				<div class="col-md-4">
+					<button type ="submit "id="singlebutton" name="newGroupAllocation" class="btn btn-success"> Assign Group </button>
+				</div>
+		</div>
+	</form>
+
+	<?php
+	if(isset($_POST['newGroupAllocation'])) {
+		echo $sql_model->newGroupAllocation($_POST['groupID'], $_POST['allocateTo']);  
+			$sql_model->close();
 	}
+}  
 
-	$stmt->free_result(); $stmt->close();
 
-	// 2. check each groupID isn't assigned to more than 3 groups
-	$currentUSersGroup = getUsersGroupID(); 
-	$stmt = $this->conn->prepare("SELECT assignedTo FROM groupassignments WHERE groupID=?");
-	$stmt->bind_param("i", $currentUSersGroup);	
-	$stmt->execute();
-	if ($stmt->num_rows >= 3) {
-		$message .= "A group cannot be assigned to more than three groups <br />";		
-	}
-	else {
-		$check2 = TRUE; 
-	}	
 
-	$stmt->free_result(); $stmt->close();
+if (isset($_GET['rankings'])) {
 
-	// 3. check each allocateTo hasn't got more than 3 groups managing it 
-	$stmt = $this->conn->prepare("SELECT groupID FROM groupassignments WHERE  assignedTo=?");
-	$stmt->bind_param("i", $allocateTo);	
-	$stmt->execute();
-	if ($stmt->num_rows >= 3) {
-		$message .= "A group cannot be marked by more than three groups <br />";		
-	}
-	else {
-		$check3 = TRUE; 
-	}	
-	$stmt->free_result(); $stmt->close();
-
-	if (($check1 && $check2 && $check3) == TRUE)  {
-
-		$message .= 'Succesfully allocated group ' . $groupID . ' to mark group ' . $allocateTo . '. <br />';
-		return $message;
-	} 
-	else {
-		return $message
-	}
 }
 
-} // end class	
+?>
+
+
+<?php
+require "footer.php";
+?>
+
