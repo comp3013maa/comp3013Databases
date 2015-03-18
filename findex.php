@@ -15,19 +15,7 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "SELECT
-			categories.cat_id,
-			categories.cat_name,
-			categories.cat_description,
-			COUNT(topics.topic_id) AS topics
-		FROM
-			categories
-		LEFT JOIN
-			topics
-		ON
-			topics.topic_id = categories.cat_id
-		GROUP BY
-			categories.cat_name, categories.cat_description, categories.cat_id";
+$sql = "SELECT * from categories";
 
 $result = $conn->query($sql);
 
