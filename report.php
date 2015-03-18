@@ -31,13 +31,12 @@ $i = 0;
 	 WHERE groupassignments.groupID = $groupID
 	 ";
 	 
- $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
+$result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
 mysqli_close($connection);
 
 	while ($row = mysqli_fetch_assoc($result)){
-		echo $row['groupID'];
-		
-	echo $report[$i] = $row['submissionName'];
+		echo "Report from group ". $row['groupID'];
+		<p></p>
 	echo file_get_contents($report[$i]);
 	$i++;	
 
