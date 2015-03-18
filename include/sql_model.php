@@ -41,11 +41,10 @@ public function getGroups() {
 	$stmt->execute(); 
 	$result = $stmt->get_result();
 	$row = $result->fetch_assoc(); 
-	$groupList[] = $row;
-		
+
 	$stmt->free_result();
         $stmt->close();
-	return $groupList;
+	return $row;
 }
 
 /* Get assigned groups for a group ID - used in getGroupAllocations()
