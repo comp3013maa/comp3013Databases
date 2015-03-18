@@ -36,16 +36,14 @@ $i = 0;
 
 	while ($row = mysqli_fetch_assoc($result){
 	//	echo $groupID;	
-		displayReport();
+	$report[$i] = $row['submissionName'];
+	echo file_get_contents($reports[$i]);
+	$i++;	
 
 	}
 mysqli_close($connection);
 
-function displayReport(){
-	$report[$i] = $row['submissionName'];
-	echo file_get_contents($reports[$i]);
-	$i++;
-}
+
 	 	
 
 
