@@ -66,16 +66,15 @@ if (isset($_GET['allocateGroups'])) {
 
 <?php
 
-/* 
+
 $groupList[] = $sql_model->getGroups(); 
 $sql_model->close();
 
 while ($groupList['groupID']) {
 	echo $groupList['groupID'];
 }
-*/ 
 
-if(isset($_POST['newGroupAllocation']) {
+if(isset($_POST['newGroupAllocation'])) {
 	
 }
 
