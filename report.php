@@ -18,20 +18,18 @@ $i = 0;
 	$sqlreport = getReports(); 
 	
 	
-
 	while ($row = mysqli_fetch_assoc($sqlreport)){
 	//	echo $groupID;	
-	//	displayReport();
-	echo $row[$i];
-	$i++;
+		displayReport();
+
 	}
-/*
+
 function displayReport(){
 	$report[$i] = $row['submissionName'];
 	ehco file_get_contents($reports[$i]);
 	$i++;
 }
-*/	 	
+	 	
 function getReports(){
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error());
