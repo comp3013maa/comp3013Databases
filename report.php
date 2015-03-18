@@ -25,10 +25,16 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error' . mysqli_error());
-	 	$row = mysqli_fetch_assoc($result);
+$report = array();
+$i = 0;
+	 	while ($row = mysqli_fetch_assoc($result)){
+	 		$report[$i] = $row['submissionName'];
+	 		$i++;
+	 	}
+	 	
 echo $report = $row['submissionName'];
-
-echo file_get_contents($report);
+echo $row
+echo file_get_contents($report[0]);
 
 date_default_timezone_set("Europe/London");
 $time = date("d/m/y h:ia");
