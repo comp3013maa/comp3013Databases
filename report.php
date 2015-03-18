@@ -31,7 +31,7 @@ $i = 0;
 	 WHERE groupassignments.groupID = $groupID
 	 ";
 	 
- $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($query));
+ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
 mysqli_close($connection);
 
 	while ($row = mysqli_fetch_assoc($result)){
