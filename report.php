@@ -15,8 +15,8 @@ else comment box and dropdown and submit button.
 $report = array();
 $i = 0;
 
-	getReports(); echo $results;
-
+	getReports(); echo $results;mysqli_close($connection);
+/*
 	while ($row = mysqli_fetch_assoc($result)){
 	//	echo $groupID;	
 		displayReport();
@@ -27,7 +27,7 @@ function displayReport(){
 	ehco file_get_contents($reports[$i]);
 	$i++;
 }
-	 	
+*/	 	
 function getReports(){
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error($connection));
@@ -46,7 +46,7 @@ function getReports(){
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
-mysqli_close($connection);
+
 }
 /*
 $review = array();
