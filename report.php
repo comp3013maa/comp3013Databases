@@ -5,12 +5,25 @@ require_once "include/sql_model.php";
 if(!isset($_SESSION['userID'])){
 	header('location: unauthorised.php?');
 }
+/*
+while report exists
+displayReport() //the groupID and free text 
+if (graded) print the review and grade
+else comment box and dropdown and submit button. 
+*/
 
-$review = array();
-echo $review['comment'] = $_POST['comment'];
-echo $review['grade'] = $_POST['grade'];
-
-$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
+$report = array();
+$i = 0;
+	 	while ($row = mysqli_fetch_assoc($result)){
+	 		$report[$i] = $row['submissionName'];
+	 		$i++;
+	 	}
+	 	
+//echo $report = $row['submissionName'];
+//echo $row
+echo file_get_contents($report[0]);
+function getReports(){
+	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error());
 	 
 	$userID = $_SESSION['userID'];
@@ -27,16 +40,14 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
-$report = array();
-$i = 0;
-	 	while ($row = mysqli_fetch_assoc($result)){
-	 		$report[$i] = $row['submissionName'];
-	 		$i++;
-	 	}
-	 	
-//echo $report = $row['submissionName'];
-//echo $row
-echo file_get_contents($report[0]);
+
+}
+
+$review = array();
+echo $review['comment'] = $_POST['comment'];
+echo $review['grade'] = $_POST['grade'];
+
+
 
 date_default_timezone_set("Europe/London");
 $time = date("d/m/y h:ia");
