@@ -35,7 +35,7 @@ $i = 0;
 //echo $report = $row['submissionName'];
 //echo $row
 echo file_get_contents($report[0]);
-echo file_get_contents($report[1]);echo file_get_contents($report[2]);
+echo file_get_contents($report[1]);echo file_get_contents($report[3]);
 date_default_timezone_set("Europe/London");
 $time = date("d/m/y h:ia");
 echo '
