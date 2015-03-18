@@ -149,7 +149,7 @@ public function newGroupAllocation($groupID, $allocateTo) {
 		return $message;
 	} 
 	else {
-		return $message
+		return $message;
 	}
 }
 
