@@ -37,7 +37,7 @@ mysqli_close($connection);
 	while ($row = mysqli_fetch_assoc($result)){
 	//	echo $groupID;	
 	$report[$i] = $row['submissionName'];
-	echo file_get_contents('$reports[$i]');
+	echo file_get_contents($reports[$i]);
 	$i++;	
 
 	}
