@@ -69,7 +69,7 @@ if (isset($_GET['allocateGroups'])) {
 	$groupList = $sql_model->getGroups();  
 	$sql_model->close(); ?>
 
-	<form class="form" method="POST" action="admin.php?allocateGroups">
+	<form class="form-horizontal" method="POST" action="admin.php?allocateGroups">
 	<fieldset>	
 		<div class="form-group">  
 		  <label class="col-md-4 control-label" for="textinput">Chose a group to assign: </label>  
@@ -87,7 +87,7 @@ if (isset($_GET['allocateGroups'])) {
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="textinput">Allocate To: </label>
 		  <div class="col-md-4">
-			<select name = "AllocateTo" class="form-control input-md">
+			<select name = "allocateTo" class="form-control input-md">
 				<?php
 				for ($i=0; $i < count($groupList); $i++ )  {						
 					echo "<option value =" . $groupList[$i] . ">" . $groupList[$i]. "</option>"; 	
@@ -108,7 +108,9 @@ if (isset($_GET['allocateGroups'])) {
 
 	<?php
 	if(isset($_POST['newGroupAllocation'])) {
-			
+			$groupId = $_POST['groupId'];
+			$AllocateTo = $_POST['allocateTo'];
+			echo 'Ruff'; 
 	}
 
 }  
