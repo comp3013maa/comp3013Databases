@@ -31,7 +31,7 @@ $row1 = mysqli_fetch_assoc($result1);
 $groupID = $row1['groupID'];	 
 
 	 $query = "
-	 SELECT submissionName, submissions.groupID
+	 SELECT submissions.submissionID as submissionID, submissionName, submissions.groupID
 	 FROM submissions INNER JOIN groupassignments
 	 ON submissions.groupID = groupassignments.assignedTo
 	 WHERE groupassignments.groupID = $groupID
@@ -46,12 +46,11 @@ mysqli_close($connection);
 		echo file_get_contents($report[$i]) . '<p></p>';
 		$i++;
 		
-		if ($_POST['graded']){echo 'lol';}
-		else{echo 'not lol';}
+		
 		
 	}
 	
-/*
+
 $review = array();
 echo $review['comment'] = $_POST['comment'];
 echo $review['grade'] = $_POST['grade'];
@@ -96,11 +95,12 @@ echo '
         </select>
     </div>
             <div class="form-group">
-                <p><input type="submit" value="Submit review" name="graded"></p>
+            	<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . ' "/>
+                <p><input type="submit" value="Submit review"></p>
             </div>
         </form>
     </div>
 </div>';
-*/
+
 require "footer.php";
 ?>
