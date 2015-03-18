@@ -20,10 +20,16 @@ $i = 0;
 	 
 	$userID = $_SESSION['userID'];
 	 
-	$sql_model = new SQL_Model();
-	$groupID = $sql_model->getUsersGroupID($userID); 
-//	$sql_model->close();
-	 
+	$query1 = "
+	SELECT groupID 
+	FROM users 
+	WHERE userID=$userID
+	";
+
+$result1 = mysqli_query($connection,$query1) or die('Error2' . mysqli_error($connection));
+$row1 = mysqli_fetch_assoc($result1);
+$groupID = $row1['groupID'];	 
+
 	 $query = "
 	 SELECT submissionName, submissions.groupID
 	 FROM submissions INNER JOIN groupassignments
@@ -38,7 +44,11 @@ mysqli_close($connection);
 		echo "Report from group ". $row['groupID'] . '<p></p>';
 		$report[$i] = $row['submissionName'];
 		echo file_get_contents($report[$i]) . '<p></p>';
-		$i++;	
+		$i++;
+		
+		if ($_POST['graded']){echo 'lol';}
+		else{echo 'not lol';}
+		
 	}
 	
 /*
@@ -86,7 +96,7 @@ echo '
         </select>
     </div>
             <div class="form-group">
-                <p><input type="submit" value="Submit review"></p>
+                <p><input type="submit" value="Submit review" name="graded"></p>
             </div>
         </form>
     </div>
