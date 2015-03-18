@@ -69,32 +69,20 @@ $groupList = array();
 $groupList = $sql_model->getGroups();  
 $sql_model->close();
 
+	
+// var_dump($groupList); 
+
+echo '<select name = "groupId">';
 	for ($i=0; $i < count($groupList); $i++ )  {						
-		echo 'Grouplist is: ' . $groupList[$i];
-		/* 
-		if ($row['key_interest'] == 1) {
-			echo "<option value =" . $row['id'] . ">" . $row['interest'] . "</option>"; 						
-		} 
-		else {
-			$otherInterests[] = $row; 
-		} */ 
-	}
-var_dump($groupList);
-echo '<select name = "newAllocation">';
-	for ($i=0; $i < count($groupList); $i++ )  {						
-		/* 
-		if ($row['key_interest'] == 1) {
-			echo "<option value =" . $row['id'] . ">" . $row['interest'] . "</option>"; 						
-		} 
-		else {
-			$otherInterests[] = $row; 
-		} */ 
-	}
-	/*
-	for ($i = 0; $i <= count($otherInterests)-1; $i++) {
-			echo '<option value="' .  $otherInterests[$i]['id'] . '">' .  $otherInterests[$i]['interest'] . '</option>'; 
-	}*/ 
+
+		echo "<option value =" . $groupList[$i] . ">" . $groupList[$i]. "</option>"; 						
 echo '</select>'; 		
+
+echo '<select name = "AllocateTo">';
+	for ($i=0; $i < count($groupList); $i++ )  {						
+
+		echo "<option value =" . $groupList[$i] . ">" . $groupList[$i]. "</option>"; 						
+echo '</select>'; 	
 ?> 
 
 <?php
