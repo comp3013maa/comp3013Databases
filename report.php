@@ -49,7 +49,7 @@ function getReports(){
 	 ";
 	 
 return $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error());
-
+mysqli_close($connection);
 }
 /*
 $review = array();
