@@ -69,7 +69,7 @@ if (isset($_GET['allocateGroups'])) {
 	$groupList = $sql_model->getGroups();  
 	$sql_model->close(); ?>
 
-	<form class="form-horizontal" method="POST" action="admin.php?allocateGroups">
+	<form class="form" method="POST" action="admin.php?allocateGroups">
 	<fieldset>	
 		<div class="form-group">  
 		  <label class="col-md-4 control-label" for="textinput">Chose a group to assign: </label>  
@@ -101,7 +101,7 @@ if (isset($_GET['allocateGroups'])) {
 		<div class="form-group">  
 				<label class="col-md-4 control-label" for="singlebutton"></label>
 				<div class="col-md-4">
-					<button type ="submit "id="singlebutton" name="register" class="btn btn-success"> Register </button>
+					<button type ="submit "id="singlebutton" name="newGroupAllocation" class="btn btn-success"> Assign Group </button>
 				</div>
 		</div>
 	</form>
