@@ -19,6 +19,7 @@ $i = 0;
 	
 	while ($row = mysqli_fetch_assoc($result)){
 		displayReport();
+		
 	}
 
 function displayReport(){
@@ -26,15 +27,7 @@ function displayReport(){
 	ehco file_get_contents($reports[$i]);
 	$i++;
 }
-
-	 
-	 		
-	 		
 	 	
-	 	
-//echo $report = $row['submissionName'];
-//echo $row
-echo file_get_contents($report[0]);
 function getReports(){
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error());
