@@ -15,16 +15,16 @@ else comment box and dropdown and submit button.
 $report = array();
 $i = 0;
 
-echo	$result = getReports(); 
+	$sqlreport = getReports(); 
 	
 	
-/*
-	while ($row = mysqli_fetch_assoc($result)){
+
+	while ($row = mysqli_fetch_assoc($sqlreport)){
 	//	echo $groupID;	
 	//	displayReport();
 	echo $row[$i];
 	$i++;
-	}*/
+	}
 /*
 function displayReport(){
 	$report[$i] = $row['submissionName'];
