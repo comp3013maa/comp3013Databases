@@ -2,7 +2,7 @@
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
 require_once "include/sql_model.php";
 
-echo file_get_contents($report);
+echo file_get_contents('$report');
 
 $review = array();
 echo $review['comment'] = $_POST['comment'];
