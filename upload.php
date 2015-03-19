@@ -70,10 +70,9 @@ if ($validUpload) {
 } 
 else {
 	echo 'File not uploaded. Try again.';
-	header('location: upload.php?');
 }
 
-
+}
 	 $userID = $_SESSION['userID'];
 	 
 	$query1 = 
@@ -96,7 +95,7 @@ else {
 	
 	mysqli_close($connection);
 	
-}
+
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
       <input type="file" name="file" id="file"> <br><br>
