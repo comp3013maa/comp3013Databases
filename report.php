@@ -40,13 +40,13 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		echo file_get_contents($report[$i]) . '<p></p>';
 		$i++;
 		
-/*	
+	
 		$submissionID = $row['submissionID'];
 		$query2 = "SELECT grade, comment
 			FROM grade
 			WHERE submissionID = $submissionID AND byGroup = $groupID
 			";
-	$result2 = mysqli_query($connection,$query2) or die('Error3' . mysqli_error($connection));
+/*	$result2 = mysqli_query($connection,$query2) or die('Error3' . mysqli_error($connection));
 	 if (mysqli_num_rows($result2) == 1) {
 	$row2 = mysqli_fetch_assoc($result2);
 	echo $row2['comment'];
