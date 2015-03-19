@@ -44,8 +44,11 @@ $result4 = mysqli_query($connection,$query4) or die('Error2' . mysqli_error($con
 echo 'Your group is assigned to review groups ';
 
 while($row4 = mysqli_fetch_assoc($result4)){
-	echo $row4['assignedTo'];
+	echo $row4['assignedTo']. ' ';
 }
+
+echo '<p></p>';
+echo 'Submitted reports will be shown below. Please review them'.'<p></p>';
 
 if (isset($_POST['grade']) && (isset($_POST['comments']))){
 	
