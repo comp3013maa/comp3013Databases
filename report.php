@@ -47,19 +47,20 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 			WHERE submissionID = $submissionID AND byGroup = $groupID
 			";
 	$result2 = mysqli_query($connection,$query2) or die('Error3' . mysqli_error($connection));
-/*	 if (mysqli_num_rows($result2) == 1) {
+	 if (mysqli_num_rows($result2) == 1) {
 	$row2 = mysqli_fetch_assoc($result2);
-	echo $row2['comment'];
-	echo $row2['grade'];*/
+	echo $row2['comments'];
+	echo $row2['grade'];
 	}
+	
 /*	
 $query3= "
-INSERT INTO grade (submissionID, grade, comment, byGroup)
-VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comment']', $groupID)
+INSERT INTO grade (submissionID, grade, comments, byGroup)
+VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
 ";*/
 mysqli_close($connection);
 //$review = array();
-//echo $review['comment'] = $_POST['comment'];
+//echo $review['comments'] = $_POST['comments'];
 //echo $review['grade'] = $_POST['grade'];
 
 date_default_timezone_set("Europe/London");
@@ -82,7 +83,7 @@ echo '
        
         <form action="report.php" class="form-inline" method="post" role="form">
             <div class="form-group">
-                <textarea rows="7" cols="80" name="comment" > Your review </textarea>
+                <textarea rows="7" cols="80" name="comments" > Your review </textarea>
             </div>
             <p></p>
             Select Grade
