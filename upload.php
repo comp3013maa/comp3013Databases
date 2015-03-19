@@ -6,6 +6,8 @@ if (!isset($_SESSION['userID'])) {
 	
 }
 
+echo '<h3>Upload your report</h3> <p></p>';
+
 $user = $_SESSION['userID'];
 
  $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
@@ -79,8 +81,8 @@ else {
 	 
 	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysqli_error("$result1"));
 	 	$row = mysqli_fetch_assoc($result1);
-	 echo	$groupID = $row['groupID'];
-	 echo	$filename =  basename($directory);
+	 	$groupID = $row['groupID'];
+	 	$filename =  basename($directory);
 
 	$query2 = 
 	 "INSERT INTO submissions 
