@@ -36,14 +36,15 @@ $query3 = "
 }
 //unlink('uploads/'.'up.txt'); //to delete file
 
-if(isset($_POST['uploaded']) && strlen(basename($FILES['file']['name']))>0) {
+if(isset($_POST['uploaded'])) {
 	
 $file = $_FILES['file']['name'];	
 $directory = 'uploads/'. basename($file);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 
-//if basename($file)
+	if (strlen($directory)>0){
+
 $marker = 0;
 while (file_exists($directory)) {
     $marker = $marker + 1;
@@ -92,7 +93,7 @@ else {
 	$result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 	
 	mysqli_close($connection);
-
+	}
 }
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
