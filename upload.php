@@ -43,15 +43,17 @@ $directory = 'uploads/'. basename($file);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 
+if ($extension == ""){
+	$validUpload = false;
+}
 
-if ($extension == 'txt' || $extension =='doc' || $extension =='docx' || $extension =='pdf'){
 $marker = 0;
 while (file_exists($directory)) {
     $marker = $marker + 1;
     $directory = 'uploads/'.basename($file,'.'.pathinfo($file)['extension']) . $marker . '.' . $extension;
     
 }//adds a number marker if file exists
-}
+
 if ($_FILES['file']['size'] > 2000000) {
     echo 'Cannot exceed 2MB. ';
     $validUpload = false;
