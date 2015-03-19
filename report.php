@@ -65,9 +65,9 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		}
 		else{
 			
-			$subID = $_POST['submissionID'];
-			$grade = $_POST['grade'];
-			$comment = $_POST['comments'];
+			$subID = 1;//$_POST['submissionID'];
+			$grade = 2;//$_POST['grade'];
+			$comment = "warf";//$_POST['comments'];
 			
 			$query3 = "
 				INSERT INTO grade (submissionID, grade, comments, byGroup)
