@@ -64,17 +64,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		</div>  ';
 		}
 		else{
-			
-			$subID = 1;//$_POST['submissionID'];
-			$grade = 2;//$_POST['grade'];
-			$comment = "warf";//$_POST['comments'];
-			
-			$query3 = "
-				INSERT INTO grade (submissionID, grade, comments, byGroup)
-				VALUES ($subID, $grade, '$comment' , $groupID)
-				";
-$result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
-			echo '
+				echo '
 <div class="detailBox">
     <div class="titleBox">
       <label>Grading Assessments</label>
@@ -105,6 +95,16 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
             		<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . '>
             	<p><input type="submit" value="Submit review"></p>
              </div>';
+			$subID = $_POST['submissionID'];
+			$grade = $_POST['grade'];
+			$comment = $_POST['comments'];
+			
+			$query3 = "
+				INSERT INTO grade (submissionID, grade, comments, byGroup)
+				VALUES ($subID, $grade, '$comment' , $groupID)
+				";
+$result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
+		
 		}	
 	}	
 	
