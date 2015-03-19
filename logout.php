@@ -8,7 +8,7 @@
 <?php
 require "header.php";
     session_destroy(); 
-    echo 'logged out';  
+    echo 'You have been succesfully logged out';  
     echo '<a href="index.php"> Go back to index </a> '; 
 ?>
 
