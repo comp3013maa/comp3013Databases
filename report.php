@@ -90,6 +90,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
             <option>9</option>
             <option>10</option>
         </select>
+        </form>
     </div>
             <div class="form-group">
             		<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . '>
