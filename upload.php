@@ -43,7 +43,7 @@ $directory = 'uploads/'. basename($file);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 
-
+//if basename($file)
 $marker = 0;
 while (file_exists($directory)) {
     $marker = $marker + 1;
@@ -55,7 +55,7 @@ if ($_FILES['file']['size'] > 2000000) {
     $validUpload = false;
 }
 
-if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extension != 'docx') {
+if($extension != 'txt' || $extension != 'doc' || $extension != 'pdf' || $extension != 'docx') {
     echo 'Please ensure file is .txt, .docx, or .pdf. ';
     $validUpload = false;
 }
