@@ -96,9 +96,9 @@ else {
 }
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
-   <!--    <input type="file" name="file" id="file"> <br><br> -->
+      <input type="file" name="file" id="file"> <br><br>
    <!--   <input type="submit" value="Submit" name = "uploaded"> -->
-      	<button type ="file "id="singlebutton" name="file" class="btn btn-success"> Choose file </button>
+      	
      	<button type ="submit "id="singlebutton" name="uploaded" class="btn btn-success"> Submit </button>
 
 </form>';
