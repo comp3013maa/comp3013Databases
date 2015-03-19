@@ -49,11 +49,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
                         <ul class="dropdown-menu">
                             <li><a href="contact.php"><i class="icon-envelope"></i> Contact Support</a></li>
                             <li class="divider"></li>
-                            <li><!-- <a href="logout.php"><i class="icon-off"></i> Logout</a> -->
-                            	<form method="POST" action = "logout.php">
-					<p>	<input type="submit" value = "logout" name="logoutForm" class="logoutDesign"> </p> 
-				</form> 
-                            </li>
+                            <li><a href="logout.php"><i class="icon-off"></i> Logout</a></li>
                         </ul>
             </li>
             <?php } ?>
