@@ -63,7 +63,11 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
         </ul>
 		</div>  ';
 		}
-		else{
+		else{$query3= "
+INSERT INTO grade (submissionID, grade, comments, byGroup)
+VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
+";
+$result3 = mysqli_query($connection,$query3) or die('Error' . mysqli_error($connection));
 			echo '
 <div class="detailBox">
     <div class="titleBox">
@@ -97,11 +101,8 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
              </div>';
 		}	
 	}	
-/*	
-$query3= "
-INSERT INTO grade (submissionID, grade, comments, byGroup)
-VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
-";*/
+	
+
 mysqli_close($connection);
 //$review = array();
 //echo $review['comments'] = $_POST['comments'];
