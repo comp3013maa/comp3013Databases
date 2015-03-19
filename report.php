@@ -71,7 +71,7 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
             <li>
                 <div class="commentText">
                     <p class="">'.$row2['comments'].'</p> 
-                    <p class="">Grade:'.$row2['grade'].'10</p> 
+             
                     <span class="date sub-text">'.$time.'</span>
                 </div>
             </li>
