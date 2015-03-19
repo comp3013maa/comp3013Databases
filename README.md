@@ -34,7 +34,7 @@ General
 
 
 Stuff to include in video/report
-- Everything validated - forms validated, mysql injection avoided (mysqli_real_escape_string()
+- Everything validated - forms validated, mysql injection avoided (mysqli_real_escape_string(), - Strong validation checks e.g. registration
 - Uploads - don't insert all the fields into the database - save space by uploading file and storing name of file
 - Normilisation
 - Foreign key definitions in Grade Table
