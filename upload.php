@@ -36,7 +36,7 @@ $query3 = "
 }
 //unlink('uploads/'.'up.txt'); //to delete file
 
-if(isset($_POST['uploaded']) && strlen($_POST['uploaded'])>0) {
+if(isset($_POST['uploaded']) && strlen(basename($FILES['file']['name']))>0) {
 	
 $file = $_FILES['file']['name'];	
 $directory = 'uploads/'. basename($file);
