@@ -41,6 +41,11 @@ $query4 = "
 	";
 	
 $result4 = mysqli_query($connection,$query4) or die('Error2' . mysqli_error($connection));
+echo 'Your group is assigned to review groups ';
+
+while($row4 = mysqli_fetch_assoc($result4)){
+	echo $row4['assignedTo'];
+}
 
 if (isset($_POST['grade']) && (isset($_POST['comments']))){
 	
@@ -57,11 +62,7 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 
 }
 
-echo 'Your group is assigned to review groups ';
 
-while($row4 = mysqli_fetch_assoc($result4)){
-	echo $row4['assigntedTo'];
-}
 
 
 	while ($row = mysqli_fetch_assoc($result)){
