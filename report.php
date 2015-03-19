@@ -6,10 +6,9 @@ if(!isset($_SESSION['userID'])){
 	header('location: unauthorised.php?');
 }
 
-$report = array();
-$i = 0;
-date_default_timezone_set("Europe/London");
-$time = date("d/m/y h:ia");
+
+//date_default_timezone_set("Europe/London");
+//$time = date("d/m/y h:ia");
 
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error($connection));
@@ -35,6 +34,14 @@ $groupID = $row1['groupID'];
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
 
+$query4 = " 
+	SELECT assignedTo
+	FROM groupassignments
+	WHERE groupID = $groupID
+	";
+	
+$result4 = mysqli_query($connection,$query4) or die('Error2' . mysqli_error($connection));
+
 if (isset($_POST['grade']) && (isset($_POST['comments']))){
 	
 			$subID = $_POST['submissionID'];
@@ -49,11 +56,19 @@ if (isset($_POST['grade']) && (isset($_POST['comments']))){
 $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
 
 }
+
+echo 'Your group is assigned to review groups ';
+
+while($row4 = mysqli_fetch_assoc($result4)){
+	echo $row4['assigntedTo'];
+}
+
+
 	while ($row = mysqli_fetch_assoc($result)){
 		echo "Report from group ". $row['groupID'] . '<p></p>';
-	//	$report[$i] = $row['submissionName'];
+
 		echo file_get_contents($row['submissionName']) . '<p></p>';
-		$i++;
+		
 		
 	
 		$submissionID = $row['submissionID'];
