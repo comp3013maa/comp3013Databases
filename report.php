@@ -51,6 +51,15 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		$row2 = mysqli_fetch_assoc($result2);
 		echo $row2['comments'];
 		echo $row2['grade'];
+		echo '<div class="actionBox">
+        <ul class="commentList">
+            <li>
+                <div class="commentText">
+                    <p class="">Good work!</p> <span class="date sub-text">'.$time.'</span>
+                </div>
+            </li>
+        </ul>
+     </div>  ';
 		}
 	}	
 /*	
@@ -72,15 +81,7 @@ echo '
         <button type="button" class="close" aria-hidden="true">&times;</button>
     </div>
     
-    <div class="actionBox">
-        <ul class="commentList">
-            <li>
-                <div class="commentText">
-                    <p class="">Good work!</p> <span class="date sub-text">'.$time.'</span>
-                </div>
-            </li>
-        </ul>
-     </div>  
+    
         <form action="report.php" class="form-inline" method="post" role="form">
             <div class="form-group">
                 <textarea rows="7" cols="80" name="comments" > Your review </textarea>
