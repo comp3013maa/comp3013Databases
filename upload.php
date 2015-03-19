@@ -5,6 +5,28 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
+
+$user = $_SESSION['userID'];
+
+$query = "
+	SELECT groupID
+	FROM users
+	WHERE userID =  $user
+	";
+
+$result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
+$row = mysqli_fetch_assoc($result);
+$groupID = $row['groupID'];	 
+
+$query3 = "
+	SELECT groupID
+	FROM submissions
+	WHERE groupID = $groupID
+	";
+	$result3 = mysqli_query($connection,$query3) or die('Error3' . mysqli_error($connection));
+	if (mysqli_num_rows($result3) == 1) {
+		header('location: submitted.php?');
+}
 //unlink('uploads/'.'up.txt'); //to delete file
 
 if(isset($_POST['uploaded'])) {
@@ -61,7 +83,7 @@ else {
 	 (submissionName, groupID)
 	 VALUES ('$directory', $groupID)";  
 	 
-	$result = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
+	$result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 	
 	mysqli_close($connection);
 
