@@ -90,13 +90,17 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
             <option>9</option>
             <option>10</option>
         </select>
-        </form>
     </div>
-            <div class="form-group">
-            		<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . '>
-            	<p><input type="submit" value="Submit review"></p>
+	    <div class="form-group">
+	    		<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . '>
+	    	<p><input type="submit" value="Submit review"></p>
+        </form>
              </div>';
-			$subID = $_POST['submissionID'];
+		
+		
+		}	
+	}	
+		$subID = $_POST['submissionID'];
 			$grade = $_POST['grade'];
 			$comment = $_POST['comments'];
 			
@@ -105,10 +109,6 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 				VALUES ($subID, $grade, '$comment' , $groupID)
 				";
 $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
-		
-		}	
-	}	
-	
 
 mysqli_close($connection);
 //$review = array();
