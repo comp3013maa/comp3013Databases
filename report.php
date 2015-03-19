@@ -51,7 +51,9 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		$row2 = mysqli_fetch_assoc($result2);
 		echo $row2['comments'];
 		echo $row2['grade'];
-		echo '<div class="actionBox">
+	
+		}
+			echo '<div class="actionBox">
         <ul class="commentList">
             <li>
                 <div class="commentText">
@@ -60,7 +62,6 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
             </li>
         </ul>
      </div>  ';
-		}
 	}	
 /*	
 $query3= "
