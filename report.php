@@ -47,12 +47,12 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 			WHERE submissionID = $submissionID AND byGroup = $groupID
 			";
 	$result2 = mysqli_query($connection,$query2) or die('Error3' . mysqli_error($connection));
-	 if (mysqli_num_rows($result2) == 1) {
-	$row2 = mysqli_fetch_assoc($result2);
-	echo $row2['comments'];
-	echo $row2['grade'];
-	}
-	
+		if (mysqli_num_rows($result2) == 1) {
+		$row2 = mysqli_fetch_assoc($result2);
+		echo $row2['comments'];
+		echo $row2['grade'];
+		}
+	}	
 /*	
 $query3= "
 INSERT INTO grade (submissionID, grade, comments, byGroup)
