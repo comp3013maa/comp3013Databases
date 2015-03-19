@@ -70,7 +70,7 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">test review' . $row2['comments']. '</p> 
+                    <p class="">' . $row2['comments']. '</p> 
              
                     <span class="date sub-text">'.$time.'</span>
                 </div>
