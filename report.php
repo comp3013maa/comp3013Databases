@@ -8,7 +8,9 @@ if(!isset($_SESSION['userID'])){
 
 $report = array();
 $i = 0;
-	
+date_default_timezone_set("Europe/London");
+$time = date("d/m/y h:ia");
+
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error($connection));
 	 
@@ -51,9 +53,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		$row2 = mysqli_fetch_assoc($result2);
 		echo $row2['comments'];
 		echo $row2['grade'];
-	
-		}
-			echo '<div class="actionBox">
+	echo '<div class="actionBox">
         <ul class="commentList">
             <li>
                 <div class="commentText">
@@ -61,21 +61,10 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
                 </div>
             </li>
         </ul>
-     </div>  ';
-	}	
-/*	
-$query3= "
-INSERT INTO grade (submissionID, grade, comments, byGroup)
-VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
-";*/
-mysqli_close($connection);
-//$review = array();
-//echo $review['comments'] = $_POST['comments'];
-//echo $review['grade'] = $_POST['grade'];
-
-date_default_timezone_set("Europe/London");
-$time = date("d/m/y h:ia");
-echo '
+		</div>  ';
+		}
+		else{
+			echo '
 <div class="detailBox">
     <div class="titleBox">
       <label>Grading Assessments</label>
@@ -106,5 +95,19 @@ echo '
             		<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . '>
             	<p><input type="submit" value="Submit review"></p>
              </div>';
+		}	
+	}	
+/*	
+$query3= "
+INSERT INTO grade (submissionID, grade, comments, byGroup)
+VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
+";*/
+mysqli_close($connection);
+//$review = array();
+//echo $review['comments'] = $_POST['comments'];
+//echo $review['grade'] = $_POST['grade'];
+
+
+
 require "footer.php";
 ?>
