@@ -43,7 +43,7 @@ $directory = 'uploads/'. basename($file);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 
-if ($extension == ""){
+if ($extension == " "){
 	$validUpload = false;
 }
 
