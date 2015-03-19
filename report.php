@@ -32,7 +32,7 @@ $groupID = $row1['groupID'];
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
-mysqli_close($connection);
+
 
 	while ($row = mysqli_fetch_assoc($result)){
 		echo "Report from group ". $row['groupID'] . '<p></p>';
@@ -52,16 +52,15 @@ mysqli_close($connection);
 	echo $row2['comment'];
 	echo $row2['grade'];*/
 	}
-	
+/*	
 $query3= "
 INSERT INTO grade(submissionID, grade, comment, byGroup)
 VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comment']', $groupID)
-";
+";*/
+mysqli_close($connection);
 //$review = array();
 //echo $review['comment'] = $_POST['comment'];
 //echo $review['grade'] = $_POST['grade'];
-
-
 
 date_default_timezone_set("Europe/London");
 $time = date("d/m/y h:ia");
