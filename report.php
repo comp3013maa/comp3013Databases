@@ -63,10 +63,10 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
         </ul>
 		</div>  ';
 		}
-		else{
-			$query3= "
+	/*	else{
+			$query3 = "
 				INSERT INTO grade (submissionID, grade, comments, byGroup)
-				VALUES ($row['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
+				VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
 				";
 $result3 = mysqli_query($connection,$query3) or die('Error4' . mysqli_error($connection));
 			echo '
@@ -100,7 +100,7 @@ $result3 = mysqli_query($connection,$query3) or die('Error4' . mysqli_error($con
             		<input type = "hidden" name = "submissionID" value = ' . $row['submissionID'] . '>
             	<p><input type="submit" value="Submit review"></p>
              </div>';
-		}	
+		}*/	
 	}	
 	
 
