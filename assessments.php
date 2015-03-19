@@ -5,7 +5,7 @@ if(!isset($_SESSION['userID'])){
 	header('location: unauthorised.php?');
 }
 
-echo '<p><h3>View Assessments</h3></p>'.'<p>You are graded by groups </p>'.;
+echo '<p><h3>View Assessments</h3></p>'.'<p>You are graded by groups </p>';
 
 
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
