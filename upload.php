@@ -43,9 +43,7 @@ $directory = 'uploads/'. basename($file);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 
-if ($extension == " "){
-	$validUpload = false;
-}
+
 
 $marker = 0;
 while (file_exists($directory)) {
@@ -72,6 +70,7 @@ if ($validUpload) {
 } 
 else {
 	echo 'File not uploaded. Try again.';
+	header('location: upload.php?');
 }
 
 
