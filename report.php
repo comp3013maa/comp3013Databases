@@ -53,11 +53,11 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		echo $row2['grade'];
 		}
 	}	
-	
+/*	
 $query3= "
 INSERT INTO grade (submissionID, grade, comments, byGroup)
 VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
-";
+";*/
 mysqli_close($connection);
 //$review = array();
 //echo $review['comments'] = $_POST['comments'];
@@ -80,7 +80,7 @@ echo '
                 </div>
             </li>
         </ul>
-       
+     </div>  
         <form action="report.php" class="form-inline" method="post" role="form">
             <div class="form-group">
                 <textarea rows="7" cols="80" name="comments" > Your review </textarea>
