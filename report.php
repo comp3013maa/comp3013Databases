@@ -64,14 +64,14 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 	$result2 = mysqli_query($connection,$query2) or die('Error3' . mysqli_error($connection));
 		if (mysqli_num_rows($result2) == 1) {
 		$row2 = mysqli_fetch_assoc($result2);
-		echo $row2['comments'];
-		echo $row2['grade'];
+	//	echo $row2['comments'];
+	//	echo $row2['grade'];
 	echo '<div class="actionBox">
         <ul class="commentList">
             <li>
                 <div class="commentText">
                     <p class="">' . $row2['comments']. '</p> 
-             
+             		 <p class="">' . $row2['grade']. '</p> 
                     <span class="date sub-text">'.$time.'</span>
                 </div>
             </li>
