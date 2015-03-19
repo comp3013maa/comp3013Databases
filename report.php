@@ -54,7 +54,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 	}
 	
 $query3= "
-INSERT INTO grade(submissionID, grade, comment, byGroup)
+INSERT INTO grade (submissionID, grade, comment, byGroup)
 VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comment']', $groupID)
 ";
 mysqli_close($connection);
