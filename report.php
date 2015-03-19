@@ -34,7 +34,7 @@ $groupID = $row1['groupID'];
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
-
+if (isset($_POST['grade'] && $_POST['comments'])){
 			$subID = $_POST['submissionID'];
 			$grade = $_POST['grade'];
 			$comment = $_POST['comments'];
@@ -46,7 +46,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 				
 $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
 
-
+}
 	while ($row = mysqli_fetch_assoc($result)){
 		echo "Report from group ". $row['groupID'] . '<p></p>';
 		$report[$i] = $row['submissionName'];
