@@ -42,3 +42,4 @@ Stuff to include in video/report
 - group by query in admin allocate 
 - Created sql_model class - has class structure - allows us to use mvc by having all model data in this class, and having view logic in the view files (e.g. admin.php?allocateGroups). However may not have used everywhere due to time - only found about class use a week before deadline so didn't have time to convert everything over. A lot of sql queries remain in the php classes relevant to them. 
 Used it for admin.php - using php classes. Also heavily validated - e.g. assigning a new group, adding a new user, goes through various checks (filtering input) and escaping output (prepared statements / mysqli_real_escape_string / htmlentities() use). 
+- Used prepared statements in sql_model class
