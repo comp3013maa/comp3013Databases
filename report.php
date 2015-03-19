@@ -42,7 +42,7 @@ $query4 = "
 	
 $result4 = mysqli_query($connection,$query4) or die('Error2' . mysqli_error($connection));
 
-echo '<h3>Peer Assessment</h3>';
+echo '<h3>Submit Gradings</h3>';
 
 echo 'Your group is assigned to review groups ';
 
