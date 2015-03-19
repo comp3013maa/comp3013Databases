@@ -43,14 +43,14 @@ $directory = 'uploads/'. basename($file);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 
-	if (strlen($directory)>0){
 
+if ($extension == 'txt' || $extension =='doc' || $extension =='docx' || $extension =='pdf'){
 $marker = 0;
 while (file_exists($directory)) {
     $marker = $marker + 1;
     $directory = 'uploads/'.basename($file,'.'.pathinfo($file)['extension']) . $marker . '.' . $extension;
 }//adds a number marker if file exists
-
+}
 if ($_FILES['file']['size'] > 2000000) {
     echo 'Cannot exceed 2MB. ';
     $validUpload = false;
@@ -93,7 +93,7 @@ else {
 	$result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 	
 	mysqli_close($connection);
-	}
+	
 }
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
