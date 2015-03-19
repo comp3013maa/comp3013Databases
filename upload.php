@@ -42,7 +42,7 @@ $file = $_FILES['file']['name'];
 $directory = 'uploads/'. basename($file);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
-
+echo 'extension gives '. $extension;
 
 if ($extension == 'txt' || $extension =='doc' || $extension =='docx' || $extension =='pdf'){
 $marker = 0;
