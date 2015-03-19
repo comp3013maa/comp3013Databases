@@ -48,7 +48,7 @@ while($row4 = mysqli_fetch_assoc($result4)){
 }
 
 echo '<p></p>';
-echo 'Submitted reports will be shown below. Please review them'.'<p></p>';
+echo 'Submitted reports are shown below. Please review them.'.'<p></p>';
 
 if (isset($_POST['grade']) && (isset($_POST['comments']))){
 	
