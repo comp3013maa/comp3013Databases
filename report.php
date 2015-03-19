@@ -46,15 +46,16 @@ mysqli_close($connection);
 			FROM grade
 			WHERE submissionID = $submissionID AND byGroup = $groupID
 			";
-	
-		// either it gives back a row - if so echo it
-		
-		// or nothing, if so show comment box
+	$result2 = mysqli_query($connection,$query2) or die('Error3' . mysqli_error($connection));
+	 if (mysqli_num_rows($result2) == 1) {
+	$row2 = mysqli_fetch_assoc($result2);
+	echo $row2['comment'];
+	echo $row2['grade'];
 	}
 	
 $query3= "
 INSERT INTO grade(submissionID, grade, comment, byGroup)
-VALUES ($submissionID, $_POST['grade'], '$_POST['comment']', $groupID)
+VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comment']', $groupID)
 ";
 //$review = array();
 //echo $review['comment'] = $_POST['comment'];
