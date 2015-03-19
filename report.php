@@ -39,7 +39,7 @@ mysqli_close($connection);
 		$report[$i] = $row['submissionName'];
 		echo file_get_contents($report[$i]) . '<p></p>';
 		$i++;
-		
+/*		
 		// either comment box or the review 
 		$submissionID = $row['submissionID'];
 		$query2 = "SELECT grade, comment
@@ -50,7 +50,7 @@ mysqli_close($connection);
 	 if (mysqli_num_rows($result2) == 1) {
 	$row2 = mysqli_fetch_assoc($result2);
 	echo $row2['comment'];
-	echo $row2['grade'];
+	echo $row2['grade'];*/
 	}
 	
 $query3= "
