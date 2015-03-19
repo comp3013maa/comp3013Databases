@@ -35,6 +35,17 @@ $groupID = $row1['groupID'];
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
 
+			$subID = $_POST['submissionID'];
+			$grade = $_POST['grade'];
+			$comment = $_POST['comments'];
+			
+			$query3 = "
+				INSERT INTO grade (submissionID, grade, comments, byGroup)
+				VALUES ($subID, $grade, '$comment' , $groupID)
+				";
+				
+$result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
+
 
 	while ($row = mysqli_fetch_assoc($result)){
 		echo "Report from group ". $row['groupID'] . '<p></p>';
@@ -100,15 +111,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		
 		}	
 	}	
-		$subID = $_POST['submissionID'];
-			$grade = $_POST['grade'];
-			$comment = $_POST['comments'];
-			
-			$query3 = "
-				INSERT INTO grade (submissionID, grade, comments, byGroup)
-				VALUES ($subID, $grade, '$comment' , $groupID)
-				";
-$result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
+		
 
 mysqli_close($connection);
 //$review = array();
