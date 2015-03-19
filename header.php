@@ -72,7 +72,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
     <ul class="nav nav-pills nav-stacked admin-menu">
         <li class=""><a href="index.php">Home</a></li>
         <li><a href="upload.php">Upload Reports </a></li>
-        <li><a href="report.php">Group Reports</a></li>
+        <li><a href="groupreports.php">Group Reports</a></li>
         <li><a href="admin.php">Admin </a></li>
         <li><a href="forum.php" data-target-id="forms">Forums </a></li>
         <li><a href="#">Others if needed</a></li>
