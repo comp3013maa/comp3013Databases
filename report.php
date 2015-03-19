@@ -69,7 +69,7 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 
 
 	while ($row = mysqli_fetch_assoc($result)){
-		echo "Report from group ". $row['groupID'] . '<p></p>';
+		echo "<label> Report from group ". $row['groupID'] . ' </label><p></p>';
 
 		echo file_get_contents($row['submissionName']) . '<p></p>';
 		
@@ -101,14 +101,14 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 				echo '
 <div class="detailBox">
     <div class="titleBox">
-      <label>Grading Assessments</label>
+      <label>Your review</label>
         <button type="button" class="close" aria-hidden="true">&times;</button>
     </div>
     
     
         <form action="report.php" class="form-inline" method="post" role="form">
             <div class="form-group">
-                <textarea rows="7" cols="80" name="comments" > Your review </textarea>
+                <textarea rows="7" cols="80" name="comments" > </textarea>
             </div>
             <p></p>
             Select Grade
