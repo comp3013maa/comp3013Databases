@@ -64,14 +64,14 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		</div>  ';
 		}
 		else{
-			$comment = array();
+			
 			$subID = $_POST['submissionID'];
 			$grade = $_POST['grade'];
-			$comment['comment'] = $_POST['comments'];
+			$comment = $_POST['comments'];
 			
 			$query3 = "
 				INSERT INTO grade (submissionID, grade, comments, byGroup)
-				VALUES ($subID, $grade, '${comment['comment']}', $groupID)
+				VALUES ($subID, $grade, 'good work', $groupID)
 				";
 $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
 			echo '
