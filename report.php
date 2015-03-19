@@ -66,7 +66,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		else{
 			$query3= "
 				INSERT INTO grade (submissionID, grade, comments, byGroup)
-				VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comments']', $groupID)
+				VALUES ($_POST['submissionID'], $_POST['grade'], $_POST['comments'], $groupID)
 				";
 $result3 = mysqli_query($connection,$query3) or die('Error4' . mysqli_error($connection));
 			echo '
