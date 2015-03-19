@@ -8,6 +8,9 @@ if (!isset($_SESSION['userID'])) {
 
 $user = $_SESSION['userID'];
 
+ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
+	 or die('Error' . mysqli_error());
+
 $query = "
 	SELECT groupID
 	FROM users
@@ -25,6 +28,8 @@ $query3 = "
 	";
 	$result3 = mysqli_query($connection,$query3) or die('Error3' . mysqli_error($connection));
 	if (mysqli_num_rows($result3) == 1) {
+		mysqli_close($connection);
+
 		header('location: submitted.php?');
 }
 //unlink('uploads/'.'up.txt'); //to delete file
@@ -63,8 +68,7 @@ else {
 	echo 'File not uploaded. Try again.';
 }
 
- $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error' . mysqli_error());
+
 	 $userID = $_SESSION['userID'];
 	 
 	$query1 = 
