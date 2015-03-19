@@ -42,7 +42,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		
 	
 		$submissionID = $row['submissionID'];
-		$query2 = "SELECT grade, comment
+		$query2 = "SELECT grade, comments
 			FROM grade
 			WHERE submissionID = $submissionID AND byGroup = $groupID
 			";
