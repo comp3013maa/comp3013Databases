@@ -52,11 +52,11 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 	echo $row2['comment'];
 	echo $row2['grade'];*/
 	}
-/*	
+	
 $query3= "
 INSERT INTO grade(submissionID, grade, comment, byGroup)
 VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comment']', $groupID)
-";*/
+";
 mysqli_close($connection);
 //$review = array();
 //echo $review['comment'] = $_POST['comment'];
