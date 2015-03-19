@@ -36,7 +36,7 @@ $query3 = "
 }
 //unlink('uploads/'.'up.txt'); //to delete file
 
-if(isset($_POST['uploaded'])) {
+if(isset($_POST['uploaded']) && strlen($_POST['uploaded'])>0) {
 	
 $file = $_FILES['file']['name'];	
 $directory = 'uploads/'. basename($file);
@@ -55,7 +55,7 @@ if ($_FILES['file']['size'] > 2000000) {
     $validUpload = false;
 }
 
-if($extension != 'txt' || $extension != 'doc' || $extension != 'pdf' || $extension != 'docx') {
+if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extension != 'docx') {
     echo 'Please ensure file is .txt, .docx, or .pdf. ';
     $validUpload = false;
 }
@@ -97,8 +97,6 @@ else {
 echo '
 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
       <input type="file" name="file" id="file"> <br><br>
-   <!--   <input type="submit" value="Submit" name = "uploaded"> -->
-      	
      	<button type ="submit "id="singlebutton" name="uploaded" class="btn btn-success"> Submit </button>
 
 </form>';
