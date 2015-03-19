@@ -70,7 +70,7 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 			
 			$query3 = "
 				INSERT INTO grade (submissionID, grade, comments, byGroup)
-				VALUES ($subID, $grade, $comments, $groupID)
+				VALUES ($subID, $grade, '$comments', $groupID)
 				";
 $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($connection));
 			echo '
