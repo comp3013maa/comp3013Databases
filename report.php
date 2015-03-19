@@ -39,8 +39,8 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		$report[$i] = $row['submissionName'];
 		echo file_get_contents($report[$i]) . '<p></p>';
 		$i++;
-/*		
-		// either comment box or the review 
+		
+	
 		$submissionID = $row['submissionID'];
 		$query2 = "SELECT grade, comment
 			FROM grade
@@ -50,13 +50,13 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 	 if (mysqli_num_rows($result2) == 1) {
 	$row2 = mysqli_fetch_assoc($result2);
 	echo $row2['comment'];
-	echo $row2['grade'];*/
+	echo $row2['grade'];
 	}
-	
+/*	
 $query3= "
 INSERT INTO grade (submissionID, grade, comment, byGroup)
 VALUES ($_POST['submissionID'], $_POST['grade'], '$_POST['comment']', $groupID)
-";
+";*/
 mysqli_close($connection);
 //$review = array();
 //echo $review['comment'] = $_POST['comment'];
