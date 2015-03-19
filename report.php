@@ -41,9 +41,10 @@ $query4 = "
 	";
 	
 $result4 = mysqli_query($connection,$query4) or die('Error2' . mysqli_error($connection));
-echo 'Your group is assigned to review groups ';
 
 echo '<h3>Peer Assessment</h3>';
+
+echo 'Your group is assigned to review groups ';
 
 while($row4 = mysqli_fetch_assoc($result4)){
 	echo $row4['assignedTo']. ' ';
