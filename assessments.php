@@ -1,6 +1,12 @@
 <?php
 require "header.php"; 
 
+if(!isset($_SESSION['userID'])){
+	header('location: unauthorised.php?');
+}
+
+echo '<p><h3>View Assessments</h3></p>';
+
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error($connection));
 	 
