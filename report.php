@@ -34,7 +34,9 @@ $groupID = $row1['groupID'];
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
-if (isset($_POST['grade'])){
+
+if (isset($_POST['grade']) && (isset($_POST['comments']))){
+	
 			$subID = $_POST['submissionID'];
 			$grade = $_POST['grade'];
 			$comment = $_POST['comments'];
