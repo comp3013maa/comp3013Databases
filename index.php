@@ -28,7 +28,7 @@ if (!isset($_SESSION['userID'])) {
             </div>
             <div class="panel-body">
                	<ul> 
-		<li id = "indexList"> <a href = "" class="listLinks"> Submit Gradings </a></li>
+		<li id = "indexList"> <a href = "report.php" class="listLinks"> Submit Gradings </a></li>
 		<li id = "indexList"> <a href = "" class="listLinks"> View Assessements </a></li>
 		<li id = "indexList"> <a href = "" class="listLinks"> View Rankings </a></li>
                </ul>
