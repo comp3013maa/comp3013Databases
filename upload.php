@@ -85,14 +85,14 @@ else {
 	 	$row = mysqli_fetch_assoc($result1);
 	 	$groupID = $row['groupID'];
 	 	$filename =  basename($directory);
-
+if ($validUpload){
 	$query2 = 
 	 "INSERT INTO submissions 
 	 (submissionName, groupID)
 	 VALUES ('$directory', $groupID)";  
 	 
 	$result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
-	
+}
 	mysqli_close($connection);
 	
 
