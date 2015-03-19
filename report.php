@@ -51,8 +51,8 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 }
 	while ($row = mysqli_fetch_assoc($result)){
 		echo "Report from group ". $row['groupID'] . '<p></p>';
-		$report[$i] = $row['submissionName'];
-		echo file_get_contents($report[$i]) . '<p></p>';
+	//	$report[$i] = $row['submissionName'];
+		echo file_get_contents($row['submissionName']) . '<p></p>';
 		$i++;
 		
 	
