@@ -25,7 +25,9 @@ $query = "
         FROM grade
         INNER JOIN groupassignments
 	ON grade.byGroup = groupassignments.groupID
-        WHERE groupassignments.assignedTo = $groupID
+	INNER JOIN submissions
+        ON grade.submissionID = submissions.submissionID
+        WHERE groupassignments.assignedTo = $groupID AND submissions.groupID = $groupID
         ";
 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
