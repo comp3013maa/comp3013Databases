@@ -1,5 +1,5 @@
 <?php
-function DbConnect () {
+function dbConnect () {
 	$host = 'eu-cdbr-azure-west-b.cloudapp.net'; 
 	$user = 'b6526a64c19791'; 
 	$pass = '5d020f59'; 
