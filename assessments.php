@@ -48,21 +48,20 @@ echo '<p></p>';
 echo "Your group's assessments are shown below.". "<p></p>";
 
   	while($row = mysqli_fetch_assoc($result)){
-  		echo '<div class="well">';
-  			echo '<label> Report from group '. $row['byGroup'] . ' </label><p></p>';
+  		echo '<div class="well">
+  		 	<label> Review from group '. $row['byGroup'] . ' </label><p></p>';
   			
-echo '<div class="actionBox">
-        <ul class="commentList">
-            <li>
-                <div class="commentText">
-                    <p class="">' . $row['comments']. '</p> 
-             		 <p class="">Grade: ' . $row['grade']. '/10</p> 
-                </div>
-            </li>
-        </ul>
-		</div>  ';
-               
-                echo '</div>';
+		echo 	'<div class="actionBox">
+			 	<ul class="commentList">
+        		    		<li>
+        			      	<div class="commentText">
+        		        		<p class="">' . $row['comments']. '</p> 
+             					<p class="">Grade: ' . $row['grade']. '/10</p> 
+                			</div>
+        				</li>
+				 </ul>
+			</div> 
+                	</div>';
         }
         
 mysqli_close($connection);
