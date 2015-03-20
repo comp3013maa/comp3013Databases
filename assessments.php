@@ -45,7 +45,7 @@ while($row2 = mysqli_fetch_assoc($result2)){
 }
 
 echo '<p></p>';
-echo 'Your group's assessments are shown below.'<p></p>';
+echo 'Your group's assessments are shown below.'. '<p></p>';
 
   	  while($row = mysqli_fetch_assoc($result)){
                 echo $row['byGroup'];
