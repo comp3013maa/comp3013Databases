@@ -109,11 +109,18 @@ if (isset($_GET['allocateGroups'])) {
 
 if (isset($_GET['rankings'])) {
 	echo '<h3>Group Rankings</h3> <br />
-		<p> These groups are ranked according with the aggregation of peer assessments on their submissions</p>
-		'; 
+	<p> Groups Ranked according to an aggregation of score (an average of scores): </p>  ';
 	$sql_model = new SQL_Model();
-	echo $sql_model->adminGetGroupRankings();
-	$sql_model->close();
+	echo $sql_model->getGroupAverageScores();
+	$sql_model->close();	
+		
+	echo'	<br />
+	<p> These groups are ranked according with the aggregation of peer assessments on their submissions 
+	(from point 12 - a little vague so we did it through both an aggregation of scores as above and assessement numbers as here). </p>
+	'; 
+	$sql_model2 = new SQL_Model();
+	echo $sql_model2->adminGetGroupRankings();
+	$sql_model2->close();
 }
 
 ?>
