@@ -26,7 +26,7 @@ $query = "
         INNER JOIN groupassignments
 	ON grade.byGroup = groupassignments.groupID
         WHERE groupassignments.assignedTo = $groupID
-          ";
+        ";
 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
   	
@@ -49,10 +49,19 @@ echo "Your group's assessments are shown below.". "<p></p>";
 
   	while($row = mysqli_fetch_assoc($result)){
   		echo '<div class="well">';
-  			echo "<label> Report from group ". $row['byGroup'] . ' </label><p></p>';
-
-                echo $row['comments'];
-                echo $row['grade'];
+  			echo '<label> Report from group '. $row['byGroup'] . ' </label><p></p>';
+  			
+echo '<div class="actionBox">
+        <ul class="commentList">
+            <li>
+                <div class="commentText">
+                    <p class="">' . $row['comments']. '</p> 
+             		 <p class="">Grade: ' . $row['grade']. '/10</p> 
+                </div>
+            </li>
+        </ul>
+		</div>  ';
+               
                 echo '</div>';
         }
         
