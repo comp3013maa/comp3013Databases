@@ -5,11 +5,15 @@ if(!isset($_SESSION['userID'])){
 	header('location: unauthorised.php?');
 }
 
-echo '<p><h3>View Assessments</h3></p>'.'<p>You are graded by groups </p>';
-
-
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error($connection));
+
+echo '<h3>Submit Gradings</h3>';
+echo 'Your group is assigned to review groups ';
+
+while($row2 = mysqli_fetch_assoc($result2)){
+	 $row2['groupID']. ' ';
+}
 	 
  $userID = $_SESSION['userID'];
 	 
@@ -38,9 +42,17 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
                 echo $row['grade'];
         }
         
-          
-          
+  	$query2 = " 
+		SELECT groupID
+		FROM groupassignments
+		WHERE assignedTo = $groupID
+		";
+	
+$result2 = mysqli_query($connection,$query2) or die('Error2' . mysqli_error($connection));
+  	
 mysqli_close($connection);
+
+echo '<p><h3>View Assessments</h3></p>'.'<p>You are graded by groups </p>';
 
 require "footer.php";
 ?>
