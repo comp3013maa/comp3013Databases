@@ -10,7 +10,7 @@ if(!isset($_SESSION['userID'])){
 	 or die('Error1' . mysqli_error($connection));
 	 
 	$userID = $_SESSION['userID'];
-	 
+	$userID =  mysqli_real_escape_string($connection, $userID);
 	$query1 = "
 	SELECT groupID 
 	FROM users 
@@ -18,7 +18,6 @@ if(!isset($_SESSION['userID'])){
 	";
 
 $result1 = mysqli_query($connection,$query1) or die('Error2' . mysqli_error($connection));
-mysqli_real_escape_string($connection, $result1);
 $row1 = mysqli_fetch_assoc($result1);
 $groupID = $row1['groupID'];	 
 
