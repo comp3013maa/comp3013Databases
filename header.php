@@ -42,6 +42,14 @@ $_SESSION['LAST_ACTIVITY'] = time();
             <li><a href="contact.php">Contact</a></li>
           </ul>
 
+          <?php if( !isset ($_SESSION['userID']) ) {?> 
+            <form class="navbar-form pull-right" method = "POST" action="login.php">
+             <input id="textinput" name="username" type="text" class="form-control input-md" placeholder="Username">
+             <input id="passwordinput" name="password" type="password" class="form-control input-md" placeholder="Password">
+              <button type="submit" class="btn btn-primary" name="loginForm">Sign in</button>
+            </form>
+          <?php }  ?>
+
           <ul class="nav navbar-nav navbar-right">
 
             <?php  if( isset ($_SESSION['userID']) ) {?> 
@@ -71,7 +79,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
         <li><a href="groupreports.php">Group Reports</a></li>
         <li><a href="admin.php">Admin </a></li>
         <li><a href="forum.php" data-target-id="forms">Forums </a></li>
-        <li><a href="#">Others if needed</a></li>
     </ul>
 </div>
 
@@ -82,8 +89,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
 <?php 
 if( isset ($_SESSION['userID']) ) {
-	echo '<p class="lol"> Hi user: ' . $_SESSION['userName'] . ' <br /> with userID: ' . $_SESSION['userID'] . '</p>';
-	
 	define("DEBUG", true);
 	if (DEBUG) {
 	    	ini_set("display_errors",1);
