@@ -112,6 +112,13 @@ echo '<h3>Group Rankings</h3> <br />
 	<p> These groups are ranked according with the aggregation of peer assessments on their submissions</p>
 '; 
 
+/*SELECT groupID, count(groupID) as aggregatePeerAssessments
+FROM submissions
+INNER JOIN grade
+ON submissions.submissionID = grade.submissionID
+GROUP BY groupID
+ORDER BY aggregatePeerAssessments DESC
+*/
 }
 
 ?>
