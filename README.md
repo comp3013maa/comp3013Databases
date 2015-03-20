@@ -31,6 +31,7 @@ Mahi
 
 
 Stuff to include in video/report
+- Provide login details for website to graham
 - Everything validated - forms validated, mysql injection avoided (mysqli_real_escape_string(), - Strong validation checks e.g. registration
 - Uploads - don't insert all the fields into the database - save space by uploading file and storing name of file
 - Normilisation
