@@ -8,8 +8,9 @@ Anuz
 - 1. student-users will upload free text reports to their group account
 - 2. student-users will be able to visually browse the other groups’ reports they have been allocated to review
 - 3. student-users will submit grading assessments and comments on the reports assigned to them
+- 4. student-users will be able to view assessments on their own reports made by other groups
 - Done login/design etc 
-- (these ones join in with 1/2/3)  4. student-users will be able to view assessments on their own reports made by other groups
+
 
 Abbas 
 - 7. student-users in a group will be able to discuss submissions with other members of their group via a forum which is threaded, browseable and searchable
