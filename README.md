@@ -41,3 +41,4 @@ Stuff to include in video/report
 Used it for admin.php - using php classes. Also heavily validated - e.g. assigning a new group, adding a new user, goes through various checks (filtering input) and escaping output (prepared statements / mysqli_real_escape_string / htmlentities() use). 
 - Used prepared statements in sql_model class
 - Customised error messageges - e.g. unaothorised.php access, registration, login - using helper_functions classes to give these message functions - errorMessage($title, $message), successMessage($title, $message)
+- For good queries, maybe everyone go through their files and talk about good ones
