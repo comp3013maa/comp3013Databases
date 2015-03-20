@@ -38,11 +38,15 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 	
 $result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 	
-	echo '<p><h3>View Assessments</h3></p>'.'<p>You are graded by groups </p>';
+	echo '<p><h3>View Assessments</h3></p>'.'You are graded by groups ';
 
 while($row2 = mysqli_fetch_assoc($result2)){
 	echo $row2['groupID']. ' ';
 }
+
+echo '<p></p>';
+echo 'Your group's assessments are shown below.'<p></p>';
+
   	  while($row = mysqli_fetch_assoc($result)){
                 echo $row['byGroup'];
                 echo $row['comments'];
