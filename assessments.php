@@ -8,8 +8,8 @@ if(!isset($_SESSION['userID'])){
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error($connection));
 	 
- $userID = $_SESSION['userID'];
-	 
+$userID = $_SESSION['userID'];
+$userID =  mysqli_real_escape_string($connection, $userID);
 	 $query1 = "
                 SELECT groupID 
                 FROM users 
@@ -19,6 +19,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 $result1 = mysqli_query($connection,$query1) or die('Error1' . mysqli_error($connection));
 $row1 = mysqli_fetch_assoc($result1);
 $groupID = $row1['groupID'];	 
+$groupID =  mysqli_real_escape_string($connection, $groupID);
 
 $query = "
         SELECT grade, comments, byGroup
