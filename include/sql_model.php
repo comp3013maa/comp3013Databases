@@ -339,4 +339,36 @@ public function adminGetGroupRankings() {
  	return $output;
 }
 
+public function getGroupAverageScores() {
+	$stmt = $this->conn->prepare("
+	SELECT submissions.groupID, AVG(grade) as AverageGrade
+	FROM grade
+	INNER JOIN submissions
+	ON submissions.submissionID = grade.submissionID
+	GROUP BY grade.submissionID ");
+	$stmt->execute();
+ 	$result = $stmt->get_result();	
+ 	$output = 	
+ 	'<div class="well">
+	    <table class="table">
+	      <thead>
+	        <tr>
+	          <th>Group ID</th>
+	          <th>Aggregate Peer Assesememnts</th>
+	          <th style="width: 36px;"></th>
+	        </tr>
+	      </thead>
+	      <tbody>';
+	while ($row = $result->fetch_assoc()) {
+		$output.= '
+	    <tr>
+	      <td>' . htmlentities($row['groupID']) . '</td>
+	      <td>' . htmlentities($row['AverageGrade']) . '</td>
+	    </tr>';			
+	}	
+	$output .= '</tbody></table></div>';
+ 	$stmt->close();
+ 	return $output;	
+}
+
 } // end class	
