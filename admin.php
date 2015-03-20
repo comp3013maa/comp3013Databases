@@ -9,13 +9,19 @@ if(!isset($_SESSION['admin']) ) {
 if (empty($_GET)) {
 	// Overall structure  
 	echo '
-	<ul> 
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+              	<h3 class="panel-title">USER MANAGEMENT</h3>
+            </div>
+            <div class="panel-body">
+                    <ul> 
 		<li id = "indexList"> <a href = "register.php" class="listLinks"> Add New User</a> </li>                  		
 		<li id = "indexList"> <a href = "browse_users.php" class="listLinks">Browse & Edit Users</a> </li>
 		<li id = "indexList"> <a href = "admin.php?allocateGroups" class="listLinks">Allocate Groups </a></li>
-		<li id = "indexList"> <a href = "admin.php?rankings" class="listLinks">Group Rankings </a></li>
-	</ul>   
-	';
+		<li id = "indexList"> <a href = "admin.php?rankings" class="listLinks">Group Rankings </a></li>                </ul>   
+            </div>
+        </div>  
+    </div> ';
 }
 
 
