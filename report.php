@@ -6,10 +6,6 @@ if(!isset($_SESSION['userID'])){
 	header('location: unauthorised.php?');
 }
 
-
-//date_default_timezone_set("Europe/London");
-//$time = date("d/m/y h:ia");
-
 	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error($connection));
 	 
@@ -75,8 +71,6 @@ echo	'<div class="well">';
 
 		echo file_get_contents($row['submissionName']) . '<p></p>';
 		
-		
-	
 		$submissionID = $row['submissionID'];
 		$query2 = "SELECT grade, comments
 			FROM grade
@@ -85,15 +79,13 @@ echo	'<div class="well">';
 	$result2 = mysqli_query($connection,$query2) or die('Error3' . mysqli_error($connection));
 		if (mysqli_num_rows($result2) == 1) {
 		$row2 = mysqli_fetch_assoc($result2);
-	//	echo $row2['comments'];
-	//	echo $row2['grade'];
+
 	echo '<div class="actionBox">
         <ul class="commentList">
             <li>
                 <div class="commentText">
                     <p class="">' . $row2['comments']. '</p> 
              		 <p class="">Grade: ' . $row2['grade']. '/10</p> 
-             <!--       <span class="date sub-text">'.$time.'</span> -->
                 </div>
             </li>
         </ul>
