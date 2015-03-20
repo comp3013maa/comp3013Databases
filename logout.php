@@ -7,9 +7,11 @@
 <body>
 <?php
 require "header.php";
+include_once "include/helper_functions.php";
+
     session_destroy(); 
-    echo 'You have been succesfully logged out';  
-    echo '<a href="index.php"> Go back to index </a> '; 
+    echo successMessage("Success Message", 'You have succesfully logged out. <a href="index.php">Click here </a> to go back to the index page.</p>
+');
 ?>
 
 </body>
