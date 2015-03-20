@@ -2,34 +2,22 @@
 require_once "include/sql_model.php";
 /* This file follows mvc - only deals with the view. sql_model is the model in our mvc and deals with our data */
 
+if(!isset($_SESSION['admin']) ) {
+	header('location: unauthorised.php?admin');	 
+} 
+
 if (empty($_GET)) {
 	// Overall structure  
 	echo '
 	<ul> 
-		<li id = "indexList"> <a href = "admin.php?add" class="listLinks"> Add New User</a> </li>                  		
-		<li id = "indexList"> <a href = "admin.php?browse" class="listLinks">Browse & Edit Users</a> </li>
+		<li id = "indexList"> <a href = "register.php" class="listLinks"> Add New User</a> </li>                  		
+		<li id = "indexList"> <a href = "browse_users.php" class="listLinks">Browse & Edit Users</a> </li>
 		<li id = "indexList"> <a href = "admin.php?allocateGroups" class="listLinks">Allocate Groups </a></li>
 		<li id = "indexList"> <a href = "admin.php?rankings" class="listLinks">Group Rankings </a></li>
 	</ul>   
 	';
 }
 
-if (isset($_GET['add'])) {
-	echo '<a href="register.html">Add New User Form</a> <br />' ;
-	// use helper classes like tuan? For validation like graham's slides? 
-	
-}
-
-if (isset($_GET['browse'])) {
-	/* DISPLAY USERS & Search bar - from other stuff  */
-	
-	/* Edit group allocation - List of users, list of groups dropdown - update sql query*/
-	/* Have an option to create a new group as well */
-	
-	/* EDIT PERSONAL INFO - admin panel code */
-	
-	echo 'ruff';
-}
 
 /* DISPLAY GROUP ALLOCATIONS AND ALLOW NEW ONES TO CREATED */
 if (isset($_GET['allocateGroups'])) {
@@ -53,6 +41,7 @@ if (isset($_GET['allocateGroups'])) {
 		<?php
 		$sql_model = new SQL_Model();
 		echo $sql_model->getGroupAllocations(); 
+		$sql_model->close();
 	 // not closed as using again below	$sql_model->close();
 		?>	
 	      </tbody>
@@ -66,7 +55,9 @@ if (isset($_GET['allocateGroups'])) {
 
 	<?php
 	$groupList = array(); 
-	$groupList = $sql_model->getGroups();  
+	$sql_model2 = new SQL_Model();
+	$groupList = $sql_model2->getGroups();
+	$sql_model2->close();  
 	?>
 
 	<form class="form-horizontal" method="POST" action="admin.php?allocateGroups">
@@ -108,14 +99,18 @@ if (isset($_GET['allocateGroups'])) {
 
 	<?php
 	if(isset($_POST['newGroupAllocation'])) {
-		echo $sql_model->newGroupAllocation($_POST['groupID'], $_POST['allocateTo']);  
+		$sql_model3 = new SQL_Model();
+		echo $sql_model3->newGroupAllocation($_POST['groupID'], $_POST['allocateTo']);  
+		$sql_model3->close();
 	}
-	$sql_model->close();
 }  
 
 
 
 if (isset($_GET['rankings'])) {
+echo '<h3>Group Rankings</h3> <br />
+	<p> These groups are ranked according with the aggregation of peer assessments on their submissions</p>
+'; 
 
 }
 
