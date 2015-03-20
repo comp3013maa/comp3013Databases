@@ -345,7 +345,8 @@ public function getGroupAverageScores() {
 	FROM grade
 	INNER JOIN submissions
 	ON submissions.submissionID = grade.submissionID
-	GROUP BY grade.submissionID ");
+	GROUP BY grade.submissionID
+	ORDER BY AverageGrade DESC ");
 	$stmt->execute();
  	$result = $stmt->get_result();	
  	$output = 	
