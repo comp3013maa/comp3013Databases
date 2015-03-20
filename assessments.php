@@ -41,7 +41,7 @@ $result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($conn
 	echo '<p><h3>View Assessments</h3></p>'.'<p>You are graded by groups </p>';
 
 while($row2 = mysqli_fetch_assoc($result2)){
-	 $row2['groupID']. ' ';
+	echo $row2['groupID']. ' ';
 }
   	  while($row = mysqli_fetch_assoc($result)){
                 echo $row['byGroup'];
