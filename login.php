@@ -8,16 +8,33 @@
 <body>
 <?php
 require "header.php";
+require_once "include/sql_model.php";
 // redirect if already logged in 
 if (isset($_SESSION['userID'])) {
-	header('location: unauthorised.php');	 
+	header('location: unauthorised.php?logged_in');	 
 }
 
-function getUser() {
-	$user = array();
 
-	$user['userName'] = $_POST['userName']; 
-	$user['password'] = $_POST['password'];
+if (isset($_POST['loginForm'])) {
+		$username = trim($_POST['username']); // trim whitespace
+		$password = trim($_POST['password']); 		
+		$sql_model = new SQL_Model();
+		$success = FALSE;
+		$success = $sql_model->login($username, $password);  
+		$sql_model->close();
+		if ($success == TRUE) {
+			$sql_model2 = new SQL_Model();			
+			$sql_model2->authenticateAdmin($_SESSION['userID']);
+			$sql_model2->close();			
+			header('location: index.php');	
+		}
+}
+
+/* OLD FIRST LOGIN CODE 
+function getUser() {
+	$username = trim($_POST['useNname']); // trim whitespace
+	$password = trim($_POST['password']); 
+
 	
 	// do error checking here
 	
@@ -28,12 +45,8 @@ function getUser() {
 	
 	return $user; 
 }
-
-
-
 function checkDatabase($user) {
-	$connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
-	 or die('Error' . mysqli_error());
+	$connection = dbConnect(); 
 	 
 	 $query = 
 	 "SELECT userID, userName 
@@ -58,8 +71,8 @@ function checkDatabase($user) {
 	 
 	 
 }
-
 checkDatabase(getUser()); 
+*/
 
 if(!isset($_SESSION['userID'])){
 
@@ -73,7 +86,7 @@ echo '
     <div class="form-group">
       <label class="col-md-3 control-label" for="name">Username</label>
       <div class="col-md-9">
-        <input id="username" name="userName" type="text" placeholder="Your User Name" class="form-control">
+        <input id="username" name="username" type="text" placeholder="Your User Name" class="form-control">
       </div>
     </div>
 
