@@ -11,6 +11,7 @@ if(!isset($_SESSION['userID'])){
 	 
 	$userID = $_SESSION['userID'];
 	$userID =  mysqli_real_escape_string($connection, $userID);
+	
 	$query1 = "
 	SELECT groupID 
 	FROM users 
@@ -19,7 +20,8 @@ if(!isset($_SESSION['userID'])){
 
 $result1 = mysqli_query($connection,$query1) or die('Error2' . mysqli_error($connection));
 $row1 = mysqli_fetch_assoc($result1);
-$groupID = $row1['groupID'];	 
+$groupID = $row1['groupID'];	
+$groupID =  mysqli_real_escape_string($connection, $groupID);
 
 	 $query = "
 	 SELECT submissions.submissionID as submissionID, submissionName, submissions.groupID
@@ -54,6 +56,10 @@ if (isset($_POST['grade']) && (isset($_POST['comments']))){
 			$subID = $_POST['submissionID'];
 			$grade = $_POST['grade'];
 			$comment = $_POST['comments'];
+	
+	$subID =  mysqli_real_escape_string($connection, $subID);
+	$grade =  mysqli_real_escape_string($connection, $grade);
+	$comment =  mysqli_real_escape_string($connection, $comment);
 			
 			$query3 = "
 				INSERT INTO grade (submissionID, grade, comments, byGroup)
@@ -72,6 +78,8 @@ echo	'<div class="well">';
 		echo file_get_contents($row['submissionName']) . '<p></p>';
 		
 		$submissionID = $row['submissionID'];
+		$submissionID =  mysqli_real_escape_string($connection, $submissionID);
+		
 		$query2 = "SELECT grade, comments
 			FROM grade
 			WHERE submissionID = $submissionID AND byGroup = $groupID
