@@ -120,7 +120,7 @@ if (isset($_GET['rankings'])) {
 	echo $sql_model->getGroupAverageScores();
 	$sql_model->close();	
 		
-	echo'	<br />
+	echo'	<hr />
 	<p> These groups are ranked according with the aggregation of peer assessments on their submissions 
 	(from point 12 - a little vague so we did it through both an aggregation of scores as above and assessement numbers as here). </p>
 	'; 
