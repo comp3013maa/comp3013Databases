@@ -14,7 +14,7 @@ $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791
 		WHERE assignedTo = $groupID
 		";
 	
-$result2 = mysqli_query($connection,$query2) or die('Error2' . mysqli_error($connection));
+$result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 
 echo '<h3>Submit Gradings</h3>';
 
@@ -32,7 +32,7 @@ while($row2 = mysqli_fetch_assoc($result2)){
           	WHERE userID=$userID
 	        ";
 	
-$result1 = mysqli_query($connection,$query1) or die('Error2' . mysqli_error($connection));
+$result1 = mysqli_query($connection,$query1) or die('Error1' . mysqli_error($connection));
 $row1 = mysqli_fetch_assoc($result1);
 $groupID = $row1['groupID'];	 
 
