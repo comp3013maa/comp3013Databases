@@ -47,11 +47,15 @@ while($row2 = mysqli_fetch_assoc($result2)){
 echo '<p></p>';
 echo "Your group's assessments are shown below.". "<p></p>";
 
-  	  while($row = mysqli_fetch_assoc($result)){
-                echo $row['byGroup'];
+  	while($row = mysqli_fetch_assoc($result)){
+  		echo '<div class="well">';
+  			echo "<label> Report from group ". $row['byGroup'] . ' </label><p></p>';
+
                 echo $row['comments'];
                 echo $row['grade'];
+                echo '</div>';
         }
+        
 mysqli_close($connection);
 
 
