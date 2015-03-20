@@ -2,9 +2,8 @@
 require "header.php"; //include file - require means must be there or give error, include() is can have it 
 
 if (!isset($_SESSION['userID'])) {
-	echo 'You are not currently logged in - please sign in to access authenticated-only areas of the system <br />';
-	//login form 
-	echo '<a href="login.php">Login</a> <br />' ;
+  echo '<p> You are not currently logged in - please sign in to access authenticated-only areas of the system <br />';
+}
 	
 }
 
@@ -58,7 +57,7 @@ if (!isset($_SESSION['userID'])) {
             <div class="panel-body">
                     <ul> 
 	                <li id = "indexList"> <a href = "register.php" class="listLinks"> Add New User</a> </li>                  		
-	                <li id = "indexList"> <a href = "admin.php?browse" class="listLinks">Browse & Edit Users</a> </li>
+	                <li id = "indexList"> <a href = "browse_users.php" class="listLinks">Browse & Edit Users</a> </li>
 	                <li id = "indexList"> <a href = "admin.php?allocateGroups" class="listLinks">Allocate Groups </a></li>
 	                <li id = "indexList"> <a href = "admin.php?rankings" class="listLinks">Group Rankings </a></li>
                 </ul>   
