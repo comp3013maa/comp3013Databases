@@ -24,8 +24,7 @@ Mahi
 - 10. the administrator-user interface will support searching for details of a particular student and browsing of student details
 - 11. the administrator-user interface will allow particular groups to be allocated to the peer assessment of particular other groups
 - 12. the administrator-users will be able to see a list of the groups ranked according with the aggregation of peer assessments on their submissions 
-- 13. Validatin checks on the login/registration forms - create a validator class? Then register/login can inherit from it 
-- Done login/design/global structure / includes/security 
+- 13. Validatin checks on the login/registration forms
 
 <b> Notes: </b>
 - For forms where users enter data to be stored in the database, use mysqli_real_escape_string() to escape the data (make it store in a safe way). E.g. in a registration form, for the username (you'd do this for name, email etc too) you do: $username = mysqli_real_escape_string($connection, $username);
