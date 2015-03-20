@@ -18,6 +18,7 @@ if(!isset($_SESSION['userID'])){
 	";
 
 $result1 = mysqli_query($connection,$query1) or die('Error2' . mysqli_error($connection));
+mysqli_real_escape_string($con, $result1);
 $row1 = mysqli_fetch_assoc($result1);
 $groupID = $row1['groupID'];	 
 
