@@ -4,8 +4,6 @@ require "header.php"; //include file - require means must be there or give error
 if (!isset($_SESSION['userID'])) {
   echo '<p> You are not currently logged in - please sign in to access authenticated-only areas of the system <br />';
 }
-	
-}
 
 ?> 
     <div class="col-sm-6">
