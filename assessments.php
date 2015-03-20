@@ -8,9 +8,6 @@ if(!isset($_SESSION['userID'])){
 $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error1' . mysqli_error($connection));
 	 
-echo '<h3>Submit Gradings</h3>';
-
-	 
  $userID = $_SESSION['userID'];
 	 
 	 $query1 = "
@@ -30,13 +27,8 @@ $query = "
 	ON grade.byGroup = groupassignments.groupID
         WHERE groupassignments.assignedTo = $groupID
           ";
-          
+
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
-        while($row = mysqli_fetch_assoc($result)){
-                echo $row['byGroup'];
-                echo $row['comments'];
-                echo $row['grade'];
-        }
   	
   		$query2 = " 
 		SELECT groupID
@@ -45,18 +37,20 @@ $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($conne
 		";
 	
 $result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
-
-
-
-echo 'Your group is assigned to review groups ';
+	
+	echo '<p><h3>View Assessments</h3></p>'.'<p>You are graded by groups </p>';
 
 while($row2 = mysqli_fetch_assoc($result2)){
 	 $row2['groupID']. ' ';
 }
-  	
+  	  while($row = mysqli_fetch_assoc($result)){
+                echo $row['byGroup'];
+                echo $row['comments'];
+                echo $row['grade'];
+        }
 mysqli_close($connection);
 
-echo '<p><h3>View Assessments</h3></p>'.'<p>You are graded by groups </p>';
+
 
 require "footer.php";
 ?>
