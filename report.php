@@ -37,7 +37,7 @@ echo '<h3>Submit Gradings</h3>';
 
 echo 'Your group is assigned to review groups ';
 
-while($row4 = mysqli_fetch_assoc($result)){
+while($row4 = mysqli_fetch_assoc($result4)){
 	echo $row4['groupID']. ' ';
 }
  
