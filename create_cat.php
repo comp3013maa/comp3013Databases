@@ -6,7 +6,7 @@ include 'fheader.php';
 include 'connect.php';
 
 echo '<h2>Create a category</h2>';
-if($_SESSION['signed_in'] == false | $_SESSION['user_level'] != 1 )
+if(!isset ($_SESSION['userID']))
 {
 	//the user is not an admin
 	echo 'Sorry, you do not have sufficient rights to access this page.';
