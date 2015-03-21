@@ -31,14 +31,14 @@ $groupID =  mysqli_real_escape_string($connection, $groupID);
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
-
+$result4 = $result;
 
 echo '<h3>Submit Gradings</h3>';
 
 echo 'Your group is assigned to review groups ';
 
-while($row4 = mysqli_fetch_assoc($result)){
-	echo $row4['groupID']. ' ';
+while($row = mysqli_fetch_assoc($result4)){
+	echo $row['groupID']. ' ';
 }
 
 echo '<p></p>';
@@ -63,7 +63,7 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 
 }
 
-reset(mysqli_fetch_assoc($result));
+
 
 	while ($row = mysqli_fetch_assoc($result)){
 echo	'<div class="well">';
