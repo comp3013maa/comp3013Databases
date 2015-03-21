@@ -63,8 +63,9 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 
 }
 
-reset($row);
-	while ($row){
+reset($result);
+
+	while ($row = mysqli_fetch_assoc($result)){
 echo	'<div class="well">';
 		echo "<label> Report from group ". $row['groupID'] . ' </label><p></p>';
 
