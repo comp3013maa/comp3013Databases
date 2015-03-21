@@ -31,7 +31,7 @@ $groupID =  mysqli_real_escape_string($connection, $groupID);
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
-$result4 = $result;
+$result4 = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
 
 echo '<h3>Submit Gradings</h3>';
 
