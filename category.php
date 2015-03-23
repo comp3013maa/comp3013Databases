@@ -1,6 +1,6 @@
 <?php
 //category.php
-require 'fheader.php';
+require 'header.php';
 include 'connect.php';
 
 //first select the category based on $_GET['cat_id']
