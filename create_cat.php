@@ -2,7 +2,7 @@
 //create_cat.php
 
 
-include 'fheader.php';
+include 'header.php';
 include 'connect.php';
 
 echo '<h2>Create a category</h2>';
