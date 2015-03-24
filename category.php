@@ -1,6 +1,6 @@
 <?php
 //category.php
-require 'fheader.php';
+require 'header.php';
 include 'connect.php';
 
 
