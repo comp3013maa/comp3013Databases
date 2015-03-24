@@ -13,7 +13,7 @@ $sql = "SELECT
 			categories;";
 		
 
-$result = mysql_query($sql, $conn);
+$result = mysql_query($sql);
 
 if(!$result)
 {
@@ -44,7 +44,7 @@ else
 				WHERE
 					topic_cat = " . mysql_real_escape_string($_GET['id']);
 		
-		$result = mysql_query($sql, $conn);
+		$result = mysql_query($sql);
 		
 		if(!$result)
 		{
