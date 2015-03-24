@@ -5,12 +5,7 @@ include 'connect.php';
 
 
 //first select the category based on $_GET['cat_id']
-$sql = "SELECT
-			cat_id,
-			cat_name,
-			cat_description
-		FROM
-			categories;";
+$sql = "SELECT	cat_id,	cat_name,cat_description FROM	categories;";
 		
 
 $result = mysql_query($sql);
