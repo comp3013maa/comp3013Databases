@@ -8,7 +8,8 @@ include 'connect.php';
 $sql = "SELECT	cat_id,	cat_name,cat_description FROM	categories;";
 		
 
-$result = mysqli_query($conn,$sql);
+$result = mysqli_query($conn,$sql)  or die('Error2' . mysqli_error($conn));
+
 
 if(!$result)
 {
