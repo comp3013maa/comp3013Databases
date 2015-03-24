@@ -10,7 +10,7 @@ $sql = "SELECT
 			cat_description
 		FROM
 			categories
-		;
+		;"
 
 $result = mysql_query($sql);
 
