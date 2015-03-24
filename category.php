@@ -8,7 +8,7 @@ include 'connect.php';
 $sql = "SELECT	cat_id,	cat_name,cat_description FROM	categories;";
 		
 
-$result = mysql_query($sql);
+$result = mysqli_query($conn,$sql);
 
 if(!$result)
 {
@@ -39,7 +39,7 @@ else
 				WHERE
 					topic_cat = " . mysql_real_escape_string($_GET['id']);
 		
-		$result = mysql_query($sql);
+		$result = mysqli_query($conn,$sql);
 		
 		if(!$result)
 		{
