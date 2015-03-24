@@ -10,8 +10,7 @@ $sql = "SELECT
 			cat_description
 		FROM
 			categories
-		WHERE
-			cat_id = " . mysql_real_escape_string($_GET['id']);
+		;
 
 $result = mysql_query($sql);
 
