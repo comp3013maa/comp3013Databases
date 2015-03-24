@@ -3,10 +3,6 @@
 require 'header.php';
 include 'connect.php';
 
-if(! $conn )
-{
-  die('Could not connect: ' . mysql_error());
-}
 
 //first select the category based on $_GET['cat_id']
 $sql = "SELECT
