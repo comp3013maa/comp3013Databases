@@ -43,7 +43,7 @@ else
 				WHERE
 					topic_cat = " . mysql_real_escape_string($_GET['id']);
 		
-		$result = mysql_query($sql);
+		$result = mysql_query($sql, $conn);
 		
 		if(!$result)
 		{
