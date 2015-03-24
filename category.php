@@ -12,7 +12,7 @@ $sql = "SELECT
 			categories;";
 		
 
-$result = mysql_query($sql);
+$result = mysql_query($sql, $conn);
 
 if(!$result)
 {
