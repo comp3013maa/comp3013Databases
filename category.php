@@ -9,8 +9,8 @@ $sql = "SELECT
 			cat_name,
 			cat_description
 		FROM
-			categories
-		;"
+			categories;";
+		
 
 $result = mysql_query($sql);
 
