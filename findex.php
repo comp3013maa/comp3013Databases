@@ -9,7 +9,7 @@ echo '<form  method="post" action="search.php?go"  id="searchform">
 	    
 	    if(isset($_POST['submit']) ){ 
 	    	if(isset($_GET['go'])){ 
-	  	$sql = "select * from posts where text LIKE *". $_GET['go']."*";
+	  	$sql = "select * from posts where text LIKE *". $_POST['name'] ."*";
 	  	$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn)); 
 	  		echo '<table border="1">
 				<tr>
