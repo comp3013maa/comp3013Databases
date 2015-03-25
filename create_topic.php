@@ -82,9 +82,9 @@ else
 							   topic_date,
 							   topic_cat,
 							   topic_by)
-				   VALUES('" . mysql_real_escape_string($_POST['topic_subject']) . "',
+				   VALUES('" . $_POST['topic_subject'] . "',
 							   NOW(),
-							   " . mysql_real_escape_string($_POST['topic_cat']) . ",
+							   " . $_POST['topic_cat'] . ",
 							   " . $_SESSION['user_id'] . "
 							   )";
 					 
