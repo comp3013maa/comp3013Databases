@@ -41,11 +41,11 @@ else
 				WHERE
 				topic_cat = " . $_GET['id'];
 		
-		$result = mysqli_query($conn,$sql);
+		$result2 = mysqli_query($conn,$sql);
 		$topicnum_rows = $result->topicnum_rows;
 
 		
-		if(!$result)
+		if(!$result2)
 		{
 			echo 'The topics could not be displayed, please try again later.';
 		}
@@ -64,14 +64,14 @@ else
 						<th>Created at</th>
 					  </tr>';	
 					
-				while($row = $result->fetch_assoc())
+				while($row1 = $result2->fetch_assoc())
 				{				
 					echo '<tr>';
 						echo '<td class="leftpart">';
-							echo '<h3><a href="topic.php?id=' . $row['topic_id'] . '">' . $row['topic_subject'] . '</a><br /><h3>';
+							echo '<h3><a href="topic.php?id=' . $row1['topic_id'] . '">' . $row1['topic_subject'] . '</a><br /><h3>';
 						echo '</td>';
 						echo '<td class="rightpart">';
-							echo date('d-m-Y', strtotime($row['topic_date']));
+							echo date('d-m-Y', strtotime($row1['topic_date']));
 						echo '</td>';
 					echo '</tr>';
 				}
