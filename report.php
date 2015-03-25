@@ -70,9 +70,9 @@ echo	'<div class="well">';
 		if(substr($row['submissionName'], 7) != "uploads"){
 			echo $row['submissionName'];
 		}
-	else{
+		else{
 		echo file_get_contents($row['submissionName']) . '<p></p>';
-	}	
+		}	
 		$submissionID = $row['submissionID'];
 		$submissionID =  mysqli_real_escape_string($connection, $submissionID);
 		
@@ -132,7 +132,7 @@ echo	'<div class="well">';
 		
 		}
 	echo	'</div>';
-}
+
 	}	
 		
 
