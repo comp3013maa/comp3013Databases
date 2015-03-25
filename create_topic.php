@@ -1,6 +1,6 @@
 <?php
 //create_topic.php
-require 'fheader.php';
+require 'header.php';
 include 'connect.php';
 
 echo '<h2>Create a topic</h2>';
@@ -23,7 +23,8 @@ else
 				FROM
 					categories";
 		
-		$result = mysql_query($sql);
+		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
+		$num_rows = $result->num_rows;
 		
 		if(!$result)
 		{
@@ -32,17 +33,13 @@ else
 		}
 		else
 		{
-			if(mysql_num_rows($result) == 0)
+			if($num_rows == 0)
 			{
 				//there are no categories, so a topic can't be posted
-				if($_SESSION['user_level'] == 1)
-				{
+				
 					echo 'You have not created categories yet.';
-				}
-				else
-				{
-					echo 'Before you can post a topic, you must wait for an admin to create some categories.';
-				}
+				
+				
 			}
 			else
 			{
@@ -68,7 +65,7 @@ else
 	{
 		//start the transaction
 		$query  = "BEGIN WORK;";
-		$result = mysql_query($query);
+		$result = mysqli_query($conn,$query) or die('Error2' . mysqli_error($conn));		
 		
 		if(!$result)
 		{
@@ -91,7 +88,7 @@ else
 							   " . $_SESSION['user_id'] . "
 							   )";
 					 
-			$result = mysql_query($sql);
+		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
 			if(!$result)
 			{
 				//something went wrong, display the error
@@ -116,19 +113,19 @@ else
 								  " . $topicid . ",
 								  " . $_SESSION['user_id'] . "
 							)";
-				$result = mysql_query($sql);
+		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
 				
 				if(!$result)
 				{
 					//something went wrong, display the error
 					echo 'An error occured while inserting your post. Please try again later.<br /><br />' . mysql_error();
 					$sql = "ROLLBACK;";
-					$result = mysql_query($sql);
+		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
 				}
 				else
 				{
 					$sql = "COMMIT;";
-					$result = mysql_query($sql);
+		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
 					
 					//after a lot of work, the query succeeded!
 					echo 'You have succesfully created <a href="topic.php?id='. $topicid . '">your new topic</a>.';
