@@ -26,9 +26,11 @@ else
 	else
 	{
 		//the form has been posted, so save it
+		 $postcatname =  mysqli_real_escape_string($conn, $_POST['cat_name'] );
+		 $postcatdescription =  mysqli_real_escape_string($conn, $_POST['cat_description'] );
 		$sql = "INSERT INTO categories(cat_name, cat_description)
-		   VALUES('" . $_POST['cat_name'] . "',
-				 '" . $_POST['cat_description'] . "')";
+		   VALUES('" $postcatname "',
+				 '" $postcatdescription "')";
 		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
 		if(!$result)
 		{
