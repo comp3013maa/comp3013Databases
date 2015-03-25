@@ -41,7 +41,7 @@ else
 						posts.post_date,
 						posts.post_by,
 						users.userID,
-						users.user_name
+						users.userName
 					FROM
 						posts
 					LEFT JOIN
