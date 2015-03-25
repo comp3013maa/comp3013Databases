@@ -8,7 +8,7 @@ echo '<form  method="post"  id="searchform">
 	    </form>';
 	    
 	    if(isset($_POST['submit']) ){
-	  	$sql = "select * from posts where post_content LIKE '%". $_POST['name'] ."%'";
+	  	$sql = "select p.*, u.* from p posts, u users where post_content LIKE '%". $_POST['name'] ."%'";
 	  	$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn)); 
 	  		echo '<table border="1">
 				<tr>
@@ -20,7 +20,7 @@ echo '<form  method="post"  id="searchform">
 			{
 			echo '<tr>';
 			echo '<td class="leftpart">';
-			echo '<h3><a href="topic.php?id=' . $row['post_topic'] . '">' . $row['post_content'] . '</a></h3>' . $row['post_id'];
+			echo '<h3><a href="topic.php?id=' . $row['p.post_topic'] . '">' . $row['p.post_content'] . '</a></h3>' . $row['u.userName'];
 			echo '</td>';
 			echo '<td class="rightpart">';
 	    		}
