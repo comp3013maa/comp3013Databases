@@ -42,7 +42,7 @@ else
 				topic_cat = " . $_GET['id'];
 		
 		$result = mysqli_query($conn,$sql);
-		$topicnum_rows = $result->num_rows;
+		$topicnum_rows = $result->topicnum_rows;
 
 		
 		if(!$result)
@@ -64,7 +64,7 @@ else
 						<th>Created at</th>
 					  </tr>';	
 					
-				while($row = $result->fetch_assoc()
+				while($row = $result->fetch_assoc())
 				{				
 					echo '<tr>';
 						echo '<td class="leftpart">';
