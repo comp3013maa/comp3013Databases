@@ -62,9 +62,6 @@ if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extensi
     $validUpload = false;
 }
 if ($validUpload) {
-	if ($extension == 'xml'){
-		
-	}
 	if (move_uploaded_file($_FILES['file']['tmp_name'], $directory)) {
         	echo basename($file) . ' successfully uploaded.';
     	}else{
