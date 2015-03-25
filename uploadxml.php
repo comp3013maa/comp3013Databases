@@ -34,7 +34,8 @@ $directory = 'uploads/'. basename($file);
 
 $xml = simplexml_load_string(file_get_contents($_FILES['file']['tmp_name'])) or die("Error: Cannot create object");
 $array = json_decode(json_encode($xml),TRUE);
-$array = serialize($array);
+//$array = serialize($array);
+$array = implode(",", $array);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 $marker = 0;
