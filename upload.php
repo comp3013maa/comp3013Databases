@@ -8,10 +8,12 @@ if (!isset($_SESSION['userID'])) {
 
 echo '<h3>Upload your report</h3> <p></p>';
 
-$user =  mysqli_real_escape_string($connection, $_SESSION['userID']);
+
 
  $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error' . mysqli_error());
+	 
+$user =  mysqli_real_escape_string($connection, $_SESSION['userID']);
 
 $query = "
 	SELECT groupID
