@@ -63,15 +63,12 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 
 }
 
-
-
 	while ($row = mysqli_fetch_assoc($result)){
 echo	'<div class="well">';
 		echo "<label> Report from group ". $row['groupID'] . ' </label><p></p>';
 
-		if(substr($row['submissionName'], -4) == ".xml"){
-			$xml=simplexml_load_string(file_get_contents($row['submissionName'])) or die("Error: Cannot create object");
-			print_r($xml);
+		if(substr($row['submissionName'], 7) != "uploads"){
+			echo $row['submissionName'];
 		}
 
 		echo file_get_contents($row['submissionName']) . '<p></p>';
