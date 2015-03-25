@@ -18,6 +18,8 @@ else
 	else
 	{
 		//a real user posted a real reply
+		$getid =  mysqli_real_escape_string($conn, $_GET['id']);
+		$sessionuserID =  mysqli_real_escape_string($conn, $_SESSION['userID']);
 		$sql = "INSERT INTO 
 					posts(post_content,
 						  post_date,
@@ -25,8 +27,8 @@ else
 						  post_by) 
 				VALUES ('" . $_POST['reply-content'] . "',
 						NOW(),
-						" . $_GET['id'] . ",
-						" . $_SESSION['userID'] . ")";
+						$getid,
+						$sessionuserID)";
 						
 		 $result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
 						
