@@ -32,7 +32,7 @@ if(isset($_POST['uploaded'])) {
 $file = $_FILES['file']['name'];	
 $directory = 'uploads/'. basename($file);
 $xmlLoad = simplexml_load_string(file_get_contents($_FILES['file']['tmp_name'])) or die("Error: Cannot create object");
-$xml = (string) $xmlLoad;
+$xml = print_r((string) $xmlLoad);
 echo $xml;
 var_dump($xml);
 $validUpload = true;
