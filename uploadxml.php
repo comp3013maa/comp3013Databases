@@ -4,7 +4,7 @@ if (!isset($_SESSION['userID'])) {
 	header('location: unauthorised.php?');	 
 	
 }
-echo '<h3>Upload your report</h3> <p></p>';
+echo '<h3>Upload your report in XML</h3> <p></p>';
 $user = $_SESSION['userID'];
  $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error' . mysqli_error());
@@ -43,8 +43,8 @@ if ($_FILES['file']['size'] > 2000000) {
     echo 'Cannot exceed 2MB. ';
     $validUpload = false;
 }
-if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extension != 'docx') {
-    echo 'Please ensure file is .txt, .docx or .pdf. ';
+if($extension != 'xml') {
+    echo 'File not XML ';
     $validUpload = false;
 }
 if ($validUpload) {
@@ -69,12 +69,12 @@ else {
 	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysqli_error("$result1"));
 	 	$row = mysqli_fetch_assoc($result1);
 	 	$groupID = $row['groupID'];
-	 	$filename =  basename($directory);
+	 	$xml = simplexml_load_string(file_get_contents($file)) or die("Error: Cannot create object");
 if ($validUpload){
 	$query2 = 
 	 "INSERT INTO submissions 
 	 (submissionName, groupID)
-	 VALUES ('$directory', $groupID)";  
+	 VALUES ('$xml', $groupID)";  
 	 
 	$result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 }
