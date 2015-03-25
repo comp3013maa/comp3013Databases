@@ -2,14 +2,14 @@
 //create_cat.php
 require 'header.php';
 include 'connect.php';
-
+$getid =  mysqli_real_escape_string($conn, $_GET['id']);
 $sql = "SELECT
 			topic_id,
 			topic_subject
 		FROM
 			topics
 		WHERE
-			topics.topic_id = " . $_GET['id'];
+			topics.topic_id = $getid;
 			
  $result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
 $num_rows = $result->num_rows;
