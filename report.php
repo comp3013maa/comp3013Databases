@@ -69,6 +69,11 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 echo	'<div class="well">';
 		echo "<label> Report from group ". $row['groupID'] . ' </label><p></p>';
 
+		if(substr($row['submissionName'], -4) == ".xml"){
+			$xml=simplexml_load_string($row['submissionName']) or die("Error: Cannot create object");
+			print_r($xml);
+		}
+
 		echo file_get_contents($row['submissionName']) . '<p></p>';
 		
 		$submissionID = $row['submissionID'];
