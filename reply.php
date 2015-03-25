@@ -25,7 +25,7 @@ else
 						  post_by) 
 				VALUES ('" . $_POST['reply-content'] . "',
 						NOW(),
-						" . mysql_real_escape_string($_GET['id']) . ",
+						" . $_GET['id'] . ",
 						" . $_SESSION['userID'] . ")";
 						
 		 $result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
