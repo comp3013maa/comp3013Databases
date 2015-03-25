@@ -70,7 +70,7 @@ echo	'<div class="well">';
 		echo "<label> Report from group ". $row['groupID'] . ' </label><p></p>';
 
 		if(substr($row['submissionName'], -4) == ".xml"){
-			$xml=simplexml_load_string($row['submissionName']) or die("Error: Cannot create object");
+			$xml=simplexml_load_string(file_get_contents($row['submissionName'])) or die("Error: Cannot create object");
 			print_r($xml);
 		}
 
