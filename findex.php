@@ -51,7 +51,7 @@ else
 				<th>Last topic</th>
 			  </tr>';	
 			
-		while($row = mysql_fetch_assoc($result))
+		while($row = $num_rows)
 		{				
 			echo '<tr>';
 				echo '<td class="leftpart">';
