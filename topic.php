@@ -9,7 +9,7 @@ $sql = "SELECT
 		FROM
 			topics
 		WHERE
-			topics.topic_id = $getid;
+			topics.topic_id = $getid";
 			
  $result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
 $num_rows = $result->num_rows;
