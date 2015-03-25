@@ -75,15 +75,15 @@ else
 								LIMIT
 									1";
 								
-					$topicsresult = mysql_query($topicsql);
-				
+					$topicsresult = mysqli_query($conn,$topicsql) or die('Error2' . mysqli_error($conn));;
+					$topicnum_rows = $topicsresult->topicnum_rows;
 					if(!$topicsresult)
 					{
 						echo 'Last topic could not be displayed.';
 					}
 					else
 					{
-						if(mysql_num_rows($topicsresult) == 0)
+						if($topicnum_rows == 0)
 						{
 							echo 'no topics';
 						}
