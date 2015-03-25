@@ -29,7 +29,8 @@ $sql = "SELECT
 		GROUP BY
 			categories.cat_name, categories.cat_description, categories.cat_id";
 
-$result = $conn->query($sql);
+$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
+
 
 if(!$result)
 {
