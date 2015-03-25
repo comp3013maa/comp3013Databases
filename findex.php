@@ -8,7 +8,7 @@ echo '<form  method="post"  id="searchform">
 	    </form>';
 	    
 	    if(isset($_POST['submit']) ){
-	  	$sql = "select * from posts where post_content LIKE %". $_POST['name'] ."%";
+	  	$sql = "select post_content from posts where post_content LIKE %". $_POST['name'] ."%";
 	  	$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn)); 
 	  		echo '<table border="1">
 				<tr>
