@@ -31,7 +31,8 @@ if(isset($_POST['uploaded'])) {
 	
 $file = $_FILES['file']['name'];	
 $directory = 'uploads/'. basename($file);
-$xml = simplexml_load_string(file_get_contents($_FILES['file']['tmp_name'])) or die("Error: Cannot create object");
+$xmlLoad = simplexml_load_string(file_get_contents($_FILES['file']['tmp_name'])) or die("Error: Cannot create object");
+$xml = print_r($xmlLoad);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 $marker = 0;
@@ -76,7 +77,7 @@ if ($validUpload){
 	$query2 = 
 	 "INSERT INTO submissions 
 	 (submissionName, groupID)
-	 VALUES ('print_r($xml)', $groupID)";  
+	 VALUES ('$xml', $groupID)";  
 	 
 	$result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 }
