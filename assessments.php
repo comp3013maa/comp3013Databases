@@ -32,7 +32,8 @@ $query = "
         ";
 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
-  	
+
+
   		$query2 = " 
 		SELECT groupID
 		FROM groupassignments
@@ -54,12 +55,23 @@ echo "Your group's assessments are shown below.". "<p></p>";
   		echo '<div class="well">
   		 	<label> Review from group '. $row['byGroup'] . ' </label><p></p>';
   			
+  		$query3 = "
+  			SELECT AVG(grade) as averageMark
+  			FROM grade
+  			WHERE byGroup = $row['byGroup']
+  			GROUP BY byGroup
+  		";	
+  		
+  		$result3 = mysqli_query($connection,$query3) or die('Error' . mysqli_error($connection));
+  		$row3 = mysqli_fetch_assoc($result3);
+  			
 		echo 	'<div class="actionBox">
 			 	<ul class="commentList">
         		    		<li>
         			      	<div class="commentText">
         		        		<p class="">' . $row['comments']. '</p> 
-             					<p class="">Grade: ' . $row['grade']. '/10</p> 
+             					<p class="">Grade: ' . $row['grade']. '/10</p>
+             					<p class="">Group average mark ' . $row3['averageMark']. '/10</p>
                 			</div>
         				</li>
 				 </ul>
