@@ -96,7 +96,7 @@ else
 				echo '</td>';
 			echo '</tr>';
 		}
-		echo '<input type="Add Category" value="Add category" />';
+		echo '<li id = "indexList"> <a href = "findex.php" class="listLinks"> Forum Index </a></li>';
 	}
 }
 
