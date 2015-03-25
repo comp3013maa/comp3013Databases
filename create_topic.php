@@ -111,7 +111,7 @@ else
 							('" . $_POST['post_content'] . "',
 								  NOW(),
 								  " . $topicid . ",
-								  " . $_SESSION['user_id'] . "
+								  " . $_SESSION['userID'] . "
 							)";
 		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
 				
