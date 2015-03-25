@@ -41,6 +41,6 @@ else
 		}
 	}
 }
-
+mysqli_close($conn);
 include 'footer.php';
 ?>
