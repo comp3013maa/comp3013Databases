@@ -83,7 +83,7 @@ if ($validUpload){
 	mysqli_close($connection);
 	
 echo '
-<form action = "upload.php" method = "POST" enctype = "multipart/form-data">
+<form action = "uploadxml.php" method = "POST" enctype = "multipart/form-data">
       <input type="file" name="file" id="file"> <br><br>
      	<button type ="submit "id="singlebutton" name="uploaded" class="btn btn-success"> Submit </button>
 </form>';
