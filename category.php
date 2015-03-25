@@ -42,7 +42,7 @@ else
 				topic_cat = " . $_GET['id'];
 		
 		$result2 = mysqli_query($conn,$sql);
-		$topicnum_rows = $result->topicnum_rows;
+		$topicnum_rows = $result2->topicnum_rows;
 
 		
 		if(!$result2)
