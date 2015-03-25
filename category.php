@@ -28,6 +28,7 @@ else
 		{
 			echo '<h2>Topics in &prime;' . $row['cat_name'] . '&prime; category</h2><br />';
 		}
+		$getid = $_GET['id'];
 	
 		//do a query for the topics
 		$sql = "SELECT	
@@ -38,7 +39,7 @@ else
 				FROM
 					topics
 				WHERE
-				topic_cat = " . $_GET['id'];
+				topic_cat = " . mysql_real_escape_string($getid);
 		
 		$result = mysqli_query($conn,$sql);
 		
