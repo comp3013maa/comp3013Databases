@@ -100,7 +100,7 @@ else
 			{
 				//the first query worked, now start the second, posts query
 				//retrieve the id of the freshly created topic for usage in the posts query
-				$topicid = mysql_insert_id();
+				$topicid = mysqli_insert_id();
 				
 				$sql = "INSERT INTO
 							posts(post_content,
