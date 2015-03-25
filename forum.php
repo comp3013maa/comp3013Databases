@@ -45,11 +45,15 @@ else
 	else
 	{
 		//prepare the table
-		echo '<table border="1">
+		echo '<div class="well">
+		<table border="1" class="table">
+			 <thead>
 			  <tr>
 				<th>Category</th>
 				<th>Last topic</th>
-			  </tr>';	
+			  </tr>
+			 </thead> 
+			<tbody>';	
 			
 		while($row = $result->fetch_assoc())
 		{				
@@ -96,6 +100,7 @@ else
 				echo '</td>';
 			echo '</tr>';
 		}
+		echo '</tbody></table></div>';
 		echo '<li id = "indexList"> <a href = "create_cat.php" class="listLinks"> Create Category </a></li>';
 	}
 }
