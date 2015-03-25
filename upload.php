@@ -8,7 +8,7 @@ if (!isset($_SESSION['userID'])) {
 
 echo '<h3>Upload your report</h3> <p></p>';
 
-$user = $_SESSION['userID'];
+$user =  mysqli_real_escape_string($connection, $_SESSION['userID']);
 
  $connection = mysqli_connect('eu-cdbr-azure-west-b.cloudapp.net','b6526a64c19791','5d020f59','comp3013')
 	 or die('Error' . mysqli_error());
@@ -21,7 +21,7 @@ $query = "
 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
 $row = mysqli_fetch_assoc($result);
-$groupID = $row['groupID'];	 
+$groupID = mysqli_real_escape_string($connection, $row['groupID']);	 
 
 $query3 = "
 	SELECT groupID
@@ -73,18 +73,20 @@ else {
 }
 
 }
-	 $userID = $_SESSION['userID'];
+
 	 
 	$query1 = 
 	"SELECT groupID 
 	FROM users
-	WHERE userID = '$userID'
+	WHERE userID = '$user'
 	";
 	 
 	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysqli_error("$result1"));
 	 	$row = mysqli_fetch_assoc($result1);
 	 	$groupID = $row['groupID'];
 	 	$filename =  basename($directory);
+	 	$directory = mysqli_real_escape_string($connection, $directory);
+	 	
 if ($validUpload){
 	$query2 = 
 	 "INSERT INTO submissions 
