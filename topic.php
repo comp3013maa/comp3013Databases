@@ -47,7 +47,7 @@ else
 					LEFT JOIN
 						users
 					ON
-						posts.post_by = users.user_id
+						posts.post_by = users.userid
 					WHERE
 						posts.post_topic = " . $_GET['id'];
 						
