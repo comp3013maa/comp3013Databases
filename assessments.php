@@ -55,6 +55,8 @@ echo "Your group's assessments are shown below.". "<p></p>";
   		$byGroup = $row['byGroup'];
   		echo '<div class="well">
   		 	<label> Review from group '. $byGroup . ' </label><p></p>';
+  		
+  		$byGroup =  mysqli_real_escape_string($connection, $byGroup);
   			
   		$query3 = "
   			SELECT AVG(grade) as averageMark
