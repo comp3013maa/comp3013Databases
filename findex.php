@@ -20,7 +20,7 @@ echo '<form  method="post"  id="searchform">
 			{
 			echo '<tr>';
 			echo '<td class="leftpart">';
-			echo '<h3><a href="topic.php?id=' . $row['p.post_topic'] . '">' . $row['p.post_content'] . '</a></h3>' . $row['u.userName'];
+			echo '<h3><a href="topic.php?id=' . $row['post_topic'] . '">' . $row['post_content'] . '</a></h3>' . $row['userName'];
 			echo '</td>';
 			echo '<td class="rightpart">';
 	    		}
