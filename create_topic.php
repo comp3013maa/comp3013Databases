@@ -49,7 +49,7 @@ else
 					Category:'; 
 				
 				echo '<select name="topic_cat">';
-					while($row = mysql_fetch_assoc($result))
+					while($row = $result->fetch_assoc())
 					{
 						echo '<option value="' . $row['cat_id'] . '">' . $row['cat_name'] . '</option>';
 					}
