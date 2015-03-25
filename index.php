@@ -14,7 +14,7 @@ if (!isset($_SESSION['userID'])) {
             <div class="panel-body">
               	<ul> 
 	                <li id = "indexList"> <a href = "upload.php" class="listLinks"> Upload Free Text Report</a> </li>                  		
-	                <li id = "indexList"> <a href = "upload.php" class="listLinks">Upload XML</a> </li>
+	                <li id = "indexList"> <a href = "uploadxml.php" class="listLinks">Upload XML</a> </li>
                	</ul>
               </div>  
         </div>
