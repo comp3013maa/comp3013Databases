@@ -39,7 +39,7 @@ else
 				FROM
 					topics
 				WHERE
-				topic_cat = 1";
+				topic_cat = ". $_GET['id'];
 		
 		$result2 = mysqli_query($conn,$sql);
 		$topicnum_rows = $result2->topicnum_rows;
