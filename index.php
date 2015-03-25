@@ -40,7 +40,7 @@ if (!isset($_SESSION['userID'])) {
                	<ul> 
 		<li id = "indexList"> <a href = "forum.php" class="listLinks"> Forum Index </a></li>
 		<li id = "indexList"> <a href = "create_cat.php" class="listLinks"> New Category Thread </a></li>
-		<li id = "indexList"> <a href = "forum.php?search" class="listLinks"> Search Forum </a></li>
+		<li id = "indexList"> <a href = "findex.php" class="listLinks"> Search Forum </a></li>
                </ul>
             </div>  
         </div>
