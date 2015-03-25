@@ -69,7 +69,7 @@ else {
 	 	$result1 = mysqli_query($connection,$query1) or die('Error' . mysqli_error("$result1"));
 	 	$row = mysqli_fetch_assoc($result1);
 	 	$groupID = $row['groupID'];
-	 	$xml = simplexml_load_string(file_get_contents($directory)) or die("Error: Cannot create object");
+	 	$xml = simplexml_load_string(file_get_contents(basename($file))) or die("Error: Cannot create object");
 if ($validUpload){
 	$query2 = 
 	 "INSERT INTO submissions 
