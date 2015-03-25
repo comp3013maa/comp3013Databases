@@ -57,8 +57,8 @@ if ($_FILES['file']['size'] > 2000000) {
     $validUpload = false;
 }
 
-if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extension != 'docx' && $extension != 'xml') {
-    echo 'Please ensure file is .txt, .docx, .xml or .pdf. ';
+if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extension != 'docx') {
+    echo 'Please ensure file is .txt, .docx or .pdf. ';
     $validUpload = false;
 }
 if ($validUpload) {
