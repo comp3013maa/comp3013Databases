@@ -77,6 +77,8 @@ else
 	
 			//the form has been posted, so save it
 			//insert the topic into the topics table first, then we'll save the post into the posts table
+			$topiccat =  mysqli_real_escape_string($connection, $_POST['topic_cat']);
+			$userID =  mysqli_real_escape_string($connection, $_SESSION['userID']);
 			$sql = "INSERT INTO 
 						topics(topic_subject,
 							   topic_date,
@@ -84,8 +86,8 @@ else
 							   topic_by)
 				   VALUES('" . $_POST['topic_subject'] . "',
 							   NOW(),
-							   " . $_POST['topic_cat'] . ",
-							   " . $_SESSION['userID'] . "
+							   "$topiccat ",
+							   " $userID "
 							   )";
 					 
 		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
@@ -111,7 +113,7 @@ else
 							('" . $_POST['post_content'] . "',
 								  NOW(),
 								  " . $topicid . ",
-								  " . $_SESSION['userID'] . "
+								  " $userID "
 							)";
 		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
 				
