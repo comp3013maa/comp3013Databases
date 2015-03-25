@@ -18,7 +18,7 @@ if(!$result)
 }
 else
 {
-	if($num_rows == 0)
+	if(mysqli_num_rows($result) == 0)
 	{
 		echo 'This category does not exist.';
 	}
