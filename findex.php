@@ -30,7 +30,7 @@ $sql = "SELECT
 			categories.cat_name, categories.cat_description, categories.cat_id";
 
 $result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
-
+$num_rows = $result->num_rows;
 
 if(!$result)
 {
@@ -38,7 +38,7 @@ if(!$result)
 }
 else
 {
-	if(mysql_num_rows($result) == 0)
+	if($num_rows == 0)
 	{
 		echo 'No categories defined yet.';
 	}
