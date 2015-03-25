@@ -26,6 +26,6 @@ echo '<form  method="post"  id="searchform">
 	    		}
 	  	
 	 }
-
+mysqli_close($conn);
 require "footer.php";
 ?>
