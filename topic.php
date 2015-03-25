@@ -9,7 +9,7 @@ $sql = "SELECT
 		FROM
 			topics
 		WHERE
-			topics.topic_id = " . mysql_real_escape_string($_GET['id']);
+			topics.topic_id = " . $_GET['id'];
 			
  $result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
 $num_rows = $result->num_rows;
@@ -49,7 +49,7 @@ else
 					ON
 						posts.post_by = users.user_id
 					WHERE
-						posts.post_topic = " . mysql_real_escape_string($_GET['id']);
+						posts.post_topic = " . $_GET['id'];
 						
 			$posts_result = mysqli_query($conn,$posts_sql) or die('Error2' . mysqli_error($conn));;
 			
