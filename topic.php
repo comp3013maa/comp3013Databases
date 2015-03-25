@@ -40,14 +40,14 @@ else
 						posts.post_content,
 						posts.post_date,
 						posts.post_by,
-						users.user_id,
+						users.userID,
 						users.user_name
 					FROM
 						posts
 					LEFT JOIN
 						users
 					ON
-						posts.post_by = users.userid
+						posts.post_by = users.userID
 					WHERE
 						posts.post_topic = " . $_GET['id'];
 						
