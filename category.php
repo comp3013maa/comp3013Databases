@@ -5,7 +5,8 @@ include 'connect.php';
 
 
 //first select the category based on $_GET['cat_id']
-$sql = "SELECT	cat_id,	cat_name,cat_description FROM categories WHERE cat_id = " . $_GET['id'];
+$getid =  mysqli_real_escape_string($conn,  $_GET['id']);
+$sql = "SELECT	cat_id,	cat_name,cat_description FROM categories WHERE cat_id = $getid";
 		
 
 $result = mysqli_query($conn,$sql)  or die('Error2' . mysqli_error($conn));
@@ -39,7 +40,7 @@ else
 				FROM
 					topics
 				WHERE
-				topic_cat = ". $_GET['id'];
+				topic_cat = $getid";
 		
 		$result2 = mysqli_query($conn,$sql1);
 		$topicnum_rows = $result2->topicnum_rows;
