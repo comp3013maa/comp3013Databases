@@ -26,7 +26,7 @@ else
 	}
 	else
 	{
-		while($row = mysql_fetch_assoc($result))
+		while($row = $result->fetch_assoc())
 		{
 			//display post data
 			echo '<table class="topic" border="1">
