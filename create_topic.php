@@ -108,7 +108,7 @@ else
 								  post_topic,
 								  post_by)
 						VALUES
-							('" . mysql_real_escape_string($_POST['post_content']) . "',
+							('" . $_POST['post_content'] . "',
 								  NOW(),
 								  " . $topicid . ",
 								  " . $_SESSION['user_id'] . "
