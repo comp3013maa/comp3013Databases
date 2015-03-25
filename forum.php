@@ -64,6 +64,7 @@ else
 				echo '<td class="rightpart">';
 				
 				//fetch last topic for each cat
+				$rowcatid =  mysqli_real_escape_string($conn, $row['cat_id']);
 					$topicsql = "SELECT
 									topic_id,
 									topic_subject,
@@ -72,7 +73,7 @@ else
 								FROM
 									topics
 								WHERE
-									topic_cat = " . $row['cat_id'] . "
+									topic_cat = $rowcatid
 								ORDER BY
 									topic_date
 								DESC
