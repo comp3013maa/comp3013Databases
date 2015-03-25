@@ -60,7 +60,7 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 echo	'<div class="well">';
 		echo "<label> Report from group ". $row['groupID'] . ' </label><p></p>';
 
-		if(substr(($row['submissionName'], -4) != ".txt") && (substr($row['submissionName'], -4) != ".docx")
+		if((substr($row['submissionName'], -4) != ".txt") && (substr($row['submissionName'], -4) != ".docx")
 		&& (substr($row['submissionName'], -4) != ".pdf") && (substr($row['submissionName'], -4) != ".doc")){
 			echo $row['submissionName'];
 		}
