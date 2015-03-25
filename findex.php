@@ -9,7 +9,8 @@ echo '<form  method="post"  id="searchform">
 	    </form>';
 	    
 	    if(isset($_POST['submit']) ){
-	  	$sql = "select p.*, u.* from posts p, users u where p.post_content LIKE '%". $_POST['name'] ."%' and p.post_by=u.userID";
+	    	$postname =  mysqli_real_escape_string($conn, $_POST['name']);
+	  	$sql = "select p.*, u.* from posts p, users u where p.post_content LIKE '%{$postname}%' and p.post_by=u.userID";
 	  	$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn)); 
 	  		echo '<table border="1">
 				<tr>
