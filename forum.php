@@ -55,7 +55,7 @@ else
 			 </thead> 
 			<tbody>';	
 			
-		while($row = $result->fetch_assoc())
+		while($row = mysqli_fetch_assoc($result))
 		{				
 			echo '<tr>';
 				echo '<td class="leftpart">';
