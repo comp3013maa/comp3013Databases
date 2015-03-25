@@ -87,7 +87,7 @@ else
 					}
 					else
 					{
-						if($topicnum_rows == 0)
+						if(mysqli_num_rows($topicsresult) == 0)
 						{
 							echo 'no topics';
 						}
