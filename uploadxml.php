@@ -31,12 +31,8 @@ if(isset($_POST['uploaded'])) {
 	
 $file = $_FILES['file']['name'];	
 $directory = 'uploads/'. basename($file);
-$xmlLoad = simplexml_load_string(file_get_contents($_FILES['file']['tmp_name'])) or die("Error: Cannot create object");
-$string = file_get_contents($_FILES['file']['tmp_name']);
-$xml = new SimpleXMLElement($string);
-$xml->asXML();
-echo $xml;
-var_dump($xml);
+$xml = simplexml_load_string(file_get_contents($_FILES['file']['tmp_name'])) or die("Error: Cannot create object");
+$array = json_decode(json_encode($xml),TRUE);
 $validUpload = true;
 $extension = pathinfo($directory,PATHINFO_EXTENSION);
 $marker = 0;
@@ -81,7 +77,7 @@ if ($validUpload){
 	$query2 = 
 	 "INSERT INTO submissions 
 	 (submissionName, groupID)
-	 VALUES ('$xml', $groupID)";  
+	 VALUES ('$array', $groupID)";  
 	 
 	$result2 = mysqli_query($connection,$query2) or die('Error' . mysqli_error($connection));
 }
