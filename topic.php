@@ -60,7 +60,7 @@ else
 			else
 			{
 			
-				while($posts_row = $posts_result->fetch_assoc()))
+				while($posts_row = $posts_result->fetch_assoc() )
 				{
 					echo '<tr class="topic-post">
 							<td class="user-post">' . $posts_row['user_name'] . '<br/>' . date('d-m-Y H:i', strtotime($posts_row['post_date'])) . '</td>
@@ -69,7 +69,7 @@ else
 				}
 			}
 			
-			if(!$_SESSION['signed_in'] )
+			if(!isset ($_SESSION['userID'])  )
 			{
 				echo '<tr><td colspan=2>You must be <a href="signin.php">signed in</a> to reply. You can also <a href="signup.php">sign up</a> for an account.';
 			}
