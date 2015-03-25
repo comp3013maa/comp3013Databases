@@ -9,6 +9,7 @@ $sql = "SELECT	cat_id,	cat_name,cat_description FROM categories WHERE cat_id = "
 		
 
 $result = mysqli_query($conn,$sql)  or die('Error2' . mysqli_error($conn));
+$num_rows = $result->num_rows;
 
 
 if(!$result)
@@ -17,14 +18,14 @@ if(!$result)
 }
 else
 {
-	if(mysqli_num_rows($result) == 0)
+	if($num_rows == 0)
 	{
 		echo 'This category does not exist.';
 	}
 	else
 	{
 		//display category data
-		while($row = mysqli_fetch_assoc($result))
+		while($row = $result->fetch_assoc())
 		{
 			echo '<h2>Topics in &prime;' . $row['cat_name'] . '&prime; category</h2><br />';
 		}
@@ -41,6 +42,8 @@ else
 				topic_cat = " . $_GET['id'];
 		
 		$result = mysqli_query($conn,$sql);
+		$topicnum_rows = $result->num_rows;
+
 		
 		if(!$result)
 		{
@@ -48,7 +51,7 @@ else
 		}
 		else
 		{
-			if(mysqli_num_rows($result) == 0)
+			if($topicnum_rows == 0)
 			{
 				echo 'There are no topics in this category yet.';
 			}
@@ -61,7 +64,7 @@ else
 						<th>Created at</th>
 					  </tr>';	
 					
-				while($row = mysqli_fetch_assoc($result))
+				while($row = $result->fetch_assoc()
 				{				
 					echo '<tr>';
 						echo '<td class="leftpart">';
