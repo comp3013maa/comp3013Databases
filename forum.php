@@ -46,7 +46,7 @@ else
 	{
 		//prepare the table
 		echo '<div class="well">
-		<table border="1" class="table">
+		<table class="table">
 			 <thead>
 			  <tr>
 				<th>Category</th>
