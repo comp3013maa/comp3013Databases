@@ -99,6 +99,6 @@ else
 		echo '<li id = "indexList"> <a href = "create_cat.php" class="listLinks"> Create Category </a></li>';
 	}
 }
-
+mysqli_close($conn);
 require 'footer.php';
 ?>
