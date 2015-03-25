@@ -10,7 +10,6 @@ $sql = "SELECT	cat_id,	cat_name,cat_description FROM categories WHERE cat_id = "
 
 $result = mysqli_query($conn,$sql)  or die('Error2' . mysqli_error($conn));
 $num_rows = $result->num_rows;
-mysqliclose();
 
 
 if(!$result)
@@ -44,7 +43,6 @@ else
 		
 		$result2 = mysqli_query($conn,$sql);
 		$topicnum_rows = $result2->topicnum_rows;
-		mysqliclose();
 
 		
 		if(!$result2)
