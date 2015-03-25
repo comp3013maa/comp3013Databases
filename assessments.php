@@ -72,7 +72,7 @@ echo "Your group's assessments are shown below.". "<p></p>";
         			      	<div class="commentText">
         		        		<p class="">' . $row['comments']. '</p> 
              					<p class="">Grade: ' . $row['grade']. '/10</p>
-             					<p class="">Group average mark: ' . $row3['averageMark']. '/10</p>
+             					<p class="">Group ' . $byGroup . ' average mark: ' . $row3['averageMark']. '/10</p>
                 			</div>
         				</li>
 				 </ul>
