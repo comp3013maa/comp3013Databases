@@ -7,9 +7,8 @@ echo '<form  method="post" action="search.php?go"  id="searchform">
 	      <input  type="submit" name="submit" value="Search"> 
 	    </form>';
 	    
-	    if(isset($_POST['submit']) ){ 
-	    	if(isset($_GET['go'])){ 
-	  	$sql = "select * from posts where text LIKE *". $_POST['name'] ."*";
+	    if(isset($_POST['submit']) ){
+	  	$sql = "select * from posts where text LIKE %". $_POST['name'] ."%";
 	  	$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn)); 
 	  		echo '<table border="1">
 				<tr>
@@ -25,7 +24,7 @@ echo '<form  method="post" action="search.php?go"  id="searchform">
 			echo '</td>';
 			echo '<td class="rightpart">';
 	    		}
-	  	} 
+	  	
 	 }
 
 require "footer.php";
