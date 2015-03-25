@@ -79,7 +79,7 @@ else
 								LIMIT
 									1";
 								
-					$topicsresult = mysqli_query($conn,$topicsql) or die('Error2' . mysqli_error($conn));;
+					$topicsresult = mysqli_query($conn,$topicsql) or die('Error2' . mysqli_error($conn));
 					$topicnum_rows = $topicsresult->topicnum_rows;
 					if(!$topicsresult)
 					{
