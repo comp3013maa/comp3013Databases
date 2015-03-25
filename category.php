@@ -31,7 +31,7 @@ else
 		}
 
 		//do a query for the topics
-		$sql = "SELECT	
+		$sql1 = "SELECT	
 					topic_id,
 					topic_subject,
 					topic_date,
@@ -41,7 +41,7 @@ else
 				WHERE
 				topic_cat = ". $_GET['id'];
 		
-		$result2 = mysqli_query($conn,$sql);
+		$result2 = mysqli_query($conn,$sql1);
 		$topicnum_rows = $result2->topicnum_rows;
 
 		
