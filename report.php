@@ -24,22 +24,15 @@ $groupID = $row1['groupID'];
 $groupID =  mysqli_real_escape_string($connection, $groupID);
 
 	 $query = "
-	 SELECT submissions.submissionID as submissionID, submissionName, submissions.groupID
+	 SELECT submissions.submissionID as submissionID, submissionName, submissions.groupID  
 	 FROM submissions INNER JOIN groupassignments
 	 ON submissions.groupID = groupassignments.assignedTo
 	 WHERE groupassignments.groupID = $groupID
 	 ";
 	 
 $result = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
-$result4 = mysqli_query($connection,$query) or die('Error2' . mysqli_error($connection));
 
 echo '<h3>Submit Gradings</h3>';
-
-echo 'Your group is assigned to review groups ';
-
-while($row4 = mysqli_fetch_assoc($result4)){
-	echo $row4['groupID']. ' ';
-}
  
 echo '<p></p>';
 echo 'Submitted reports are shown below. Please review them.'.'<p></p>';
