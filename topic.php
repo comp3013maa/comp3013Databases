@@ -1,6 +1,6 @@
 <?php
 //create_cat.php
-require 'fheader.php';
+require 'header.php';
 include 'connect.php';
 
 $sql = "SELECT
@@ -11,7 +11,8 @@ $sql = "SELECT
 		WHERE
 			topics.topic_id = " . mysql_real_escape_string($_GET['id']);
 			
-$result = mysql_query($sql);
+ $result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
+$num_rows = $result->num_rows;
 
 if(!$result)
 {
@@ -19,7 +20,7 @@ if(!$result)
 }
 else
 {
-	if(mysql_num_rows($result) == 0)
+	if($num_rows == 0)
 	{
 		echo 'This topic doesn&prime;t exist.';
 	}
@@ -50,7 +51,7 @@ else
 					WHERE
 						posts.post_topic = " . mysql_real_escape_string($_GET['id']);
 						
-			$posts_result = mysql_query($posts_sql);
+			$posts_result = mysqli_query($conn,$posts_sql) or die('Error2' . mysqli_error($conn));;
 			
 			if(!$posts_result)
 			{
