@@ -57,16 +57,19 @@ if ($_FILES['file']['size'] > 2000000) {
     $validUpload = false;
 }
 
-if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extension != 'docx') {
-    echo 'Please ensure file is .txt, .docx, or .pdf. ';
+if($extension != 'txt' && $extension != 'doc' && $extension != 'pdf' && $extension != 'docx' && $extension != 'xml') {
+    echo 'Please ensure file is .txt, .docx, .xml or .pdf. ';
     $validUpload = false;
 }
 if ($validUpload) {
- if (move_uploaded_file($_FILES['file']['tmp_name'], $directory)) {
-        echo basename($file) . ' successfully uploaded.';
-    }else{
-        echo 'Upload error';
-    }
+	if ($extension == 'xml'){
+		
+	}
+	if (move_uploaded_file($_FILES['file']['tmp_name'], $directory)) {
+        	echo basename($file) . ' successfully uploaded.';
+    	}else{
+        	echo 'Upload error';
+    	}
 } 
 else {
 	echo 'File not uploaded. Try again.';
