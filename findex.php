@@ -1,6 +1,6 @@
 <?php
 //create_cat.php
-require 'fheader.php';
+require 'header.php';
 
 $server = 'eu-cdbr-azure-west-b.cloudapp.net';
 $username = 'b6526a64c19791';
