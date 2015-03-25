@@ -2,6 +2,7 @@
 require "header.php";
 require "connect.php";
 
+echo '<h3>Search Forum </h3>';
 echo '<form  method="post"  id="searchform"> 
 	      <input  type="text" name="name"> 
 	      <input  type="submit" name="submit" value="Search"> 
