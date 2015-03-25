@@ -63,7 +63,7 @@ else
 				while($posts_row = $posts_result->fetch_assoc() )
 				{
 					echo '<tr class="topic-post">
-							<td class="user-post">' . $posts_row['user_name'] . '<br/>' . date('d-m-Y H:i', strtotime($posts_row['post_date'])) . '</td>
+							<td class="user-post">' . $posts_row['userName'] . '<br/>' . date('d-m-Y H:i', strtotime($posts_row['post_date'])) . '</td>
 							<td class="post-content">' . htmlentities(stripslashes($posts_row['post_content'])) . '</td>
 						  </tr>';
 				}
