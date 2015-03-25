@@ -29,8 +29,8 @@ else
 		 $postcatname =  mysqli_real_escape_string($conn, $_POST['cat_name'] );
 		 $postcatdescription =  mysqli_real_escape_string($conn, $_POST['cat_description'] );
 		$sql = "INSERT INTO categories(cat_name, cat_description)
-		   VALUES('" $postcatname "',
-				 '" $postcatdescription "')";
+		   VALUES(' $postcatname ',
+				 ' $postcatdescription ')";
 		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
 		if(!$result)
 		{
