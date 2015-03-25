@@ -76,7 +76,6 @@ else
 		}
 	}
 }
- <input type="Add Category" value="Add category" />;
 
 require 'footer.php';
 ?>
