@@ -74,6 +74,7 @@ else
 				}
 			}
 		}
+		echo '<li id = "indexList"> <a href = "create_topic.php" class="listLinks"> Create Topic </a></li>';
 	}
 }
 
