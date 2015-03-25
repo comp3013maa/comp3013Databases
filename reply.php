@@ -1,6 +1,6 @@
 <?php
 //create_cat.php
-require 'fheader.php';
+require 'header.php';
 include 'connect.php';
 
 if($_SERVER['REQUEST_METHOD'] != 'POST')
@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 else
 {
 	//check for sign in status
-	if(!$_SESSION['signed_in'])
+	if(!isset ($_SESSION['userID']) )
 	{
 		echo 'You must be signed in to post a reply.';
 	}
@@ -28,7 +28,7 @@ else
 						" . mysql_real_escape_string($_GET['id']) . ",
 						" . $_SESSION['user_id'] . ")";
 						
-		$result = mysql_query($sql);
+		 $result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));
 						
 		if(!$result)
 		{
