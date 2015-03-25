@@ -38,7 +38,7 @@ else
 				FROM
 					topics
 				WHERE
-					topic_cat = '$_GET["id"]'";
+					topic_cat = 'htmlspecialchars($_GET["id"])'";
 		
 		$result = mysqli_query($conn,$sql);
 		
