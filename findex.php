@@ -96,6 +96,7 @@ else
 				echo '</td>';
 			echo '</tr>';
 		}
+		echo '<input type="Add Category" value="Add category" />';
 	}
 }
 
