@@ -51,7 +51,7 @@ else
 		}
 		else
 		{
-			if($mysqli_num_rows($result2) == 0)
+			if(mysqli_num_rows($result2) == 0)
 			{
 				echo 'There are no topics in this category yet.';
 			}
