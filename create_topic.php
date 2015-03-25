@@ -85,7 +85,7 @@ else
 				   VALUES('" . $_POST['topic_subject'] . "',
 							   NOW(),
 							   " . $_POST['topic_cat'] . ",
-							   " . $_SESSION['user_id'] . "
+							   " . $_SESSION['userID'] . "
 							   )";
 					 
 		$result = mysqli_query($conn,$sql) or die('Error2' . mysqli_error($conn));		
