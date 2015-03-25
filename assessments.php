@@ -54,7 +54,7 @@ echo "Your group's assessments are shown below.". "<p></p>";
   	while($row = mysqli_fetch_assoc($result)){
   		echo '<div class="well">
   		 	<label> Review from group '. $row['byGroup'] . ' </label><p></p>';
-  	/*		
+  			
   		$query3 = "
   			SELECT AVG(grade) as averageMark
   			FROM grade
@@ -63,7 +63,7 @@ echo "Your group's assessments are shown below.". "<p></p>";
   		";	
   		
   		$result3 = mysqli_query($connection,$query3) or die('Error' . mysqli_error($connection));
-  		$row3 = mysqli_fetch_assoc($result3);*/
+  		$row3 = mysqli_fetch_assoc($result3);
   			
 		echo 	'<div class="actionBox">
 			 	<ul class="commentList">
