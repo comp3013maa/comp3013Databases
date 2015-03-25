@@ -93,7 +93,7 @@ else
 						}
 						else
 						{
-							while($topicrow = mysql_fetch_assoc($topicsresult))
+							while($topicrow = mysqli_fetch_assoc($topicsresult))
 							echo '<a href="topic.php?id=' . $topicrow['topic_id'] . '">' . $topicrow['topic_subject'] . '</a> at ' . date('d-m-Y', strtotime($topicrow['topic_date']));
 						}
 					}
