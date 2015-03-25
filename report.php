@@ -60,7 +60,7 @@ $result3 = mysqli_query($connection, $query3) or die('Error4' . mysqli_error($co
 echo	'<div class="well">';
 		echo "<label> Report from group ". $row['groupID'] . ' </label><p></p>';
 
-		if(substr($row['submissionName'], 7) != "uploads"){
+		if(substr($row['submissionName'], 6) != "uploads"){
 			echo $row['submissionName'];
 		}
 		else{
