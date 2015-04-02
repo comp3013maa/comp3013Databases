@@ -15,6 +15,7 @@ $msg="Hi there, karthick";
 $subj="Test message";
 
 mail($to,$subject,$msg,$from);
+exit();
 /*$to = $_POST['toemail'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
