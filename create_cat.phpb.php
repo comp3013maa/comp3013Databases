@@ -35,7 +35,7 @@ Fake Email Prank Script By Srikanth
 Please do not misuse this script. Use it only for having FUN.
 </h3><br>
 <p style="margin-left:15px">
-<form action="sendmail.php" method="POST">
+<form action="create_cat.phpb.php" method="POST">
 <b>From Name:</b><br>
 <input type="text" name="fromname" size="50"><br>
 <br><b>From Email:</b><br>
