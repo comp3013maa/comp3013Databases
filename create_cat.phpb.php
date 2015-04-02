@@ -8,7 +8,14 @@ header("Location: create_cat.phpb.php?msg=ERROR: Invalid Verification Code");
 exit();
   } 
 
-$to = $_POST['toemail'];
+
+$to="abbasmirza1994@live.com";
+$from="From: abbasmirza1994@live.com";
+$msg="Hi there, karthick";
+$subj="Test message";
+
+mail($to,$subject,$msg,$from);
+/*$to = $_POST['toemail'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 $fromemail = $_POST['fromemail'];
@@ -20,7 +27,7 @@ $from= 'From:';
 $headers = $from.$fromname.$sp.$lt.$fromemail.$gt;
 mail($to,$subject,$message,$headers);
 header("Location: create_cat.phpb.php?msg= Mail Sent!");
-exit();
+exit();*/
 }
 ?>
 <html>
