@@ -1,91 +1,62 @@
-<<<<<<< HEAD
 <?php
-//create_cat.php
-require 'fheader.php';
-include 'connect.php';
-
-echo '<h2>Create a category</h2>';
-if($_SESSION['signed_in'] == false | $_SESSION['user_level'] != 1 )
+session_start();
+if ($_POST['Submit'] == 'Send')
 {
-	//the user is not an admin
-	echo 'Sorry, you do not have sufficient rights to access this page.';
-}
-else
-{
-	//the user has admin rights
-	if($_SERVER['REQUEST_METHOD'] != 'POST')
-	{
-		//the form hasn't been posted yet, display it
-		echo '<form method="post" action="">
-			Category name: <input type="text" name="cat_name" /><br />
-			Category description:<br /> <textarea name="cat_description" /></textarea><br /><br />
-			<input type="submit" value="Add category" />
-		 </form>';
-	}
-	else
-	{
-		//the form has been posted, so save it
-		$sql = "INSERT INTO categories(cat_name, cat_description)
-		   VALUES('" . mysql_real_escape_string($_POST['cat_name']) . "',
-				 '" . mysql_real_escape_string($_POST['cat_description']) . "')";
-		$result = mysql_query($sql);
-		if(!$result)
-		{
-			//something went wrong, display the error
-			echo 'Error' . mysql_error();
-		}
-		else
-		{
-			echo 'New category succesfully added.';
-		}
-	}
-}
+if (strcmp(md5($_POST['user_code']),$_SESSION['ckey']))
+	{ 
+header("Location: sendmail.php?msg=ERROR: Invalid Verification Code");
+exit();
+  } 
 
-require 'footer.php';
+$to = $_POST['toemail'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];
+$fromemail = $_POST['fromemail'];
+$fromname = $_POST['fromname'];
+$lt= '<';
+$gt= '>';
+$sp= ' ';
+$from= 'From:';
+$headers = $from.$fromname.$sp.$lt.$fromemail.$gt;
+mail($to,$subject,$message,$headers);
+header("Location: sendmail.php?msg= Mail Sent!");
+exit();
+}
 ?>
-=======
-<?php
-//create_cat.php
-require 'fheader.php';
-require 'connect.php';
-
-echo '<h2>Create a category</h2>';
-if($_SESSION['signed_in'] == false | $_SESSION['user_level'] != 1 )
-{
-	//the user is not an admin
-	echo 'Sorry, you do not have sufficient rights to access this page.';
-}
-else
-{
-	//the user has admin rights
-	if($_SERVER['REQUEST_METHOD'] != 'POST')
-	{
-		//the form hasn't been posted yet, display it
-		echo '<form method="post" action="">
-			Category name: <input type="text" name="cat_name" /><br />
-			Category description:<br /> <textarea name="cat_description" /></textarea><br /><br />
-			<input type="submit" value="Add category" />
-		 </form>';
-	}
-	else
-	{
-		//the form has been posted, so save it
-		$sql = "INSERT INTO categories(cat_name, cat_description)
-		   VALUES('" . mysql_real_escape_string($_POST['cat_name']) . "',
-				 '" . mysql_real_escape_string($_POST['cat_description']) . "')";
-		$result = mysql_query($sql);
-		if(!$result)
-		{
-			//something went wrong, display the error
-			echo 'Error' . mysql_error();
-		}
-		else
-		{
-			echo 'New category succesfully added.';
-		}
-	}
-}
- 
-require 'footer.php';
-?>
->>>>>>> 4390ada83108171a4b402931672b679eff903a70
+<html>
+<head>
+<title>Email Pranks</title>
+</head>
+<body bgcolor="#ffffcc">
+<h2 align="center">
+Fake Email Prank Script By Srikanth
+</h2>
+<h3 align="center">
+Please do not misuse this script. Use it only for having FUN.
+</h3><br>
+<p style="margin-left:15px">
+<form action="sendmail.php" method="POST">
+<b>From Name:</b><br>
+<input type="text" name="fromname" size="50"><br>
+<br><b>From Email:</b><br>
+<input type="text" name="fromemail" size="50"><br>
+<br><b>To Email:</b><br>
+<input type="text" name="toemail" size="50"><br>
+<br><b>Subject:</b><br>
+<input type="text" name="subject" size="74"><br>
+<br><b>Your Message:</b><br>
+<textarea name="message" rows="5" cols="50">
+</textarea><br>
+<br><b>Verification Code:</b><br>
+<input name="user_code" type="text" size="25">  
+<img src="pngimg.php" align="middle"><br><br>
+<input type="submit" name="Submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+</p>
+<?php if (isset($_GET['msg'])) { echo "<font color=\"red\"><h3 align=\"center\"> $_GET[msg] </h3></font>"; } ?>
+<h3 align="center">
+WARNING: Use it at your own risk. Do not use this for Spamming!.
+</h3>
+</body>
+</html>
