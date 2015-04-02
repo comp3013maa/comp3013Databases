@@ -4,7 +4,7 @@ if ($_POST['Submit'] == 'Send')
 {
 if (strcmp(md5($_POST['user_code']),$_SESSION['ckey']))
 	{ 
-header("Location: sendmail.php?msg=ERROR: Invalid Verification Code");
+header("Location: create_cat.phpb.php?msg=ERROR: Invalid Verification Code");
 exit();
   } 
 
@@ -19,7 +19,7 @@ $sp= ' ';
 $from= 'From:';
 $headers = $from.$fromname.$sp.$lt.$fromemail.$gt;
 mail($to,$subject,$message,$headers);
-header("Location: sendmail.php?msg= Mail Sent!");
+header("Location: create_cat.phpb.php?msg= Mail Sent!");
 exit();
 }
 ?>
@@ -49,7 +49,7 @@ Please do not misuse this script. Use it only for having FUN.
 </textarea><br>
 <br><b>Verification Code:</b><br>
 <input name="user_code" type="text" size="25">  
-<img src="pngimg.php" align="middle"><br><br>
+<img src="fheader.php" align="middle"><br><br>
 <input type="submit" name="Submit" value="Send">
 <input type="reset" value="Reset">
 </form>
