@@ -15,6 +15,8 @@ $msg="Hi there, karthick";
 $subj="Test message";
 
 mail($to,$subject,$msg,$from);
+header("Location: create_cat.phpb.php?msg= Mail Sent!");
+
 exit();
 /*$to = $_POST['toemail'];
 $subject = $_POST['subject'];
